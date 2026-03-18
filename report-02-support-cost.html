@@ -451,25 +451,31 @@
     }
   });
 
-  // Chart 2 — Human team vs AI agent equivalents (grouped)
+  // Chart 2 — Human team vs AI agent equivalents (dual line)
   new Chart(document.getElementById('c2'), {
-    type: 'bar',
+    type: 'line',
     data: {
       labels: ['0-10%', '10-20%', '20-30%', '30-40%', '40-50%', '50%+'],
       datasets: [
         {
           label: 'Human team size',
           data: [6.6, 5.9, 6.3, 5.6, 4.3, 3.0],
-          backgroundColor: '#E4E4E7',
-          borderRadius: 3,
-          borderSkipped: false,
+          borderColor: '#A1A1AA',
+          backgroundColor: '#A1A1AA',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#A1A1AA',
+          tension: 0.3,
         },
         {
           label: 'AI agent equivalents',
           data: [0.2, 1.1, 2.1, 3.1, 3.5, 6.25],
-          backgroundColor: ['#FDDDD6', '#FCC0AF', '#FBA389', '#FA8563', '#F96B44', '#FF5B35'],
-          borderRadius: 3,
-          borderSkipped: false,
+          borderColor: '#FF5B35',
+          backgroundColor: '#FF5B35',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#FF5B35',
+          tension: 0.3,
         }
       ]
     },
@@ -481,7 +487,7 @@
           display: true,
           position: 'top',
           align: 'start',
-          labels: { boxWidth: 10, boxHeight: 10, padding: 18, font: { size: 11 }, color: '#71717A' }
+          labels: { boxWidth: 20, boxHeight: 2, padding: 18, font: { size: 11 }, color: '#71717A', usePointStyle: false }
         },
         tooltip: {
           callbacks: { label: c => ` ${c.dataset.label}: ${c.parsed.y}` }
