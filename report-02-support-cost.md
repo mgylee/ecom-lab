@@ -4,7 +4,7 @@
 
 ---
 
-**<1 min** AI Agent median resolution time vs. 20+ hours for human agents.
+**<2 min** AI Agent median resolution time vs. 20+ hours for human agents.
 **2x** more work handled by AI than the human team at 50%+ automation.
 **$196K** net annual saving at the lowest automation tier, after platform costs.
 
@@ -20,16 +20,16 @@ A human agent at a brand under $5M GMV handles 82 billable tickets per month. At
 
 ## Human agents vs. AI Agent
 
-The difference is not incremental. Human agents resolve tickets in 20 to 32 hours. AI Agent resolves them in under a minute.
+The difference is not incremental. Human agents resolve tickets in 20 to 32 hours. AI Agent resolves them in under 2 minutes.
 
 | GMV tier | Human median resolution | AI Agent median resolution |
 |----------|------------------------|---------------------------|
-| >$150M | 19.8 hrs | 0.7 mins |
-| $30-150M | 21.5 hrs | 0.8 mins |
-| $5-30M | 24.9 hrs | 0.9 mins |
-| <$5M | 31.9 hrs | 5.5 mins |
+| >$150M | 19.8 hrs | 0.9 mins |
+| $30-150M | 21.5 hrs | 1.4 mins |
+| $5-30M | 24.9 hrs | 1.4 mins |
+| <$5M | 31.9 hrs | 5.6 mins |
 
-Across the top three GMV tiers, AI Agent median resolution is under 1 minute. For brands under $5M GMV, it is 5.5 minutes. Human resolution time does not vary as dramatically, but it is consistently measured in hours, not minutes.
+Across the top three GMV tiers, AI Agent median resolution is under 1.5 minutes. For brands under $5M GMV, it is 5.6 minutes. Human resolution time does not vary as dramatically, but it is consistently measured in hours, not minutes.
 
 ---
 
