@@ -458,6 +458,118 @@
       .stats-strip { grid-template-columns: 1fr 1fr; padding: 0 24px 40px; }
       .stat-item { padding: 20px 16px; }
     }
+  /* ── FEEDBACK WIDGET ── */
+  .feedback-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    transition: background 0.15s;
+  }
+  .feedback-btn:hover { background: var(--700); }
+
+  .feedback-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 300;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 28px;
+  }
+  .feedback-overlay.open { display: flex; }
+
+  .feedback-modal {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 24px;
+    width: 340px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+
+  .feedback-modal h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+
+  .feedback-modal p {
+    font-size: 12.5px;
+    color: var(--500);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .feedback-modal input,
+  .feedback-modal textarea {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--900);
+    background: var(--50);
+    border: 1px solid var(--200);
+    border-radius: 6px;
+    padding: 9px 12px;
+    margin-bottom: 10px;
+    outline: none;
+    resize: none;
+    transition: border-color 0.15s;
+  }
+
+  .feedback-modal input:focus,
+  .feedback-modal textarea:focus { border-color: var(--400); }
+
+  .feedback-modal textarea { height: 100px; }
+
+  .feedback-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 4px;
+  }
+
+  .btn-cancel {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--500);
+    background: none;
+    border: 1px solid var(--200);
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.15s;
+  }
+  .btn-cancel:hover { color: var(--black); border-color: var(--400); }
+
+  .btn-send {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--black);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.15s;
+  }
+  .btn-send:hover { background: var(--700); }
   </style>
 </head>
 <body>
@@ -753,6 +865,37 @@
     }
   });
 
+</script>
+
+<!-- FEEDBACK WIDGET -->
+<button class="feedback-btn" onclick="document.getElementById('feedbackOverlay').classList.add('open')">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1h12v9H8l-3 3V10H1V1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+  Leave feedback
+</button>
+
+<div class="feedback-overlay" id="feedbackOverlay">
+  <div class="feedback-modal">
+    <h3>Leave feedback</h3>
+    <p>Comments go directly to Matilda. Include your name so she knows who to follow up with.</p>
+    <input type="text" id="fbName" placeholder="Your name" />
+    <textarea id="fbComment" placeholder="What's your feedback?"></textarea>
+    <div class="feedback-actions">
+      <button class="btn-cancel" onclick="document.getElementById('feedbackOverlay').classList.remove('open')">Cancel</button>
+      <button class="btn-send" onclick="sendFeedback()">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function sendFeedback() {
+    const name    = document.getElementById('fbName').value.trim();
+    const comment = document.getElementById('fbComment').value.trim();
+    if (!comment) return;
+    const subject = encodeURIComponent('Ecom Lab feedback' + (name ? ' from ' + name : ''));
+    const body    = encodeURIComponent(comment + (name ? '\n\n' + name : ''));
+    window.location.href = 'mailto:matilda.lee@gorgias.com?subject=' + subject + '&body=' + body;
+    document.getElementById('feedbackOverlay').classList.remove('open');
+  }
 </script>
 
 </body>
