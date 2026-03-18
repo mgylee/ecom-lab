@@ -325,6 +325,33 @@
 
     <p>An SMB brand handling 1,000 tickets per month at 82 tickets per agent needs roughly 12 agents to keep up. An Enterprise brand handling the same volume needs closer to 3. First response time follows the same pattern. SMB brands average 37 hours. Named accounts average 21 hours. Smaller brands are slower and more expensive to run simultaneously.</p>
 
+    <p>AI Agent changes the math entirely. Median resolution time across the top three tiers is under 1 minute. For SMB, it is 5.5 minutes. Compare that to human agents resolving tickets in 20 to 32 hours.</p>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <div class="chart-title">Median Resolution Time: Human Agents vs. AI Agent</div>
+        <div class="chart-sub">Hours to resolve a ticket, by GMV tier</div>
+      </div>
+      <div class="chart-area"><canvas id="c1b"></canvas></div>
+      <div class="chart-footer">Gorgias platform data · March 2026 · Median values, last 90 days</div>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>GMV tier</th>
+          <th>Human median resolution</th>
+          <th>AI Agent median resolution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="td-bold">&gt;$150M</td><td>19.8 hrs</td><td class="td-accent">0.7 mins</td></tr>
+        <tr><td class="td-bold">$30-150M</td><td>21.5 hrs</td><td class="td-accent">0.8 mins</td></tr>
+        <tr><td class="td-bold">$5-30M</td><td>24.9 hrs</td><td class="td-accent">0.9 mins</td></tr>
+        <tr><td class="td-bold">&lt;$5M</td><td>31.9 hrs</td><td class="td-accent">5.5 mins</td></tr>
+      </tbody>
+    </table>
+
     <h2 id="replaces">What AI replaces</h2>
 
     <p>At 30% automation, 30% of tickets never reach an agent. The productivity data above determines how much that is worth.</p>
@@ -447,6 +474,57 @@
       scales: {
         x: { grid: { display: false }, border: noBorder },
         y: { grid, border: noBorder, min: 0, max: 350 }
+      }
+    }
+  });
+
+  // Chart 1b — Median resolution time: Human vs AI Agent
+  new Chart(document.getElementById('c1b'), {
+    type: 'bar',
+    data: {
+      labels: ['>$150M', '$30-150M', '$5-30M', '<$5M'],
+      datasets: [
+        {
+          label: 'Human agents',
+          data: [19.8, 21.5, 24.9, 31.9],
+          backgroundColor: '#E4E4E7',
+          borderRadius: 3,
+          borderSkipped: false,
+        },
+        {
+          label: 'AI Agent',
+          data: [0.012, 0.013, 0.015, 0.092],
+          backgroundColor: '#FF5B35',
+          borderRadius: 3,
+          borderSkipped: false,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          align: 'start',
+          labels: { boxWidth: 10, boxHeight: 10, padding: 18, font: { size: 11 }, color: '#71717A' }
+        },
+        tooltip: {
+          callbacks: {
+            label: c => {
+              if (c.datasetIndex === 1) {
+                const mins = [0.7, 0.8, 0.9, 5.5];
+                return ` AI Agent: ${mins[c.dataIndex]} mins`;
+              }
+              return ` Human agents: ${c.parsed.y} hrs`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { display: false }, border: noBorder },
+        y: { grid, border: noBorder, min: 0, max: 35, ticks: { callback: v => v + ' hrs' } }
       }
     }
   });
