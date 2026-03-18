@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gorgias Ecommerce AI Adoption Index</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0A0A0A;
+      --900:     #18181B;
+      --700:     #3F3F46;
+      --500:     #71717A;
+      --400:     #A1A1AA;
+      --200:     #E4E4E7;
+      --100:     #F4F4F5;
+      --50:      #FAFAFA;
+      --white:   #FFFFFF;
+      --accent:  #FF5B35;
+      --col:     680px;
+      --side:    240px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--900);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOP ACCENT ── */
+    body::before {
+      content: '';
+      display: block;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 52px;
+      border-bottom: 1px solid var(--200);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .nav-brand {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-brand-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-label {
+      font-size: 12px;
+      color: var(--500);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── HEADER SECTION ── */
+    .header-section {
+      max-width: calc(var(--col) + var(--side) + 80px);
+      margin: 0 auto;
+      padding: 72px 48px 56px;
+      display: grid;
+      grid-template-columns: 1fr var(--side);
+      gap: 64px;
+      align-items: start;
+    }
+
+    .header-left {}
+
+    .header-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--500);
+    }
+
+    .tag-sep { color: var(--200); }
+
+    .header-left h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--black);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .header-left h1 em {
+      font-style: italic;
+      color: var(--700);
+    }
+
+    .header-deck {
+      font-size: 16px;
+      color: var(--700);
+      line-height: 1.65;
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
+
+    .author-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-top: 24px;
+      border-top: 1px solid var(--200);
+    }
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--100);
+      border: 1px solid var(--200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--700);
+      flex-shrink: 0;
+    }
+
+    .author-name { font-size: 13.5px; font-weight: 600; color: var(--900); }
+    .author-title { font-size: 12.5px; color: var(--500); }
+
+    /* ── SIDEBAR (header + article shared) ── */
+    .sidebar {
+      padding-top: 4px;
+    }
+
+    .sidebar-section { margin-bottom: 32px; }
+
+    .sidebar-heading {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--400);
+      margin-bottom: 10px;
+    }
+
+    .toc { list-style: none; }
+
+    .toc li { margin-bottom: 2px; }
+
+    .toc a {
+      font-size: 13px;
+      color: var(--500);
+      text-decoration: none;
+      display: block;
+      padding: 5px 0;
+      border-left: 2px solid transparent;
+      padding-left: 10px;
+      transition: color 0.15s, border-color 0.15s;
+      line-height: 1.4;
+    }
+
+    .toc a:hover {
+      color: var(--black);
+      border-left-color: var(--accent);
+    }
+
+    .subscribe-box {
+      border: 1px solid var(--200);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .subscribe-box p {
+      font-size: 12.5px;
+      color: var(--700);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .btn-sub {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--black);
+      background: var(--100);
+      border: 1px solid var(--200);
+      border-radius: 6px;
+      padding: 8px 14px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .btn-sub:hover { background: var(--200); }
+
+    .share-row { display: flex; gap: 8px; }
+
+    .share-btn {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--500);
+      text-decoration: none;
+      border: 1px solid var(--200);
+      border-radius: 6px;
+      padding: 6px 10px;
+      transition: all 0.15s;
+    }
+
+    .share-btn:hover { color: var(--black); border-color: var(--400); }
+
+    /* ── STATS ROW ── */
+    .stats-strip {
+      max-width: calc(var(--col) + var(--side) + 80px);
+      margin: 0 auto;
+      padding: 0 48px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--200);
+    }
+
+    .stat-item {
+      padding: 28px 32px;
+      border-right: 1px solid var(--200);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-desc {
+      font-size: 13px;
+      color: var(--500);
+      line-height: 1.5;
+    }
+
+    /* ── BODY LAYOUT ── */
+    .body-layout {
+      max-width: calc(var(--col) + var(--side) + 80px);
+      margin: 0 auto;
+      padding: 0 48px 96px;
+      display: grid;
+      grid-template-columns: 1fr var(--side);
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* ── ARTICLE ── */
+    article {}
+
+    article h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--black);
+      margin-top: 52px;
+      margin-bottom: 16px;
+      scroll-margin-top: 72px;
+      letter-spacing: -0.01em;
+    }
+
+    article p {
+      font-size: 16px;
+      color: var(--700);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    article p strong { color: var(--900); font-weight: 600; }
+
+    /* ── PULL QUOTE ── */
+    .pullquote {
+      margin: 36px 0;
+      padding: 0 0 0 20px;
+      border-left: 2px solid var(--black);
+    }
+
+    .pullquote p {
+      font-size: 18px !important;
+      font-style: italic;
+      color: var(--900) !important;
+      line-height: 1.6 !important;
+      margin: 0 !important;
+    }
+
+    /* ── CHART BLOCK ── */
+    .chart-block {
+      margin: 36px 0;
+      border: 1px solid var(--200);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .chart-header {
+      padding: 18px 22px 0;
+    }
+
+    .chart-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--900);
+      margin-bottom: 3px;
+    }
+
+    .chart-sub {
+      font-size: 12px;
+      color: var(--400);
+    }
+
+    .chart-area {
+      padding: 16px 22px;
+      position: relative;
+      height: 260px;
+    }
+
+    .chart-footer {
+      padding: 10px 22px 14px;
+      border-top: 1px solid var(--100);
+      font-size: 11px;
+      color: var(--400);
+    }
+
+    /* ── TABLE ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 28px 0;
+    }
+
+    .data-table thead th {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--400);
+      padding: 0 14px 10px;
+      border-bottom: 1px solid var(--200);
+      text-align: left;
+    }
+
+    .data-table tbody td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--100);
+      color: var(--700);
+      font-size: 14px;
+    }
+
+    .data-table tbody tr:last-child td { border-bottom: none; }
+
+    .td-bold { font-weight: 600; color: var(--900); }
+    .td-accent { font-weight: 600; color: var(--accent); }
+
+    /* ── PLACEHOLDER ── */
+    .placeholder {
+      margin: 20px 0;
+      padding: 12px 16px;
+      background: #FFFBEB;
+      border-left: 3px solid #F59E0B;
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      color: #78350F;
+      line-height: 1.55;
+    }
+
+    /* ── HR ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--200);
+      margin: 48px 0;
+    }
+
+    /* ── METHODOLOGY ── */
+    .method {
+      padding: 24px;
+      background: var(--50);
+      border-radius: 8px;
+      border: 1px solid var(--200);
+    }
+
+    .method-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--400);
+      margin-bottom: 8px;
+    }
+
+    .method p {
+      font-size: 13px !important;
+      color: var(--500) !important;
+      line-height: 1.65 !important;
+      margin: 0 !important;
+    }
+
+    /* ── STICKY SIDEBAR (article) ── */
+    .sticky-side {
+      position: sticky;
+      top: 72px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .header-section,
+      .body-layout { grid-template-columns: 1fr; gap: 0; padding: 40px 24px; }
+      .sidebar, .sticky-side { display: none; }
+      .stats-strip { grid-template-columns: 1fr 1fr; padding: 0 24px 40px; }
+      .stat-item { padding: 20px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">
+    <span class="nav-brand-dot"></span>
+    Gorgias Ecommerce Lab
+  </a>
+  <div class="nav-right">
+    <span class="nav-label">Research</span>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="header-section">
+  <div class="header-left">
+    <div class="header-eyebrow">
+      <span class="tag">AI Adoption Index</span>
+      <span class="tag-sep">·</span>
+      <span class="tag">March 2026</span>
+    </div>
+    <h1>AI is everywhere.<br><em>Our data shows there is still resistance.</em></h1>
+    <p class="header-deck">What behavioral data from ecommerce brands reveals about where AI adoption actually stands, and what the brands that have committed are seeing.</p>
+    <div class="author-row">
+      <div class="avatar">ML</div>
+      <div>
+        <div class="author-name">Matilda Lee</div>
+        <div class="author-title">Head of Product Marketing, Gorgias</div>
+      </div>
+    </div>
+  </div>
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Table of contents</div>
+      <ul class="toc">
+        <li><a href="#gap">The gap between narrative and data</a></li>
+        <li><a href="#who">Who has adopted, and who hasn't</a></li>
+        <li><a href="#performance">What adopters are seeing</a></li>
+        <li><a href="#bottom">The bottom line</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="subscribe-box">
+        <p>Data-driven research on how ecommerce brands operate and grow.</p>
+        <a class="btn-sub" href="#">Subscribe to Ecommerce Lab</a>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Share</div>
+      <div class="share-row">
+        <a class="share-btn" href="#">X</a>
+        <a class="share-btn" href="#">LinkedIn</a>
+        <a class="share-btn" href="#">Email</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <div class="stat-num">~20%</div>
+    <div class="stat-desc">of ecommerce brands have deployed AI in customer-facing support</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">10×</div>
+    <div class="stat-desc">faster response times for brands at 30%+ automation vs. zero</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">2pts</div>
+    <div class="stat-desc">CSAT difference between brands at 0% and 20% automation</div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="body-layout">
+  <article>
+
+    <h2 id="gap">The gap between narrative and data</h2>
+
+    <p>Every vendor deck, every conference keynote, every earnings call implies the same thing: AI in ecommerce support is mainstream. Our data disagrees.</p>
+
+    <p>We measured actual production deployment across ecommerce brands using Gorgias from January 2025 through January 2026. Not self-reported usage. Not survey responses. Platform-level signals showing whether AI is actively resolving customer interactions. The result: roughly <strong>1 in 5 brands has deployed AI in customer-facing support</strong>.</p>
+
+    <div class="placeholder">
+      <strong>Placeholder:</strong> Confirm exact aggregate adoption rate and MoM growth figure from internal trend data.
+    </div>
+
+    <div class="pullquote">
+      <p>When you ask brands whether they "use AI," you get a different answer than when you measure whether AI is actually resolving customer tickets.</p>
+    </div>
+
+    <h2 id="who">Who has adopted, and who hasn't</h2>
+
+    <p>Brand size is the strongest predictor of AI adoption. The bigger the brand, the more likely they have deployed AI in support. The relationship is nearly linear across every GMV tier.</p>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <div class="chart-title">AI Agent Adoption Rate by Brand GMV</div>
+        <div class="chart-sub">Share of brands with AI actively deployed in customer support</div>
+      </div>
+      <div class="chart-area"><canvas id="c1"></canvas></div>
+      <div class="chart-footer">Gorgias platform data · March 2026</div>
+    </div>
+
+    <p>Fewer than <strong>18% of brands under $1M GMV</strong> have deployed AI. That number crosses 25% around $5M GMV, 35% at $25M, and approaches <strong>50% for brands above $500M GMV</strong>. Even at the largest tier, half have not deployed.</p>
+
+    <h2 id="performance">What adopters are seeing</h2>
+
+    <p>Among brands that have deployed AI, the response time improvement is not incremental. It is structural.</p>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <div class="chart-title">First Response Time vs. Automation Rate</div>
+        <div class="chart-sub">Median first response time (minutes), all channels</div>
+      </div>
+      <div class="chart-area"><canvas id="c2"></canvas></div>
+      <div class="chart-footer">Gorgias platform data · March 2026</div>
+    </div>
+
+    <p>Brands at 20% automation respond in roughly <strong>400 minutes</strong>, versus 736 for brands near zero. The curve is not linear. At 30% automation, median first response time falls to <strong>80 minutes</strong>. At 40%, it reaches <strong>12 minutes</strong>.</p>
+
+    <p>CSAT at 20% automation sits at <strong>87.9%</strong>, versus 90.3% at zero.</p>
+
+    <div class="placeholder">
+      <strong>Placeholder:</strong> Add 1-2 anonymised customer proof points: ticket volumes automated, FRT improvement, or headcount held flat at scale.
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Automation rate</th>
+          <th>Median first response</th>
+          <th>Positive CSAT</th>
+          <th>Speed vs. baseline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-bold">0%</td>
+          <td>736 min</td>
+          <td>90.3%</td>
+          <td>Baseline</td>
+        </tr>
+        <tr>
+          <td class="td-bold">20%</td>
+          <td>399 min</td>
+          <td>87.9%</td>
+          <td class="td-accent">46% faster</td>
+        </tr>
+        <tr>
+          <td class="td-bold">30%</td>
+          <td>80 min</td>
+          <td>84.0%</td>
+          <td class="td-accent">89% faster</td>
+        </tr>
+        <tr>
+          <td class="td-bold">40%</td>
+          <td>12 min</td>
+          <td>81.3%</td>
+          <td class="td-accent">98% faster</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="bottom">The bottom line</h2>
+
+    <p>Most brands are not there yet. The data is clear on that. But the data is equally clear on what happens when they get there. Brands above 30% automation respond to customers up to 10x faster. Satisfaction barely moves.</p>
+
+    <p>The gap between brands that have committed and those still hesitating is not closing. It is widening every month.</p>
+
+    <div class="placeholder">
+      <strong>Placeholder:</strong> Add modeled projection: at current growth, when does the share of brands above 30% automation double?
+    </div>
+
+    <hr />
+
+    <div class="method">
+      <div class="method-label">Methodology</div>
+      <p>Platform-level behavioral data from Gorgias merchants, January 2025 through January 2026. AI adoption is measured by active AI enablement in customer-facing workflows, not self-reported usage. Official AI Agent adoption requires reaching activation and achieving at least 5% automation in a 7-day period with at least 5 billed tickets. Data as of March 2026.</p>
+    </div>
+
+  </article>
+
+  <!-- STICKY SIDEBAR -->
+  <div class="sticky-side">
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Table of contents</div>
+      <ul class="toc">
+        <li><a href="#gap">The gap between narrative and data</a></li>
+        <li><a href="#who">Who has adopted, and who hasn't</a></li>
+        <li><a href="#performance">What adopters are seeing</a></li>
+        <li><a href="#bottom">The bottom line</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="subscribe-box">
+        <p>Data-driven research on how ecommerce brands operate and grow.</p>
+        <a class="btn-sub" href="#">Subscribe</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  Chart.defaults.font.family = "'Inter', sans-serif";
+  Chart.defaults.font.size   = 11;
+  Chart.defaults.color       = '#A1A1AA';
+
+  const grid  = { color: '#F4F4F5', drawBorder: false };
+  const noBorder = { display: false };
+
+  // Chart 1 — Adoption by GMV
+  new Chart(document.getElementById('c1'), {
+    type: 'bar',
+    data: {
+      labels: ['$500K','$1M','$5M','$10M','$25M','$50M','$100M','$500M'],
+      datasets: [{
+        data: [15.3, 18.2, 25.1, 28.7, 34.6, 39.1, 42.9, 49.9],
+        backgroundColor: (ctx) => ctx.dataIndex < 3 ? '#E4E4E7' : '#0A0A0A',
+        borderRadius: 3,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.parsed.y}%` } } },
+      scales: {
+        x: { grid: { display: false }, border: noBorder },
+        y: { grid, border: noBorder, ticks: { callback: v => v + '%' }, min: 0, max: 60 }
+      }
+    }
+  });
+
+  // Chart 2 — FRT vs automation rate
+  new Chart(document.getElementById('c2'), {
+    type: 'line',
+    data: {
+      labels: ['0%','5%','10%','15%','20%','25%','30%','35%','40%'],
+      datasets: [{
+        data: [736, 717, 675, 579, 399, 199, 80, 31, 12],
+        borderColor: '#0A0A0A',
+        backgroundColor: 'rgba(10,10,10,0.04)',
+        borderWidth: 2,
+        pointRadius: 3,
+        pointBackgroundColor: '#0A0A0A',
+        fill: true,
+        tension: 0.35
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.parsed.y} min` } } },
+      scales: {
+        x: { grid: { display: false }, border: noBorder, title: { display: true, text: 'Total automation rate', color: '#A1A1AA', font: { size: 11 } } },
+        y: { grid, border: noBorder, ticks: { callback: v => v + ' min' }, min: 0 }
+      }
+    }
+  });
+
+</script>
+
+</body>
+</html>
