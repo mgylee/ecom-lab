@@ -35,7 +35,7 @@ Across the top three GMV tiers, AI Agent median resolution is under 1 minute. Fo
 
 ## What changes at scale
 
-As automation rate increases, two things happen simultaneously: AI handles more ticket volume, and human teams get smaller. The lines cross at 50%+ automation.
+As automation rate increases, AI absorbs more ticket volume. That does not mean cutting your team. It means your existing team stops spending time on repetitive tickets and starts handling the work that actually requires a human. The lines cross at 50%+ automation.
 
 | Automation tier | Avg team size | AI agent equivalents |
 |-----------------|---------------|----------------------|
@@ -46,7 +46,7 @@ As automation rate increases, two things happen simultaneously: AI handles more 
 | 40-50% | 4.3 | 3.5 |
 | 50%+ | 3.0 | 6.25 |
 
-At 50%+ automation, AI does the work of **6.25 agents on average across brands at that tier**. The average human team is 3 people. AI is handling more than double what the human team handles.
+At 50%+ automation, AI does the work of **6.25 agents on average across brands at that tier**. The average human team is 3 people. Those 3 people are not doing less. They are doing different work, the complex tickets, the high-value conversations, the problems that require judgment. AI handles the rest.
 
 For a brand at $5-30M GMV handling 2,000 tickets per month, 30% automation removes 600 tickets from the human queue. At 179 tickets per agent, that equals **3.4 agents freed** and roughly **$170K in annual savings**.
 
