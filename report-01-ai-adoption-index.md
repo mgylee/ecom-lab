@@ -71,11 +71,19 @@ The rate threshold matters independently of volume. Among brands automating fewe
 
 ---
 
+## The headcount equation
+
+Faster response times are visible to customers. The efficiency gains are visible to finance.
+
+> **Placeholder:** Ticket volume growth year-over-year vs. headcount growth year-over-year, segmented by automation tier (0-10%, 10-30%, 30%+). Finding to show: brands at 30%+ automation absorb volume growth without adding headcount. Brands below 10% are hiring to keep up.
+
+---
+
 ## The bottom line
 
-Most brands are not there yet. The data is clear on that. But the data is equally clear on what happens when they get there. Brands above 30% automation respond to customers up to 10x faster. Satisfaction barely moves.
+Most brands are not there yet. Those that have committed are responding 10x faster and scaling without growing their team. The ones still hesitating are hiring their way through the same volume.
 
-The gap between brands that have committed and those still hesitating is not closing. It is widening every month.
+That gap is not closing. It is widening every month.
 
 ---
 
