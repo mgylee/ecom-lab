@@ -51,7 +51,7 @@ Among brands that have deployed AI, the response time improvement is not increme
 | 30% | 80 min | 84.0% | 89% faster |
 | 40% | 12 min | 81.3% | 98% faster |
 
-Going from 0% to 20% automation cuts median first response time roughly in half: from 736 minutes to 400. Going from 20% to 30% cuts it by another 80%: down to 80 minutes. At 40%, it reaches 12 minutes. The gains do not scale evenly. They accelerate.
+Brands automating near 0% respond in 736 minutes on average. At 20% automation, that drops to 400 — roughly half. At 30%, it falls to 80 minutes. At 40%, 12 minutes. The gains do not scale evenly. They accelerate.
 
 CSAT at 20% automation sits at 87.9%, versus 90.3% at zero.
 
