@@ -55,6 +55,18 @@ Brands at 20% automation respond in roughly 400 minutes, versus 736 for brands n
 
 CSAT at 20% automation sits at 87.9%, versus 90.3% at zero.
 
+The rate threshold matters independently of volume. Among brands automating fewer than 1,000 tickets per month, roughly 1 in 3 have crossed 30% automation. Among brands automating more than 1,000 tickets per month, that number is 1 in 28. Those brands are handling significant volume. But the structural shift in response time follows the rate, not the count.
+
+| Automated tickets (28d) | Brands | % above 30% automation rate |
+|------------------------|--------|-----------------------------|
+| 1–9 | 374 | 34% |
+| 10–49 | 766 | 29% |
+| 50–99 | 482 | 34% |
+| 100–249 | 665 | 30% |
+| 250–499 | 369 | 33% |
+| 500–999 | 237 | 35% |
+| 1,000+ | 2,162 | 4% |
+
 > **Placeholder:** Add 1-2 anonymised customer proof points: ticket volumes automated, FRT improvement, or headcount held flat at scale.
 
 ---
