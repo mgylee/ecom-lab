@@ -46,7 +46,7 @@ As automation rate increases, AI absorbs more ticket volume. It means you can sc
 | 40-50% | 4.3 | 3.5 |
 | 50%+ | 3.0 | 6.25 |
 
-At 50%+ automation, AI does the work of **6.25 agents on average across brands at that tier**. The average human team is 3 people. Those 3 people are not doing less. They are doing different work, the complex tickets, the high-value conversations, the problems that require judgment. AI handles the rest.
+At 50%+ automation, AI does the work of **6.25 agents on average across brands at that tier**. The average human team is 3 people. Your team stays the same size but shifts to higher-value work. AI is handling more volume than the human team.
 
 For a brand at $5-30M GMV handling 2,000 tickets per month, 30% automation removes 600 tickets from the human queue. At 179 tickets per agent, that equals **3.4 agents freed** and roughly **$170K in annual savings**.
 
