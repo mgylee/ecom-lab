@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The industry average is meaningless. Here's your real benchmark.</title>
+  <title>Your CSAT score is lying to you.</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
@@ -156,14 +156,11 @@
     article p { font-size: 16px; color: var(--700); line-height: 1.8; margin-bottom: 18px; }
     article p strong { color: var(--900); font-weight: 600; }
 
-    .pullquote { margin: 36px 0; padding: 0 0 0 20px; border-left: 2px solid var(--black); }
-    .pullquote p { font-size: 18px !important; font-style: italic; color: var(--900) !important; line-height: 1.6 !important; margin: 0 !important; }
-
     .chart-block { margin: 36px 0; border: 1px solid var(--200); border-radius: 8px; overflow: hidden; }
     .chart-header { padding: 18px 22px 0; }
     .chart-title { font-size: 13px; font-weight: 600; color: var(--900); margin-bottom: 3px; }
     .chart-sub { font-size: 12px; color: var(--400); }
-    .chart-area { padding: 16px 22px; position: relative; height: 260px; }
+    .chart-area { padding: 16px 22px; position: relative; }
     .chart-footer { padding: 10px 22px 14px; border-top: 1px solid var(--100); font-size: 11px; color: var(--400); }
 
     .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 28px 0; }
@@ -172,7 +169,6 @@
     .data-table tbody tr:last-child td { border-bottom: none; }
     .td-bold { font-weight: 600; color: var(--900); }
     .td-accent { font-weight: 600; color: var(--accent); }
-    .td-muted { color: var(--400); }
 
     hr { border: none; border-top: 1px solid var(--200); margin: 48px 0; }
 
@@ -213,8 +209,8 @@
       <span class="tag-sep">&middot;</span>
       <span class="tag">March 2026</span>
     </div>
-    <h1>The industry average is meaningless.<br><em>Here's your real benchmark.</em></h1>
-    <p class="header-deck">Most brands compare their AI performance to an all-industry average. That average describes no one. Your vertical and your GMV band are the only peer group that matters.</p>
+    <h1>Your CSAT score is lying to you.</h1>
+    <p class="header-deck">CSAT barely moves across verticals. Speed and resolution vary by 4x. Most brands are benchmarking the wrong metric.</p>
     <div class="author-row">
       <div class="avatar">ML</div>
       <div>
@@ -227,9 +223,9 @@
     <div class="sidebar-section">
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
-        <li><a href="#wrong">The wrong benchmark</a></li>
-        <li><a href="#vertical">What your vertical looks like</a></li>
-        <li><a href="#adoption">Adoption is not performance</a></li>
+        <li><a href="#tracks">The metric everyone tracks</a></li>
+        <li><a href="#moves">The metrics that actually move</a></li>
+        <li><a href="#benchmark">Where your vertical stands</a></li>
         <li><a href="#bottom">The bottom line</a></li>
       </ul>
     </div>
@@ -252,107 +248,92 @@
 
 <div class="stats-strip">
   <div class="stat-item">
-    <div class="stat-num">&lt;20%</div>
-    <div class="stat-desc">of brands have deployed AI in customer-facing support</div>
+    <div class="stat-num">0.3 pts</div>
+    <div class="stat-desc">total CSAT variation across verticals, on a 5-point scale</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">17%</div>
-    <div class="stat-desc">automation rate at $250M+ GMV, the highest tier</div>
+    <div class="stat-num">4x</div>
+    <div class="stat-desc">resolution time spread across the same verticals</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">36%</div>
-    <div class="stat-desc">top AI success rate by vertical</div>
+    <div class="stat-num">265 hrs</div>
+    <div class="stat-desc">avg resolution in Electronics vs. 67 hrs in Pet Supplies</div>
   </div>
 </div>
 
 <div class="body-layout">
   <article>
 
-    <h2 id="wrong">The wrong benchmark</h2>
+    <h2 id="tracks">The metric everyone tracks</h2>
 
-    <p>Most brands measure their AI performance against an all-industry average. At $10M GMV, that average is 15.5% automation rate. It is technically correct. It hides everything that matters.</p>
+    <p>Most support teams report CSAT. Leadership watches it. QBRs feature it. It is the default measure of whether support is working.</p>
 
-    <p>At the same $10M GMV band, automation rates range from 10.4% to 17.4% depending on vertical. A brand at 15% could be outperforming its vertical or underperforming it. The all-industry number cannot tell you which.</p>
-
-    <p>Ticket type, product complexity, and return behavior shape what AI can resolve without escalation. Those factors are vertical-specific, not size-specific. Your industry determines your AI ceiling. Your revenue does not.</p>
-
-    <h2 id="vertical">What your vertical looks like</h2>
+    <p>Across verticals at the $5-30M GMV band, CSAT ranges from 4.31 to 4.62. That is 0.3 points of spread on a 5-point scale. It tells you almost nothing about how your support operation is performing relative to your peers.</p>
 
     <div class="chart-block">
       <div class="chart-header">
-        <div class="chart-title">AI Automation Rate by Vertical</div>
-        <div class="chart-sub">$10M GMV band, average across all brands</div>
+        <div class="chart-title">Avg CSAT by Vertical</div>
+        <div class="chart-sub">$5-30M GMV band, 5-point scale. The bars are nearly identical.</div>
       </div>
-      <div class="chart-area" style="height:240px;"><canvas id="c1"></canvas></div>
-      <div class="chart-footer">Gorgias platform data &middot; March 2026</div>
+      <div class="chart-area" style="height:280px;"><canvas id="c1"></canvas></div>
+      <div class="chart-footer">Gorgias platform data &middot; Last 365 days &middot; March 2026</div>
     </div>
+
+    <p>Every vertical lands between 4.3 and 4.6. A brand at 4.4 has no way of knowing whether that is good, average, or poor for their category. The number does not move enough to be a signal.</p>
+
+    <h2 id="moves">The metrics that actually move</h2>
+
+    <p>Resolution time tells a different story. At the same $5-30M GMV band, the spread is 4x.</p>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <div class="chart-title">Avg Resolution Time by Vertical</div>
+        <div class="chart-sub">$5-30M GMV band, in hours. The spread is 4x.</div>
+      </div>
+      <div class="chart-area" style="height:280px;"><canvas id="c2"></canvas></div>
+      <div class="chart-footer">Gorgias platform data &middot; Last 365 days &middot; March 2026</div>
+    </div>
+
+    <p>An Electronics brand resolving tickets in 265 hours and a Pet Supplies brand resolving in 67 hours can both report a CSAT of 4.4. One is taking 4x longer. CSAT does not capture that difference. Speed does.</p>
+
+    <p>First response time follows a similar pattern. The fastest verticals respond in under 19 hours. The slowest take over 28 hours. That is a 50% gap that CSAT compresses into noise.</p>
+
+    <h2 id="benchmark">Where your vertical stands</h2>
 
     <table class="data-table">
       <thead>
         <tr>
           <th>Vertical</th>
-          <th>Automation rate</th>
-          <th>Adoption rate</th>
-          <th>AI success rate</th>
+          <th>CSAT</th>
+          <th>First response</th>
+          <th>Resolution</th>
+          <th>FCR</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td class="td-bold">Hardware</td><td class="td-accent">17.4%</td><td>24.7%</td><td>35.8%</td></tr>
-        <tr><td class="td-bold">Apparel & Accessories</td><td>15.8%</td><td>29.3%</td><td>34.3%</td></tr>
-        <tr><td class="td-bold">Vehicles & Parts</td><td>15.4%</td><td>24.4%</td><td>34.7%</td></tr>
-        <tr><td class="td-bold">Electronics</td><td>15.1%</td><td>28.8%</td><td>31.4%</td></tr>
-        <tr><td class="td-bold">Food & Beverage</td><td>13.9%</td><td>27.9%</td><td>31.1%</td></tr>
-        <tr><td class="td-bold">Luggage & Bags</td><td class="td-muted">10.4%</td><td>37.1%</td><td>33.6%</td></tr>
+        <tr><td class="td-bold">Animals & Pet Supplies</td><td>4.62</td><td>20.0 hrs</td><td class="td-accent">67 hrs</td><td>44.4%</td></tr>
+        <tr><td class="td-bold">Food & Beverage</td><td>4.55</td><td>20.0 hrs</td><td>74 hrs</td><td>44.0%</td></tr>
+        <tr><td class="td-bold">Hardware</td><td>4.40</td><td>18.6 hrs</td><td>89 hrs</td><td>38.4%</td></tr>
+        <tr><td class="td-bold">Health & Beauty</td><td>4.44</td><td>25.2 hrs</td><td>97 hrs</td><td>42.6%</td></tr>
+        <tr><td class="td-bold">Vehicles & Parts</td><td>4.60</td><td>20.3 hrs</td><td>99 hrs</td><td>38.5%</td></tr>
+        <tr><td class="td-bold">Apparel & Accessories</td><td>4.39</td><td>24.5 hrs</td><td>99 hrs</td><td>43.4%</td></tr>
+        <tr><td class="td-bold">Sporting Goods</td><td>4.45</td><td>24.0 hrs</td><td>124 hrs</td><td>40.2%</td></tr>
+        <tr><td class="td-bold">Furniture</td><td>4.49</td><td>28.6 hrs</td><td>129 hrs</td><td>38.8%</td></tr>
+        <tr><td class="td-bold">Electronics</td><td>4.31</td><td>27.7 hrs</td><td class="td-accent">265 hrs</td><td>36.9%</td></tr>
       </tbody>
     </table>
-
-    <p>Luggage & Bags has the highest adoption rate in the sample at 37.1% and the lowest automation rate at 10.4%. Turning AI on and getting it to close tickets are two different problems.</p>
-
-    <p>Hardware leads in both automation rate and success rate. Verticals with simpler, more repetitive ticket types resolve at higher rates than verticals with complex, relationship-driven support needs.</p>
-
-    <h2 id="adoption">Adoption is not performance</h2>
-
-    <p>AI adoption scales with GMV. Automation rate barely moves.</p>
-
-    <div class="chart-block">
-      <div class="chart-header">
-        <div class="chart-title">AI Adoption Rate vs. Automation Rate by GMV</div>
-        <div class="chart-sub">Adoption grows with size. Automation does not keep pace.</div>
-      </div>
-      <div class="chart-area" style="height:260px;"><canvas id="c2"></canvas></div>
-      <div class="chart-footer">Gorgias platform data &middot; March 2026 &middot; All industries</div>
-    </div>
-
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>GMV band</th>
-          <th>AI adoption rate</th>
-          <th>Avg automation rate</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="td-bold">$500K</td><td>15.3%</td><td>8.1%</td></tr>
-        <tr><td class="td-bold">$10M</td><td>28.7%</td><td>10.9%</td></tr>
-        <tr><td class="td-bold">$50M</td><td>39.1%</td><td>13.9%</td></tr>
-        <tr><td class="td-bold">$100M</td><td>42.9%</td><td>15.2%</td></tr>
-        <tr><td class="td-bold">$250M</td><td>47.2%</td><td>16.8%</td></tr>
-      </tbody>
-    </table>
-
-    <p>At $250M GMV, nearly half of brands have adopted AI. The average automation rate is 16.8%. The gap between "we have AI" and "AI is doing the work" persists at every GMV band.</p>
-
-    <p>Enabling AI is a configuration decision. Getting value from it requires intent mapping, escalation logic, and continuous calibration. Most brands have not done that work yet.</p>
 
     <h2 id="bottom">The bottom line</h2>
 
-    <p>The all-industry average does not describe any real brand. Find your vertical. Find your GMV band. That is your peer group. Benchmark against them, not against a number that exists only in aggregate.</p>
+    <p>CSAT is a lagging metric that compresses real operational differences into a number that barely moves. If your team is reporting CSAT as the primary measure of support quality, you are measuring the wrong thing.</p>
+
+    <p>Resolution time, first response time, and first contact resolution vary meaningfully across verticals. They are the metrics that differentiate fast support operations from slow ones. Benchmark those.</p>
 
     <hr />
 
     <div class="method">
       <div class="method-label">Methodology</div>
-      <p>Platform-level configuration and usage data from Gorgias merchants. AI adoption measured by active AI Agent enablement in customer-facing workflows. Automation rate is approved AI-automated interactions as a share of total interactions. Success rate is approved AI-resolved interactions as a share of AI-covered interactions, excluding spam. A brand is counted as an AI adopter only if AI tools are actively enabled to automate customer interactions during a given month. Internal productivity tools and non-support AI usage are excluded. Data as of March 2026.</p>
+      <p>Platform-level performance data from Gorgias merchants over the last 365 days. Metrics reported at the $5-30M GMV band to control for brand size. CSAT measured on a 5-point scale. First contact resolution (FCR) is the share of tickets resolved without a follow-up interaction. Resolution time measures full ticket lifecycle from creation to close. Data as of March 2026.</p>
     </div>
 
   </article>
@@ -361,9 +342,9 @@
     <div class="sidebar-section">
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
-        <li><a href="#wrong">The wrong benchmark</a></li>
-        <li><a href="#vertical">What your vertical looks like</a></li>
-        <li><a href="#adoption">Adoption is not performance</a></li>
+        <li><a href="#tracks">The metric everyone tracks</a></li>
+        <li><a href="#moves">The metrics that actually move</a></li>
+        <li><a href="#benchmark">Where your vertical stands</a></li>
         <li><a href="#bottom">The bottom line</a></li>
       </ul>
     </div>
@@ -385,14 +366,16 @@
   const grid     = { color: '#F4F4F5', drawBorder: false };
   const noBorder = { display: false };
 
-  // Chart 1 — Automation rate by vertical (horizontal bar)
+  const verticals = ['Pet Supplies', 'Food & Bev', 'Hardware', 'Health & Beauty', 'Vehicles', 'Apparel', 'Sporting', 'Furniture', 'Electronics'];
+
+  // Chart 1 — CSAT by vertical (flat, all nearly identical)
   new Chart(document.getElementById('c1'), {
     type: 'bar',
     data: {
-      labels: ['Hardware', 'Apparel', 'Vehicles & Parts', 'Electronics', 'Food & Bev', 'Luggage & Bags'],
+      labels: verticals,
       datasets: [{
-        data: [17.4, 15.8, 15.4, 15.1, 13.9, 10.4],
-        backgroundColor: ['#0A0A0A', '#3F3F46', '#3F3F46', '#71717A', '#A1A1AA', '#E4E4E7'],
+        data: [4.62, 4.55, 4.40, 4.44, 4.60, 4.39, 4.45, 4.49, 4.31],
+        backgroundColor: '#E4E4E7',
         borderRadius: 3,
         borderSkipped: false,
       }]
@@ -403,60 +386,38 @@
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: c => ` ${c.parsed.x}% automation rate` } }
+        tooltip: { callbacks: { label: c => ` CSAT: ${c.parsed.x}/5` } }
       },
       scales: {
-        x: { grid, border: noBorder, min: 0, max: 20, ticks: { callback: v => v + '%' } },
+        x: { grid, border: noBorder, min: 0, max: 5, ticks: { stepSize: 1 } },
         y: { grid: { display: false }, border: noBorder }
       }
     }
   });
 
-  // Chart 2 — Adoption vs automation by GMV (dual line)
+  // Chart 2 — Resolution time by vertical (huge spread)
   new Chart(document.getElementById('c2'), {
-    type: 'line',
+    type: 'bar',
     data: {
-      labels: ['$500K', '$10M', '$50M', '$100M', '$250M'],
-      datasets: [
-        {
-          label: 'AI adoption rate',
-          data: [15.3, 28.7, 39.1, 42.9, 47.2],
-          borderColor: '#A1A1AA',
-          backgroundColor: '#A1A1AA',
-          borderWidth: 2,
-          pointRadius: 4,
-          pointBackgroundColor: '#A1A1AA',
-          tension: 0.3,
-        },
-        {
-          label: 'Avg automation rate',
-          data: [8.1, 10.9, 13.9, 15.2, 16.8],
-          borderColor: '#FF5B35',
-          backgroundColor: '#FF5B35',
-          borderWidth: 2,
-          pointRadius: 4,
-          pointBackgroundColor: '#FF5B35',
-          tension: 0.3,
-        }
-      ]
+      labels: verticals,
+      datasets: [{
+        data: [67, 74, 89, 97, 99, 99, 124, 129, 265],
+        backgroundColor: ['#E4E4E7','#E4E4E7','#D4D4D8','#D4D4D8','#A1A1AA','#A1A1AA','#71717A','#3F3F46','#FF5B35'],
+        borderRadius: 3,
+        borderSkipped: false,
+      }]
     },
     options: {
+      indexAxis: 'y',
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: {
-          display: true,
-          position: 'top',
-          align: 'start',
-          labels: { boxWidth: 20, boxHeight: 2, padding: 18, font: { size: 11 }, color: '#71717A', usePointStyle: false }
-        },
-        tooltip: {
-          callbacks: { label: c => ` ${c.dataset.label}: ${c.parsed.y}%` }
-        }
+        legend: { display: false },
+        tooltip: { callbacks: { label: c => ` ${c.parsed.x} hrs avg resolution` } }
       },
       scales: {
-        x: { grid: { display: false }, border: noBorder },
-        y: { grid, border: noBorder, min: 0, max: 55, ticks: { callback: v => v + '%', stepSize: 10 } }
+        x: { grid, border: noBorder, min: 0, max: 300, ticks: { callback: v => v + ' hrs' } },
+        y: { grid: { display: false }, border: noBorder }
       }
     }
   });

@@ -1,66 +1,83 @@
-# The industry average is meaningless. Here's your real benchmark.
+# Your CSAT score is lying to you.
 
 *Gorgias Ecommerce Lab | March 2026*
 
 ---
 
-**<20%** of brands have deployed AI in customer-facing support.
-**17%** automation rate at $250M+ GMV, the highest tier.
-**36%** top AI success rate by vertical.
+**0.3 pts** total CSAT variation across verticals, on a 5-point scale.
+**4x** resolution time spread across the same verticals.
+**265 hrs** avg resolution in Electronics vs. 67 hrs in Pet Supplies, same GMV.
 
 ---
 
-## The wrong benchmark
+## The metric everyone tracks
 
-Most brands measure their AI performance against an all-industry average. At $10M GMV, that average is 15.5% automation rate. It is technically correct. It hides everything that matters.
+Most support teams report CSAT. Leadership watches it. QBRs feature it. It is the default measure of whether support is working.
 
-At the same $10M GMV band, automation rates range from 10.4% to 17.4% depending on vertical. A brand at 15% could be outperforming its vertical or underperforming it. The all-industry number cannot tell you which.
+Across verticals at the $5-30M GMV band, CSAT ranges from 4.31 to 4.62. That is 0.3 points of spread on a 5-point scale. It tells you almost nothing about how your support operation is performing relative to your peers.
 
-Ticket type, product complexity, and return behavior shape what AI can resolve without escalation. Those factors are vertical-specific, not size-specific. Your industry determines your AI ceiling. Your revenue does not.
+| Vertical | Avg CSAT |
+|----------|----------|
+| Animals & Pet Supplies | 4.62 |
+| Vehicles & Parts | 4.60 |
+| Food & Beverage | 4.55 |
+| Furniture | 4.49 |
+| Sporting Goods | 4.45 |
+| Health & Beauty | 4.44 |
+| Hardware | 4.40 |
+| Apparel & Accessories | 4.39 |
+| Electronics | 4.31 |
 
----
-
-## What your vertical looks like
-
-AI performance by vertical, $10M GMV band:
-
-| Vertical | Automation rate | Adoption rate | AI success rate |
-|----------|----------------|---------------|-----------------|
-| Hardware | 17.4% | 24.7% | 35.8% |
-| Apparel & Accessories | 15.8% | 29.3% | 34.3% |
-| Vehicles & Parts | 15.4% | 24.4% | 34.7% |
-| Electronics | 15.1% | 28.8% | 31.4% |
-| Food & Beverage | 13.9% | 27.9% | 31.1% |
-| Luggage & Bags | 10.4% | 37.1% | 33.6% |
-
-Luggage & Bags has the highest adoption rate in the sample at 37.1% and the lowest automation rate at 10.4%. Turning AI on and getting it to close tickets are two different problems.
-
-Hardware leads in both automation rate and success rate. Verticals with simpler, more repetitive ticket types resolve at higher rates than verticals with complex, relationship-driven support needs.
+Every vertical lands between 4.3 and 4.6. A brand at 4.4 has no way of knowing whether that is good, average, or poor for their category. The answer is: it does not matter. The number does not move enough to be a signal.
 
 ---
 
-## Adoption is not performance
+## The metrics that actually move
 
-AI adoption scales with GMV. Automation rate barely moves.
+Resolution time tells a different story. At the same $5-30M GMV band, the spread is 4x.
 
-| GMV band | AI adoption rate | Avg automation rate |
-|----------|-----------------|---------------------|
-| $500K | 15.3% | 8.1% |
-| $10M | 28.7% | 10.9% |
-| $50M | 39.1% | 13.9% |
-| $100M | 42.9% | 15.2% |
-| $250M | 47.2% | 16.8% |
+| Vertical | Avg resolution time | Avg first response |
+|----------|--------------------|--------------------|
+| Animals & Pet Supplies | 67 hrs | 20.0 hrs |
+| Food & Beverage | 74 hrs | 20.0 hrs |
+| Hardware | 89 hrs | 18.6 hrs |
+| Health & Beauty | 97 hrs | 25.2 hrs |
+| Vehicles & Parts | 99 hrs | 20.3 hrs |
+| Apparel & Accessories | 99 hrs | 24.5 hrs |
+| Sporting Goods | 124 hrs | 24.0 hrs |
+| Furniture | 129 hrs | 28.6 hrs |
+| Electronics | 265 hrs | 27.7 hrs |
 
-At $250M GMV, nearly half of brands have adopted AI. The average automation rate is 16.8%. The gap between "we have AI" and "AI is doing the work" persists at every GMV band.
+An Electronics brand resolving tickets in 265 hours and a Pet Supplies brand resolving in 67 hours can both report a CSAT of 4.4. One is taking 4x longer. CSAT does not capture that difference. Speed does.
 
-Enabling AI is a configuration decision. Getting value from it requires intent mapping, escalation logic, and continuous calibration. Most brands have not done that work yet.
+First response time follows a similar pattern. The fastest verticals respond in under 19 hours. The slowest take over 28 hours. That is a 50% gap that CSAT compresses into noise.
+
+---
+
+## Where your vertical stands
+
+The full benchmark at the $5-30M GMV band:
+
+| Vertical | CSAT | First response | Resolution | FCR |
+|----------|------|---------------|------------|-----|
+| Animals & Pet Supplies | 4.62 | 20.0 hrs | 67 hrs | 44.4% |
+| Food & Beverage | 4.55 | 20.0 hrs | 74 hrs | 44.0% |
+| Hardware | 4.40 | 18.6 hrs | 89 hrs | 38.4% |
+| Health & Beauty | 4.44 | 25.2 hrs | 97 hrs | 42.6% |
+| Vehicles & Parts | 4.60 | 20.3 hrs | 99 hrs | 38.5% |
+| Apparel & Accessories | 4.39 | 24.5 hrs | 99 hrs | 43.4% |
+| Sporting Goods | 4.45 | 24.0 hrs | 124 hrs | 40.2% |
+| Furniture | 4.49 | 28.6 hrs | 129 hrs | 38.8% |
+| Electronics | 4.31 | 27.7 hrs | 265 hrs | 36.9% |
 
 ---
 
 ## The bottom line
 
-The all-industry average does not describe any real brand. Find your vertical. Find your GMV band. That is your peer group. Benchmark against them, not against a number that exists only in aggregate.
+CSAT is a lagging metric that compresses real operational differences into a number that barely moves. If your team is reporting CSAT as the primary measure of support quality, you are measuring the wrong thing.
+
+Resolution time, first response time, and first contact resolution vary meaningfully across verticals. They are the metrics that differentiate fast support operations from slow ones. Benchmark those.
 
 ---
 
-**Methodology:** Platform-level configuration and usage data from Gorgias merchants. AI adoption measured by active AI Agent enablement in customer-facing workflows. Automation rate is approved AI-automated interactions as a share of total interactions. Success rate is approved AI-resolved interactions as a share of AI-covered interactions, excluding spam. A brand is counted as an AI adopter only if AI tools are actively enabled to automate customer interactions during a given month. Internal productivity tools and non-support AI usage are excluded. Data as of March 2026.
+**Methodology:** Platform-level performance data from Gorgias merchants over the last 365 days. Metrics reported at the $5-30M GMV band to control for brand size. CSAT measured on a 5-point scale. First contact resolution (FCR) is the share of tickets resolved without a follow-up interaction. Resolution time measures full ticket lifecycle from creation to close. Data as of March 2026.
