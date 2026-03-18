@@ -478,6 +478,7 @@
     gap: 7px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     transition: background 0.15s;
+    text-decoration: none;
   }
   .feedback-btn:hover { background: var(--700); }
 
@@ -868,35 +869,10 @@
 </script>
 
 <!-- FEEDBACK WIDGET -->
-<button class="feedback-btn" onclick="document.getElementById('feedbackOverlay').classList.add('open')">
+<a class="feedback-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeIS0YgyVSuwy1ZailiGB9chENZE6fILkyFbeZi_jGiRswgSg/viewform" target="_blank" rel="noopener">
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1h12v9H8l-3 3V10H1V1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
   Leave feedback
-</button>
-
-<div class="feedback-overlay" id="feedbackOverlay">
-  <div class="feedback-modal">
-    <h3>Leave feedback</h3>
-    <p>Comments go directly to Matilda. Include your name so she knows who to follow up with.</p>
-    <input type="text" id="fbName" placeholder="Your name" />
-    <textarea id="fbComment" placeholder="What's your feedback?"></textarea>
-    <div class="feedback-actions">
-      <button class="btn-cancel" onclick="document.getElementById('feedbackOverlay').classList.remove('open')">Cancel</button>
-      <button class="btn-send" onclick="sendFeedback()">Send</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  function sendFeedback() {
-    const name    = document.getElementById('fbName').value.trim();
-    const comment = document.getElementById('fbComment').value.trim();
-    if (!comment) return;
-    const subject = encodeURIComponent('Ecom Lab feedback' + (name ? ' from ' + name : ''));
-    const body    = encodeURIComponent(comment + (name ? '\n\n' + name : ''));
-    window.location.href = 'mailto:matilda.lee@gorgias.com?subject=' + subject + '&body=' + body;
-    document.getElementById('feedbackOverlay').classList.remove('open');
-  }
-</script>
+</a>
 
 </body>
 </html>
