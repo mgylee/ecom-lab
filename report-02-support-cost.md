@@ -4,41 +4,44 @@
 
 ---
 
-**37x** return on platform investment at the lowest automation tier.
+**$205K** average annual saving for brands at the lowest automation tier.
 **6.25** human agents replaced by AI at 50%+ automation.
-**85%** of brands that reduced headcount maintained or grew revenue.
+**1 in 4** brands reduced headcount after enabling AI Agent, 85% maintained revenue.
 
 ---
 
 ## Support is a headcount problem
 
-Support costs are not a software problem. They are a time problem. An agent closes a ticket. That ticket takes minutes. Those minutes add up to a salary.
+Support costs are not a software problem. They are a time problem. An agent closes a ticket. That ticket takes time. That time costs money.
 
-Most brands staff for peak volume and carry that cost year-round. The data shows what happens when AI absorbs that volume instead.
-
----
-
-## What automation does to your team
-
-The relationship between automation rate and staffing efficiency is direct. As more tickets are resolved by AI, fewer staff are needed per 1,000 tickets.
-
-| Automation tier | Staff per 1K tickets (before) | Staff per 1K tickets (after) | Change |
-|-----------------|-------------------------------|------------------------------|--------|
-| 0-10% | 5.30 | 5.28 | -0.4% |
-| 10-20% | 5.59 | 5.49 | -1.8% |
-| 20-30% | 5.71 | 4.95 | -13.2% |
-| 30-40% | 5.65 | 4.61 | -18.4% |
-| 40-50% | 5.66 | 4.53 | -20.0% |
-| 50-60% | 6.20 | 5.19 | -16.3% |
-| 60%+ | 6.55 | 3.88 | -40.8% |
-
-The 0-10% tier is a clean control group: virtually no change (-0.4%), confirming that efficiency gains are driven by automation, not external factors. At 30-40%, brands need 18% fewer staff per 1,000 tickets. At 60%+, that number reaches 41%.
+Most brands know their total support headcount. Few know their cost per ticket. The gap between those two numbers is where the overspend lives.
 
 ---
 
-## AI as a virtual team member
+## What one agent actually handles
 
-A second way to read the same data: how many human agents does AI replace?
+Agent productivity varies significantly by brand size. Enterprise agents handle nearly four times as many tickets per month as SMB agents. Smaller brands are paying more per ticket resolved because their queues are less efficient and their queries take longer.
+
+| GMV tier | Avg tickets per agent per month | Avg first response time |
+|----------|---------------------------------|-------------------------|
+| >$150M | 270 | 20.8 hrs |
+| $30-150M | 308 | 22.6 hrs |
+| $5-30M | 179 | 30.0 hrs |
+| <$5M | 82 | 37.1 hrs |
+
+An SMB brand handling 1,000 tickets per month at 82 tickets per agent needs roughly 12 agents to keep up. An Enterprise brand handling the same volume needs closer to 3. The cost difference is not marginal.
+
+First response time follows the same pattern. SMB brands average 37 hours to first response. Named accounts average 21 hours. Smaller brands are slower and more expensive to run simultaneously.
+
+---
+
+## What AI replaces
+
+At 30% automation, 30% of tickets never reach an agent. The productivity table above determines how much that is worth.
+
+For a Commercial brand ($5-30M GMV) handling 2,000 tickets per month, 30% automation removes 600 tickets from the human queue. At 179 tickets per agent per month, that is the equivalent of 3.4 agents freed. At a fully-loaded cost of $50K per year, that is $170K in annual savings.
+
+The AI agent equivalents data confirms the pattern at scale.
 
 | Automation tier | Avg team size | AI agent equivalents |
 |-----------------|---------------|----------------------|
@@ -51,7 +54,7 @@ A second way to read the same data: how many human agents does AI replace?
 
 At 50%+ automation, AI does the work of 6.25 agents. The average human team at that tier is 3 people. AI is handling more than double what the human team handles.
 
-The team size column tells its own story: 6.6 agents at low automation, 3.0 at 50%+. Brands running higher automation are already operating with smaller teams.
+The team size column tells its own story. Brands with higher automation are already running smaller teams.
 
 ---
 
@@ -66,13 +69,11 @@ Nearly 1 in 4 brands reduced headcount after enabling AI Agent.
 | Reduced headcount, tickets stable or grew | 58.5% |
 | Fewer people, same tickets, same or more revenue | 51.0% |
 
-Of the brands that reduced headcount, 85% maintained or grew revenue. Over half achieved all three: fewer people, same ticket volume, same or more revenue.
+Of those, 85% maintained or grew revenue. Over half achieved all three: fewer people, same ticket volume, same or more revenue.
 
 ---
 
-## What it costs to wait
-
-The ROI calculation is simple. Compare how many agents would be needed at pre-AI productivity to handle current volume versus how many are actually employed. Multiply the difference by $50K per year.
+## The numbers
 
 | Automation tier | Avg headcount saved | Avg annual saving |
 |-----------------|---------------------|-------------------|
@@ -87,10 +88,10 @@ Even at the lowest automation tier, brands are saving the equivalent of 4 full-t
 
 ## The bottom line
 
-Every quarter a brand spends below 30% automation is a quarter they are staffing tickets that AI could be handling. The math does not require a complex model. It requires running the numbers.
+Every quarter a brand spends below 30% automation is a quarter they are staffing tickets that AI could be handling. The math does not require a complex model.
 
-The brands above 50% automation have replaced more than 6 human agents with AI, run smaller teams, and are not losing revenue for it. The ones hesitating are paying for headcount they do not need.
+The brands above 50% automation have replaced more than 6 human agents with AI, are running smaller teams, and are not losing revenue for it. The ones still hesitating are paying for headcount they do not need.
 
 ---
 
-**Methodology:** Platform-level behavioral data from Gorgias merchants. Staffing efficiency analysis based on users per 1,000 tickets before and after AI Agent enablement. AI agent equivalents calculated as automated tickets divided by human tickets per active user. ROI analysis assumes $50K fully-loaded annual cost per agent. Data as of March 2026.
+**Methodology:** Platform-level behavioral data from Gorgias merchants. Agent productivity figures based on human-handled billable tickets (non-spam, with assigned agent) over the last 90 days. AI agent equivalents calculated as automated tickets divided by human tickets per active user. ROI analysis based on accounts where AI produced net positive savings, assuming $50K fully-loaded annual cost per agent. Data as of March 2026.

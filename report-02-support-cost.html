@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Most brands are overpaying for support. Here's the math.</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -34,12 +35,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    body::before {
-      content: '';
-      display: block;
-      height: 3px;
-      background: var(--accent);
-    }
+    body::before { content: ''; display: block; height: 3px; background: var(--accent); }
 
     nav {
       display: flex;
@@ -66,26 +62,9 @@
       gap: 8px;
     }
 
-    .nav-brand-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-label {
-      font-size: 12px;
-      color: var(--500);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
+    .nav-brand-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-label { font-size: 12px; color: var(--500); letter-spacing: 0.06em; text-transform: uppercase; }
 
     .header-section {
       max-width: calc(var(--col) + var(--side) + 80px);
@@ -97,21 +76,9 @@
       align-items: start;
     }
 
-    .header-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
+    .header-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
 
-    .tag {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--500);
-    }
-
+    .tag { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--500); }
     .tag-sep { color: var(--200); }
 
     .header-left h1 {
@@ -124,40 +91,17 @@
       letter-spacing: -0.01em;
     }
 
-    .header-left h1 em {
-      font-style: italic;
-      color: var(--700);
-    }
+    .header-left h1 em { font-style: italic; color: var(--700); }
 
-    .header-deck {
-      font-size: 16px;
-      color: var(--700);
-      line-height: 1.65;
-      max-width: 520px;
-      margin-bottom: 28px;
-    }
+    .header-deck { font-size: 16px; color: var(--700); line-height: 1.65; max-width: 520px; margin-bottom: 28px; }
 
-    .author-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding-top: 24px;
-      border-top: 1px solid var(--200);
-    }
+    .author-row { display: flex; align-items: center; gap: 10px; padding-top: 24px; border-top: 1px solid var(--200); }
 
     .avatar {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--100);
-      border: 1px solid var(--200);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--700);
-      flex-shrink: 0;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--100); border: 1px solid var(--200);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 600; color: var(--700); flex-shrink: 0;
     }
 
     .author-name { font-size: 13.5px; font-weight: 600; color: var(--900); }
@@ -166,74 +110,21 @@
     .sidebar { padding-top: 4px; }
     .sidebar-section { margin-bottom: 32px; }
 
-    .sidebar-heading {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--400);
-      margin-bottom: 10px;
-    }
+    .sidebar-heading { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--400); margin-bottom: 10px; }
 
     .toc { list-style: none; }
     .toc li { margin-bottom: 2px; }
-
-    .toc a {
-      font-size: 13px;
-      color: var(--500);
-      text-decoration: none;
-      display: block;
-      padding: 5px 0;
-      border-left: 2px solid transparent;
-      padding-left: 10px;
-      transition: color 0.15s, border-color 0.15s;
-      line-height: 1.4;
-    }
-
+    .toc a { font-size: 13px; color: var(--500); text-decoration: none; display: block; padding: 5px 0 5px 10px; border-left: 2px solid transparent; transition: color 0.15s, border-color 0.15s; line-height: 1.4; }
     .toc a:hover { color: var(--black); border-left-color: var(--accent); }
 
-    .subscribe-box {
-      border: 1px solid var(--200);
-      border-radius: 8px;
-      padding: 16px;
-    }
+    .subscribe-box { border: 1px solid var(--200); border-radius: 8px; padding: 16px; }
+    .subscribe-box p { font-size: 12.5px; color: var(--700); line-height: 1.5; margin-bottom: 12px; }
 
-    .subscribe-box p {
-      font-size: 12.5px;
-      color: var(--700);
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
-
-    .btn-sub {
-      display: block;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--black);
-      background: var(--100);
-      border: 1px solid var(--200);
-      border-radius: 6px;
-      padding: 8px 14px;
-      text-decoration: none;
-      transition: background 0.15s;
-    }
-
+    .btn-sub { display: block; text-align: center; font-size: 12px; font-weight: 600; color: var(--black); background: var(--100); border: 1px solid var(--200); border-radius: 6px; padding: 8px 14px; text-decoration: none; transition: background 0.15s; }
     .btn-sub:hover { background: var(--200); }
 
     .share-row { display: flex; gap: 8px; }
-
-    .share-btn {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--500);
-      text-decoration: none;
-      border: 1px solid var(--200);
-      border-radius: 6px;
-      padding: 6px 10px;
-      transition: all 0.15s;
-    }
-
+    .share-btn { font-size: 12px; font-weight: 500; color: var(--500); text-decoration: none; border: 1px solid var(--200); border-radius: 6px; padding: 6px 10px; transition: all 0.15s; }
     .share-btn:hover { color: var(--black); border-color: var(--400); }
 
     .stats-strip {
@@ -242,32 +133,14 @@
       padding: 0 48px 56px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 0;
       border-top: 1px solid var(--200);
     }
 
-    .stat-item {
-      padding: 28px 32px;
-      border-right: 1px solid var(--200);
-    }
-
+    .stat-item { padding: 28px 32px; border-right: 1px solid var(--200); }
     .stat-item:last-child { border-right: none; }
 
-    .stat-num {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 40px;
-      font-weight: 700;
-      color: var(--black);
-      line-height: 1;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .stat-desc {
-      font-size: 13px;
-      color: var(--500);
-      line-height: 1.5;
-    }
+    .stat-num { font-family: 'Playfair Display', Georgia, serif; font-size: 40px; font-weight: 700; color: var(--black); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .stat-desc { font-size: 13px; color: var(--500); line-height: 1.5; }
 
     .body-layout {
       max-width: calc(var(--col) + var(--side) + 80px);
@@ -279,202 +152,56 @@
       align-items: start;
     }
 
-    article h2 {
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--black);
-      margin-top: 52px;
-      margin-bottom: 16px;
-      scroll-margin-top: 72px;
-      letter-spacing: -0.01em;
-    }
-
-    article p {
-      font-size: 16px;
-      color: var(--700);
-      line-height: 1.8;
-      margin-bottom: 18px;
-    }
-
+    article h2 { font-size: 20px; font-weight: 600; color: var(--black); margin-top: 52px; margin-bottom: 16px; scroll-margin-top: 72px; letter-spacing: -0.01em; }
+    article p { font-size: 16px; color: var(--700); line-height: 1.8; margin-bottom: 18px; }
     article p strong { color: var(--900); font-weight: 600; }
 
-    .pullquote {
-      margin: 36px 0;
-      padding: 0 0 0 20px;
-      border-left: 2px solid var(--black);
-    }
+    .pullquote { margin: 36px 0; padding: 0 0 0 20px; border-left: 2px solid var(--black); }
+    .pullquote p { font-size: 18px !important; font-style: italic; color: var(--900) !important; line-height: 1.6 !important; margin: 0 !important; }
 
-    .pullquote p {
-      font-size: 18px !important;
-      font-style: italic;
-      color: var(--900) !important;
-      line-height: 1.6 !important;
-      margin: 0 !important;
-    }
+    .chart-block { margin: 36px 0; border: 1px solid var(--200); border-radius: 8px; overflow: hidden; }
+    .chart-header { padding: 18px 22px 0; }
+    .chart-title { font-size: 13px; font-weight: 600; color: var(--900); margin-bottom: 3px; }
+    .chart-sub { font-size: 12px; color: var(--400); }
+    .chart-area { padding: 16px 22px; position: relative; height: 260px; }
+    .chart-footer { padding: 10px 22px 14px; border-top: 1px solid var(--100); font-size: 11px; color: var(--400); }
 
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-      margin: 28px 0;
-    }
-
-    .data-table thead th {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--400);
-      padding: 0 14px 10px;
-      border-bottom: 1px solid var(--200);
-      text-align: left;
-    }
-
-    .data-table tbody td {
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--100);
-      color: var(--700);
-      font-size: 14px;
-    }
-
+    .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 28px 0; }
+    .data-table thead th { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--400); padding: 0 14px 10px; border-bottom: 1px solid var(--200); text-align: left; }
+    .data-table tbody td { padding: 12px 14px; border-bottom: 1px solid var(--100); color: var(--700); font-size: 14px; }
     .data-table tbody tr:last-child td { border-bottom: none; }
-
     .td-bold { font-weight: 600; color: var(--900); }
     .td-accent { font-weight: 600; color: var(--accent); }
-    .td-muted { color: var(--400); font-style: italic; }
 
-    .placeholder {
-      margin: 20px 0;
-      padding: 12px 16px;
-      background: #FFFBEB;
-      border-left: 3px solid #F59E0B;
-      border-radius: 0 6px 6px 0;
-      font-size: 13px;
-      color: #78350F;
-      line-height: 1.55;
-    }
+    hr { border: none; border-top: 1px solid var(--200); margin: 48px 0; }
 
-    hr {
-      border: none;
-      border-top: 1px solid var(--200);
-      margin: 48px 0;
-    }
+    .method { padding: 24px; background: var(--50); border-radius: 8px; border: 1px solid var(--200); }
+    .method-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--400); margin-bottom: 8px; }
+    .method p { font-size: 13px !important; color: var(--500) !important; line-height: 1.65 !important; margin: 0 !important; }
 
-    .method {
-      padding: 24px;
-      background: var(--50);
-      border-radius: 8px;
-      border: 1px solid var(--200);
-    }
+    .sticky-side { position: sticky; top: 72px; }
 
-    .method-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--400);
-      margin-bottom: 8px;
-    }
-
-    .method p {
-      font-size: 13px !important;
-      color: var(--500) !important;
-      line-height: 1.65 !important;
-      margin: 0 !important;
-    }
-
-    .sticky-side {
-      position: sticky;
-      top: 72px;
-    }
-
-    /* FEEDBACK WIDGET */
-    .feedback-btn {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      background: var(--black);
-      color: var(--white);
-      border: none;
-      border-radius: 8px;
-      padding: 10px 16px;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-      transition: background 0.15s;
-    }
+    .feedback-btn { position: fixed; bottom: 28px; right: 28px; background: var(--black); color: var(--white); border: none; border-radius: 8px; padding: 10px 16px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; z-index: 200; display: flex; align-items: center; gap: 7px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); transition: background 0.15s; }
     .feedback-btn:hover { background: var(--700); }
 
-    .feedback-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
-      z-index: 300;
-      align-items: flex-end;
-      justify-content: flex-end;
-      padding: 28px;
-    }
+    .feedback-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 300; align-items: flex-end; justify-content: flex-end; padding: 28px; }
     .feedback-overlay.open { display: flex; }
 
-    .feedback-modal {
-      background: var(--white);
-      border-radius: 10px;
-      padding: 24px;
-      width: 340px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    }
-
+    .feedback-modal { background: var(--white); border-radius: 10px; padding: 24px; width: 340px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
     .feedback-modal h3 { font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 4px; }
     .feedback-modal p { font-size: 12.5px; color: var(--500); margin-bottom: 14px; line-height: 1.5; }
-
-    .feedback-modal input,
-    .feedback-modal textarea {
-      width: 100%;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      color: var(--900);
-      background: var(--50);
-      border: 1px solid var(--200);
-      border-radius: 6px;
-      padding: 9px 12px;
-      margin-bottom: 10px;
-      outline: none;
-      resize: none;
-      transition: border-color 0.15s;
-    }
-    .feedback-modal input:focus,
-    .feedback-modal textarea:focus { border-color: var(--400); }
+    .feedback-modal input, .feedback-modal textarea { width: 100%; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--900); background: var(--50); border: 1px solid var(--200); border-radius: 6px; padding: 9px 12px; margin-bottom: 10px; outline: none; resize: none; transition: border-color 0.15s; }
+    .feedback-modal input:focus, .feedback-modal textarea:focus { border-color: var(--400); }
     .feedback-modal textarea { height: 100px; }
-
     .feedback-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
-
-    .btn-cancel {
-      font-size: 13px; font-weight: 500; color: var(--500);
-      background: none; border: 1px solid var(--200); border-radius: 6px;
-      padding: 8px 14px; cursor: pointer; font-family: 'Inter', sans-serif;
-      transition: all 0.15s;
-    }
+    .btn-cancel { font-size: 13px; font-weight: 500; color: var(--500); background: none; border: 1px solid var(--200); border-radius: 6px; padding: 8px 14px; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.15s; }
     .btn-cancel:hover { color: var(--black); border-color: var(--400); }
-
-    .btn-send {
-      font-size: 13px; font-weight: 600; color: var(--white);
-      background: var(--black); border: none; border-radius: 6px;
-      padding: 8px 16px; cursor: pointer; font-family: 'Inter', sans-serif;
-      transition: background 0.15s;
-    }
+    .btn-send { font-size: 13px; font-weight: 600; color: var(--white); background: var(--black); border: none; border-radius: 6px; padding: 8px 16px; cursor: pointer; font-family: 'Inter', sans-serif; transition: background 0.15s; }
     .btn-send:hover { background: var(--700); }
 
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
-      .header-section,
-      .body-layout { grid-template-columns: 1fr; gap: 0; padding: 40px 24px; }
+      .header-section, .body-layout { grid-template-columns: 1fr; gap: 0; padding: 40px 24px; }
       .sidebar, .sticky-side { display: none; }
       .stats-strip { grid-template-columns: 1fr 1fr; padding: 0 24px 40px; }
       .stat-item { padding: 20px 16px; }
@@ -501,7 +228,7 @@
       <span class="tag">March 2026</span>
     </div>
     <h1>Most brands are overpaying for support.<br><em>Here's the math.</em></h1>
-    <p class="header-deck">Support costs are a function of time. Every ticket has a handle time. Every handle time has a cost. AI changes that equation, and most brands have not run the numbers.</p>
+    <p class="header-deck">Support costs are a function of time. Every ticket takes time. That time costs money. Most brands have never calculated how much, or what changes when AI handles the load.</p>
     <div class="author-row">
       <div class="avatar">ML</div>
       <div>
@@ -514,9 +241,11 @@
     <div class="sidebar-section">
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
-        <li><a href="#cost">The cost most brands don't calculate</a></li>
-        <li><a href="#handle">What a ticket actually takes</a></li>
-        <li><a href="#equation">What automation removes</a></li>
+        <li><a href="#headcount">Support is a headcount problem</a></li>
+        <li><a href="#handles">What one agent actually handles</a></li>
+        <li><a href="#replaces">What AI replaces</a></li>
+        <li><a href="#leaner">The brands that went leaner</a></li>
+        <li><a href="#numbers">The numbers</a></li>
         <li><a href="#bottom">The bottom line</a></li>
       </ul>
     </div>
@@ -539,100 +268,150 @@
 
 <div class="stats-strip">
   <div class="stat-item">
-    <div class="stat-num">[X] min</div>
-    <div class="stat-desc">average handle time per ticket for brands below $10M GMV</div>
+    <div class="stat-num">$205K</div>
+    <div class="stat-desc">average annual saving at the lowest automation tier</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">[X] FTE</div>
-    <div class="stat-desc">equivalent automated at 30% automation for a mid-size brand</div>
+    <div class="stat-num">6.25</div>
+    <div class="stat-desc">human agents replaced by AI at 50%+ automation</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">$[X]K</div>
-    <div class="stat-desc">estimated annual saving at 30% automation vs. zero</div>
+    <div class="stat-num">85%</div>
+    <div class="stat-desc">of brands that reduced headcount maintained or grew revenue</div>
   </div>
 </div>
 
 <div class="body-layout">
   <article>
 
-    <h2 id="cost">The cost most brands don't calculate</h2>
+    <h2 id="headcount">Support is a headcount problem</h2>
 
-    <p>Support costs are not a software problem. They are a time problem. An agent closes a ticket. That ticket took minutes. Those minutes add up to a salary.</p>
+    <p>Support costs are not a software problem. They are a time problem. An agent closes a ticket. That ticket takes time. That time costs money.</p>
 
-    <p>Most brands know their total support headcount. Most do not know their cost per ticket. The gap between those two numbers is where the overspend lives. Brands staff for peak volume and carry that cost year-round. quiet weeks, slow seasons, and periods where AI could be absorbing the load instead.</p>
+    <p>Most brands know their total support headcount. Few know their cost per ticket. The gap between those two numbers is where the overspend lives.</p>
 
     <div class="pullquote">
-      <p>Every ticket has a handle time. Every handle time has a cost. Most brands have never calculated either.</p>
+      <p>Every ticket has a cost. Most brands have never calculated what it is.</p>
     </div>
 
-    <div class="placeholder">
-      <strong>Placeholder:</strong> Average cost per ticket by GMV tier. Expected range: $8-25 depending on brand size and query complexity.
-    </div>
+    <h2 id="handles">What one agent actually handles</h2>
 
-    <h2 id="handle">What a ticket actually takes</h2>
+    <p>Agent productivity varies significantly by brand size. Enterprise agents handle nearly four times as many tickets per month as SMB agents. Smaller brands pay more per ticket resolved because their queues are less efficient and their queries take longer.</p>
 
-    <p>Handle time is the unit that determines headcount. It sets how many tickets one agent closes in a day, which sets how many agents you need. It varies by brand size: smaller brands field more repetitive queries (order status, shipping, returns) while larger brands deal with more complex issues that take longer to resolve.</p>
-
-    <div class="placeholder">
-      <strong>Placeholder:</strong> Average handle time per ticket (minutes) by GMV tier. Pull from platform data.
-    </div>
-
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>GMV</th>
-          <th>Avg tickets/month</th>
-          <th>Avg handle time</th>
-          <th>FTE equivalent</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="td-bold">~$1M</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder] min</td><td class="td-muted">[placeholder]</td></tr>
-        <tr><td class="td-bold">~$5M</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder] min</td><td class="td-muted">[placeholder]</td></tr>
-        <tr><td class="td-bold">~$25M</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder] min</td><td class="td-muted">[placeholder]</td></tr>
-        <tr><td class="td-bold">~$100M</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder] min</td><td class="td-muted">[placeholder]</td></tr>
-      </tbody>
-    </table>
-
-    <h2 id="equation">What automation removes from that equation</h2>
-
-    <p>At 30% automation, 30% of tickets never reach an agent. Handle time for those tickets is zero.</p>
-
-    <p>For a brand handling 2,000 tickets per month at 6 minutes average handle time, 30% automation frees <strong>60 agent hours per month</strong>. At a fully-loaded agent cost of $50K per year, that is the equivalent of <strong>[placeholder] FTEs</strong> and <strong>$[placeholder] in annual savings</strong>.</p>
-
-    <div class="placeholder">
-      <strong>Placeholder:</strong> Validate fully-loaded agent cost and AHT figures with data team. Formula: (tickets automated x AHT in hours) / 160 agent hours per month = FTE equivalent.
+    <div class="chart-block">
+      <div class="chart-header">
+        <div class="chart-title">Avg Tickets per Agent per Month by GMV Tier</div>
+        <div class="chart-sub">Human-handled billable tickets, last 90 days</div>
+      </div>
+      <div class="chart-area"><canvas id="c1"></canvas></div>
+      <div class="chart-footer">Gorgias platform data · March 2026</div>
     </div>
 
     <table class="data-table">
       <thead>
         <tr>
-          <th>Automation rate</th>
-          <th>Tickets automated (2,000/mo)</th>
-          <th>Agent hours freed</th>
-          <th>FTE equivalent</th>
-          <th>Annual saving</th>
+          <th>GMV tier</th>
+          <th>Avg tickets per agent/month</th>
+          <th>Avg first response</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td class="td-bold">10%</td><td>200</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td></tr>
-        <tr><td class="td-bold">20%</td><td>400</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td></tr>
-        <tr><td class="td-bold">30%</td><td>600</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td><td class="td-accent">[placeholder]</td></tr>
-        <tr><td class="td-bold">40%</td><td>800</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td><td class="td-accent">[placeholder]</td></tr>
+        <tr><td class="td-bold">&gt;$150M</td><td>270</td><td>20.8 hrs</td></tr>
+        <tr><td class="td-bold">$30-150M</td><td>308</td><td>22.6 hrs</td></tr>
+        <tr><td class="td-bold">$5-30M</td><td>179</td><td>30.0 hrs</td></tr>
+        <tr><td class="td-bold">&lt;$5M</td><td>82</td><td>37.1 hrs</td></tr>
       </tbody>
     </table>
+
+    <p>An SMB brand handling 1,000 tickets per month at 82 tickets per agent needs roughly 12 agents to keep up. An Enterprise brand handling the same volume needs closer to 3. First response time follows the same pattern. SMB brands average 37 hours. Named accounts average 21 hours. Smaller brands are slower and more expensive to run simultaneously.</p>
+
+    <h2 id="replaces">What AI replaces</h2>
+
+    <p>At 30% automation, 30% of tickets never reach an agent. The productivity data above determines how much that is worth.</p>
+
+    <p>For a Commercial brand ($5-30M GMV) handling 2,000 tickets per month, 30% automation removes 600 tickets from the human queue. At 179 tickets per agent per month, that is the equivalent of <strong>3.4 agents freed</strong>. At a fully-loaded cost of $50K per year, that is <strong>$170K in annual savings</strong>.</p>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <div class="chart-title">AI Agent Equivalents by Automation Tier</div>
+        <div class="chart-sub">Number of human agents AI replaces at each automation level</div>
+      </div>
+      <div class="chart-area"><canvas id="c2"></canvas></div>
+      <div class="chart-footer">Gorgias platform data · March 2026</div>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Automation tier</th>
+          <th>Avg team size</th>
+          <th>AI agent equivalents</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="td-bold">0-10%</td><td>6.6</td><td>0.2</td></tr>
+        <tr><td class="td-bold">10-20%</td><td>5.9</td><td>1.1</td></tr>
+        <tr><td class="td-bold">20-30%</td><td>6.3</td><td>2.1</td></tr>
+        <tr><td class="td-bold">30-40%</td><td>5.6</td><td>3.1</td></tr>
+        <tr><td class="td-bold">40-50%</td><td>4.3</td><td>3.5</td></tr>
+        <tr><td class="td-bold">50%+</td><td>3.0</td><td class="td-accent">6.25</td></tr>
+      </tbody>
+    </table>
+
+    <p>At 50%+ automation, AI does the work of 6.25 agents. The average human team at that tier is 3 people. AI is handling more than double what the human team handles. The team size column tells its own story: brands with higher automation are already running smaller teams.</p>
+
+    <h2 id="leaner">The brands that went leaner</h2>
+
+    <p>Nearly 1 in 4 brands reduced headcount after enabling AI Agent.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Outcome</th>
+          <th>Share of brands</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Reduced headcount</td><td class="td-bold">23.5%</td></tr>
+        <tr><td>Reduced headcount, revenue stable or grew</td><td class="td-bold">85.0%</td></tr>
+        <tr><td>Reduced headcount, tickets stable or grew</td><td class="td-bold">58.5%</td></tr>
+        <tr><td>Fewer people, same tickets, same or more revenue</td><td class="td-accent">51.0%</td></tr>
+      </tbody>
+    </table>
+
+    <p>Of those that reduced headcount, 85% maintained or grew revenue. Over half achieved all three: fewer people, same ticket volume, same or more revenue.</p>
+
+    <h2 id="numbers">The numbers</h2>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Automation tier</th>
+          <th>Avg headcount saved</th>
+          <th>Avg annual saving</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="td-bold">0-20%</td><td>4.1 agents</td><td>$205K</td></tr>
+        <tr><td class="td-bold">20-40%</td><td>4.2 agents</td><td>$209K</td></tr>
+        <tr><td class="td-bold">40-60%</td><td>5.2 agents</td><td>$262K</td></tr>
+        <tr><td class="td-bold">60%+</td><td>6.2 agents</td><td class="td-accent">$310K</td></tr>
+      </tbody>
+    </table>
+
+    <p>Even at the lowest automation tier, brands are saving the equivalent of 4 full-time agents, roughly $205K per year. At an average platform cost of $9K per year, that is a 37x return.</p>
 
     <h2 id="bottom">The bottom line</h2>
 
-    <p>Support headcount is not fixed. Every ticket AI resolves is a ticket an agent did not spend time on. At 30% automation, that is real headcount. that no longer need to be staffed, or capacity that absorbs volume growth without a new hire.</p>
+    <p>Every quarter a brand spends below 30% automation is a quarter they are staffing tickets that AI could be handling. The math does not require a complex model.</p>
 
-    <p>The brands above 30% automation are not just faster. They are cheaper to run.</p>
+    <p>The brands above 50% automation have replaced more than 6 human agents with AI, are running smaller teams, and are not losing revenue for it. The ones still hesitating are paying for headcount they do not need.</p>
 
     <hr />
 
     <div class="method">
       <div class="method-label">Methodology</div>
-      <p>Platform-level behavioral data from Gorgias merchants. Handle time benchmarks based on [placeholder: data source]. FTE calculations assume 160 working hours per agent per month and $50K fully-loaded annual cost. Data as of March 2026.</p>
+      <p>Platform-level behavioral data from Gorgias merchants. Agent productivity figures based on human-handled billable tickets (non-spam, with assigned agent) over the last 90 days. AI agent equivalents calculated as automated tickets divided by human tickets per active user. ROI analysis based on accounts where AI produced net positive savings, assuming $50K fully-loaded annual cost per agent. Data as of March 2026.</p>
     </div>
 
   </article>
@@ -641,9 +420,11 @@
     <div class="sidebar-section">
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
-        <li><a href="#cost">The cost most brands don't calculate</a></li>
-        <li><a href="#handle">What a ticket actually takes</a></li>
-        <li><a href="#equation">What automation removes</a></li>
+        <li><a href="#headcount">Support is a headcount problem</a></li>
+        <li><a href="#handles">What one agent actually handles</a></li>
+        <li><a href="#replaces">What AI replaces</a></li>
+        <li><a href="#leaner">The brands that went leaner</a></li>
+        <li><a href="#numbers">The numbers</a></li>
         <li><a href="#bottom">The bottom line</a></li>
       </ul>
     </div>
@@ -656,6 +437,61 @@
   </div>
 
 </div>
+
+<script>
+  Chart.defaults.font.family = "'Inter', sans-serif";
+  Chart.defaults.font.size   = 11;
+  Chart.defaults.color       = '#A1A1AA';
+
+  const grid     = { color: '#F4F4F5', drawBorder: false };
+  const noBorder = { display: false };
+
+  // Chart 1 — Tickets per agent by GMV tier
+  new Chart(document.getElementById('c1'), {
+    type: 'bar',
+    data: {
+      labels: ['<$5M', '$5-30M', '$30-150M', '>$150M'],
+      datasets: [{
+        data: [82, 179, 308, 270],
+        backgroundColor: ['#E4E4E7', '#E4E4E7', '#0A0A0A', '#0A0A0A'],
+        borderRadius: 3,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.parsed.y} tickets/agent/mo` } } },
+      scales: {
+        x: { grid: { display: false }, border: noBorder },
+        y: { grid, border: noBorder, min: 0, max: 350 }
+      }
+    }
+  });
+
+  // Chart 2 — AI agent equivalents by automation tier
+  new Chart(document.getElementById('c2'), {
+    type: 'bar',
+    data: {
+      labels: ['0-10%', '10-20%', '20-30%', '30-40%', '40-50%', '50%+'],
+      datasets: [{
+        data: [0.2, 1.1, 2.1, 3.1, 3.5, 6.25],
+        backgroundColor: ['#E4E4E7', '#D4D4D8', '#A1A1AA', '#71717A', '#3F3F46', '#0A0A0A'],
+        borderRadius: 3,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.parsed.y} agent equivalents` } } },
+      scales: {
+        x: { grid: { display: false }, border: noBorder, title: { display: true, text: 'Automation rate', color: '#A1A1AA', font: { size: 11 } } },
+        y: { grid, border: noBorder, min: 0, max: 7 }
+      }
+    }
+  });
+</script>
 
 <button class="feedback-btn" onclick="document.getElementById('feedbackOverlay').classList.add('open')">
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1h12v9H8l-3 3V10H1V1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
