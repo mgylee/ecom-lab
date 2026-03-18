@@ -35,7 +35,7 @@ Across the top three GMV tiers, AI Agent median resolution is under 1 minute. Fo
 
 ## What changes at scale
 
-As automation rate increases, AI absorbs more ticket volume. That does not mean cutting your team. It means your existing team stops spending time on repetitive tickets and starts handling the work that actually requires a human. The lines cross at 50%+ automation.
+As automation rate increases, AI absorbs more ticket volume. It means you can scale your business without hiring more. At 50%+ automation, the balance tips.
 
 | Automation tier | Avg team size | AI agent equivalents |
 |-----------------|---------------|----------------------|
