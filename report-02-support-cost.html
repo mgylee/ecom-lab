@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Most brands are overpaying for support. Here's the math.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0A0A0A;
+      --900:     #18181B;
+      --700:     #3F3F46;
+      --500:     #71717A;
+      --400:     #A1A1AA;
+      --200:     #E4E4E7;
+      --100:     #F4F4F5;
+      --50:      #FAFAFA;
+      --white:   #FFFFFF;
+      --accent:  #FF5B35;
+      --col:     680px;
+      --side:    240px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--900);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+      display: block;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 52px;
+      border-bottom: 1px solid var(--200);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .nav-brand {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-brand-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-label {
+      font-size: 12px;
+      color: var(--500);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .header-section {
+      max-width: calc(var(--col) + var(--side) + 80px);
+      margin: 0 auto;
+      padding: 72px 48px 56px;
+      display: grid;
+      grid-template-columns: 1fr var(--side);
+      gap: 64px;
+      align-items: start;
+    }
+
+    .header-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--500);
+    }
+
+    .tag-sep { color: var(--200); }
+
+    .header-left h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--black);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .header-left h1 em {
+      font-style: italic;
+      color: var(--700);
+    }
+
+    .header-deck {
+      font-size: 16px;
+      color: var(--700);
+      line-height: 1.65;
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
+
+    .author-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-top: 24px;
+      border-top: 1px solid var(--200);
+    }
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--100);
+      border: 1px solid var(--200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--700);
+      flex-shrink: 0;
+    }
+
+    .author-name { font-size: 13.5px; font-weight: 600; color: var(--900); }
+    .author-title { font-size: 12.5px; color: var(--500); }
+
+    .sidebar { padding-top: 4px; }
+    .sidebar-section { margin-bottom: 32px; }
+
+    .sidebar-heading {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--400);
+      margin-bottom: 10px;
+    }
+
+    .toc { list-style: none; }
+    .toc li { margin-bottom: 2px; }
+
+    .toc a {
+      font-size: 13px;
+      color: var(--500);
+      text-decoration: none;
+      display: block;
+      padding: 5px 0;
+      border-left: 2px solid transparent;
+      padding-left: 10px;
+      transition: color 0.15s, border-color 0.15s;
+      line-height: 1.4;
+    }
+
+    .toc a:hover { color: var(--black); border-left-color: var(--accent); }
+
+    .subscribe-box {
+      border: 1px solid var(--200);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .subscribe-box p {
+      font-size: 12.5px;
+      color: var(--700);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .btn-sub {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--black);
+      background: var(--100);
+      border: 1px solid var(--200);
+      border-radius: 6px;
+      padding: 8px 14px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .btn-sub:hover { background: var(--200); }
+
+    .share-row { display: flex; gap: 8px; }
+
+    .share-btn {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--500);
+      text-decoration: none;
+      border: 1px solid var(--200);
+      border-radius: 6px;
+      padding: 6px 10px;
+      transition: all 0.15s;
+    }
+
+    .share-btn:hover { color: var(--black); border-color: var(--400); }
+
+    .stats-strip {
+      max-width: calc(var(--col) + var(--side) + 80px);
+      margin: 0 auto;
+      padding: 0 48px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--200);
+    }
+
+    .stat-item {
+      padding: 28px 32px;
+      border-right: 1px solid var(--200);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-desc {
+      font-size: 13px;
+      color: var(--500);
+      line-height: 1.5;
+    }
+
+    .body-layout {
+      max-width: calc(var(--col) + var(--side) + 80px);
+      margin: 0 auto;
+      padding: 0 48px 96px;
+      display: grid;
+      grid-template-columns: 1fr var(--side);
+      gap: 64px;
+      align-items: start;
+    }
+
+    article h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--black);
+      margin-top: 52px;
+      margin-bottom: 16px;
+      scroll-margin-top: 72px;
+      letter-spacing: -0.01em;
+    }
+
+    article p {
+      font-size: 16px;
+      color: var(--700);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    article p strong { color: var(--900); font-weight: 600; }
+
+    .pullquote {
+      margin: 36px 0;
+      padding: 0 0 0 20px;
+      border-left: 2px solid var(--black);
+    }
+
+    .pullquote p {
+      font-size: 18px !important;
+      font-style: italic;
+      color: var(--900) !important;
+      line-height: 1.6 !important;
+      margin: 0 !important;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 28px 0;
+    }
+
+    .data-table thead th {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--400);
+      padding: 0 14px 10px;
+      border-bottom: 1px solid var(--200);
+      text-align: left;
+    }
+
+    .data-table tbody td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--100);
+      color: var(--700);
+      font-size: 14px;
+    }
+
+    .data-table tbody tr:last-child td { border-bottom: none; }
+
+    .td-bold { font-weight: 600; color: var(--900); }
+    .td-accent { font-weight: 600; color: var(--accent); }
+    .td-muted { color: var(--400); font-style: italic; }
+
+    .placeholder {
+      margin: 20px 0;
+      padding: 12px 16px;
+      background: #FFFBEB;
+      border-left: 3px solid #F59E0B;
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      color: #78350F;
+      line-height: 1.55;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--200);
+      margin: 48px 0;
+    }
+
+    .method {
+      padding: 24px;
+      background: var(--50);
+      border-radius: 8px;
+      border: 1px solid var(--200);
+    }
+
+    .method-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--400);
+      margin-bottom: 8px;
+    }
+
+    .method p {
+      font-size: 13px !important;
+      color: var(--500) !important;
+      line-height: 1.65 !important;
+      margin: 0 !important;
+    }
+
+    .sticky-side {
+      position: sticky;
+      top: 72px;
+    }
+
+    /* FEEDBACK WIDGET */
+    .feedback-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      transition: background 0.15s;
+    }
+    .feedback-btn:hover { background: var(--700); }
+
+    .feedback-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 300;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 28px;
+    }
+    .feedback-overlay.open { display: flex; }
+
+    .feedback-modal {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 24px;
+      width: 340px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .feedback-modal h3 { font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+    .feedback-modal p { font-size: 12.5px; color: var(--500); margin-bottom: 14px; line-height: 1.5; }
+
+    .feedback-modal input,
+    .feedback-modal textarea {
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--900);
+      background: var(--50);
+      border: 1px solid var(--200);
+      border-radius: 6px;
+      padding: 9px 12px;
+      margin-bottom: 10px;
+      outline: none;
+      resize: none;
+      transition: border-color 0.15s;
+    }
+    .feedback-modal input:focus,
+    .feedback-modal textarea:focus { border-color: var(--400); }
+    .feedback-modal textarea { height: 100px; }
+
+    .feedback-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
+
+    .btn-cancel {
+      font-size: 13px; font-weight: 500; color: var(--500);
+      background: none; border: 1px solid var(--200); border-radius: 6px;
+      padding: 8px 14px; cursor: pointer; font-family: 'Inter', sans-serif;
+      transition: all 0.15s;
+    }
+    .btn-cancel:hover { color: var(--black); border-color: var(--400); }
+
+    .btn-send {
+      font-size: 13px; font-weight: 600; color: var(--white);
+      background: var(--black); border: none; border-radius: 6px;
+      padding: 8px 16px; cursor: pointer; font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+    .btn-send:hover { background: var(--700); }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .header-section,
+      .body-layout { grid-template-columns: 1fr; gap: 0; padding: 40px 24px; }
+      .sidebar, .sticky-side { display: none; }
+      .stats-strip { grid-template-columns: 1fr 1fr; padding: 0 24px 40px; }
+      .stat-item { padding: 20px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">
+    <span class="nav-brand-dot"></span>
+    Gorgias Ecommerce Lab
+  </a>
+  <div class="nav-right">
+    <span class="nav-label">Research</span>
+  </div>
+</nav>
+
+<div class="header-section">
+  <div class="header-left">
+    <div class="header-eyebrow">
+      <span class="tag">Support Economics</span>
+      <span class="tag-sep">·</span>
+      <span class="tag">March 2026</span>
+    </div>
+    <h1>Most brands are overpaying for support.<br><em>Here's the math.</em></h1>
+    <p class="header-deck">Support costs are a function of time. Every ticket has a handle time. Every handle time has a cost. AI changes that equation — and most brands have not run the numbers.</p>
+    <div class="author-row">
+      <div class="avatar">ML</div>
+      <div>
+        <div class="author-name">Matilda Lee</div>
+        <div class="author-title">Head of Product Marketing, Gorgias</div>
+      </div>
+    </div>
+  </div>
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Table of contents</div>
+      <ul class="toc">
+        <li><a href="#cost">The cost most brands don't calculate</a></li>
+        <li><a href="#handle">What a ticket actually takes</a></li>
+        <li><a href="#equation">What automation removes</a></li>
+        <li><a href="#bottom">The bottom line</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="subscribe-box">
+        <p>Data-driven research on how ecommerce brands operate and grow.</p>
+        <a class="btn-sub" href="#">Subscribe to Ecommerce Lab</a>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Share</div>
+      <div class="share-row">
+        <a class="share-btn" href="#">X</a>
+        <a class="share-btn" href="#">LinkedIn</a>
+        <a class="share-btn" href="#">Email</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="stats-strip">
+  <div class="stat-item">
+    <div class="stat-num">[X] min</div>
+    <div class="stat-desc">average handle time per ticket for brands below $10M GMV</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">[X] FTE</div>
+    <div class="stat-desc">equivalent automated at 30% automation for a mid-size brand</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">$[X]K</div>
+    <div class="stat-desc">estimated annual saving at 30% automation vs. zero</div>
+  </div>
+</div>
+
+<div class="body-layout">
+  <article>
+
+    <h2 id="cost">The cost most brands don't calculate</h2>
+
+    <p>Support costs are not a software problem. They are a time problem. An agent closes a ticket. That ticket took minutes. Those minutes add up to a salary.</p>
+
+    <p>Most brands know their total support headcount. Most do not know their cost per ticket. The gap between those two numbers is where the overspend lives. Brands staff for peak volume and carry that cost year-round — through quiet weeks, slow seasons, and periods where AI could be absorbing the load instead.</p>
+
+    <div class="pullquote">
+      <p>Every ticket has a handle time. Every handle time has a cost. Most brands have never calculated either.</p>
+    </div>
+
+    <div class="placeholder">
+      <strong>Placeholder:</strong> Average cost per ticket by GMV tier. Expected range: $8-25 depending on brand size and query complexity.
+    </div>
+
+    <h2 id="handle">What a ticket actually takes</h2>
+
+    <p>Handle time is the unit that determines headcount. It sets how many tickets one agent closes in a day, which sets how many agents you need. It varies by brand size: smaller brands field more repetitive queries — order status, shipping, returns — while larger brands deal with more complex issues that take longer to resolve.</p>
+
+    <div class="placeholder">
+      <strong>Placeholder:</strong> Average handle time per ticket (minutes) by GMV tier. Pull from platform data.
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>GMV</th>
+          <th>Avg tickets/month</th>
+          <th>Avg handle time</th>
+          <th>FTE equivalent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="td-bold">~$1M</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder] min</td><td class="td-muted">[placeholder]</td></tr>
+        <tr><td class="td-bold">~$5M</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder] min</td><td class="td-muted">[placeholder]</td></tr>
+        <tr><td class="td-bold">~$25M</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder] min</td><td class="td-muted">[placeholder]</td></tr>
+        <tr><td class="td-bold">~$100M</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder] min</td><td class="td-muted">[placeholder]</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="equation">What automation removes from that equation</h2>
+
+    <p>At 30% automation, 30% of tickets never reach an agent. Handle time for those tickets is zero.</p>
+
+    <p>For a brand handling 2,000 tickets per month at 6 minutes average handle time, 30% automation frees <strong>60 agent hours per month</strong>. At a fully-loaded agent cost of $50K per year, that is the equivalent of <strong>[placeholder] FTEs</strong> and <strong>$[placeholder] in annual savings</strong>.</p>
+
+    <div class="placeholder">
+      <strong>Placeholder:</strong> Validate fully-loaded agent cost and AHT figures with data team. Formula: (tickets automated x AHT in hours) / 160 agent hours per month = FTE equivalent.
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Automation rate</th>
+          <th>Tickets automated (2,000/mo)</th>
+          <th>Agent hours freed</th>
+          <th>FTE equivalent</th>
+          <th>Annual saving</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="td-bold">10%</td><td>200</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td></tr>
+        <tr><td class="td-bold">20%</td><td>400</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td></tr>
+        <tr><td class="td-bold">30%</td><td>600</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td><td class="td-accent">[placeholder]</td></tr>
+        <tr><td class="td-bold">40%</td><td>800</td><td class="td-muted">[placeholder]</td><td class="td-muted">[placeholder]</td><td class="td-accent">[placeholder]</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="bottom">The bottom line</h2>
+
+    <p>Support headcount is not fixed. Every ticket AI resolves is a ticket an agent did not spend time on. At 30% automation, that is real headcount — hours that no longer need to be staffed, or capacity that absorbs volume growth without a new hire.</p>
+
+    <p>The brands above 30% automation are not just faster. They are cheaper to run.</p>
+
+    <hr />
+
+    <div class="method">
+      <div class="method-label">Methodology</div>
+      <p>Platform-level behavioral data from Gorgias merchants. Handle time benchmarks based on [placeholder: data source]. FTE calculations assume 160 working hours per agent per month and $50K fully-loaded annual cost. Data as of March 2026.</p>
+    </div>
+
+  </article>
+
+  <div class="sticky-side">
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Table of contents</div>
+      <ul class="toc">
+        <li><a href="#cost">The cost most brands don't calculate</a></li>
+        <li><a href="#handle">What a ticket actually takes</a></li>
+        <li><a href="#equation">What automation removes</a></li>
+        <li><a href="#bottom">The bottom line</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="subscribe-box">
+        <p>Data-driven research on how ecommerce brands operate and grow.</p>
+        <a class="btn-sub" href="#">Subscribe</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<button class="feedback-btn" onclick="document.getElementById('feedbackOverlay').classList.add('open')">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1h12v9H8l-3 3V10H1V1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+  Leave feedback
+</button>
+
+<div class="feedback-overlay" id="feedbackOverlay">
+  <div class="feedback-modal">
+    <h3>Leave feedback</h3>
+    <p>Comments go directly to Matilda. Include your name so she knows who to follow up with.</p>
+    <input type="text" id="fbName" placeholder="Your name" />
+    <textarea id="fbComment" placeholder="What's your feedback?"></textarea>
+    <div class="feedback-actions">
+      <button class="btn-cancel" onclick="document.getElementById('feedbackOverlay').classList.remove('open')">Cancel</button>
+      <button class="btn-send" onclick="sendFeedback()">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function sendFeedback() {
+    const name    = document.getElementById('fbName').value.trim();
+    const comment = document.getElementById('fbComment').value.trim();
+    if (!comment) return;
+    const subject = encodeURIComponent('Ecom Lab feedback' + (name ? ' from ' + name : ''));
+    const body    = encodeURIComponent(comment + (name ? '\n\n' + name : ''));
+    window.location.href = 'mailto:matilda.lee@gorgias.com?subject=' + subject + '&body=' + body;
+    document.getElementById('feedbackOverlay').classList.remove('open');
+  }
+</script>
+
+</body>
+</html>
