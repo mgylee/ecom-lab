@@ -5,8 +5,8 @@
 ---
 
 **<1 min** AI Agent median resolution time vs. 20+ hours for human agents.
-**6.25** human agents replaced by AI at 50%+ automation.
-**$205K** average annual saving at the lowest automation tier.
+**2x** more work handled by AI than the human team at 50%+ automation.
+**$196K** net annual saving at the lowest automation tier, after platform costs.
 
 ---
 
@@ -14,7 +14,7 @@
 
 Support costs are a time problem. An agent closes a ticket. That ticket takes time. That time costs money. Most brands know their total support headcount. Few know their cost per ticket. The gap between those two numbers is where the overspend lives.
 
-A human agent at an SMB brand resolves 82 tickets per month. At an Enterprise brand, that number is 308. The cost per ticket varies by a factor of four depending on brand size, before you even look at speed.
+A human agent at a brand under $5M GMV handles 82 billable tickets per month. At a brand above $150M GMV, that number is 308. The cost per ticket varies by a factor of four depending on brand size, before you even look at speed.
 
 ---
 
@@ -29,7 +29,7 @@ The difference is not incremental. Human agents resolve tickets in 20 to 32 hour
 | $5-30M | 24.9 hrs | 0.9 mins |
 | <$5M | 31.9 hrs | 5.5 mins |
 
-Across the top three tiers, AI Agent median resolution is under 1 minute. For SMB brands, it is 5.5 minutes. Human resolution time does not vary as dramatically, but it is consistently measured in hours, not minutes.
+Across the top three GMV tiers, AI Agent median resolution is under 1 minute. For brands under $5M GMV, it is 5.5 minutes. Human resolution time does not vary as dramatically, but it is consistently measured in hours, not minutes.
 
 ---
 
@@ -46,9 +46,9 @@ As automation rate increases, two things happen simultaneously: AI handles more 
 | 40-50% | 4.3 | 3.5 |
 | 50%+ | 3.0 | 6.25 |
 
-At 50%+ automation, AI does the work of **6.25 agents**. The average human team at that tier is 3 people. AI is handling more than double what the human team handles.
+At 50%+ automation, AI does the work of **6.25 agents on average across brands at that tier**. The average human team is 3 people. AI is handling more than double what the human team handles.
 
-For a mid-market brand ($5-30M GMV) handling 2,000 tickets per month, 30% automation removes 600 tickets from the human queue. At 179 tickets per agent, that equals **3.4 agents freed** and roughly **$170K in annual savings**.
+For a brand at $5-30M GMV handling 2,000 tickets per month, 30% automation removes 600 tickets from the human queue. At 179 tickets per agent, that equals **3.4 agents freed** and roughly **$170K in annual savings**.
 
 ---
 
@@ -56,14 +56,14 @@ For a mid-market brand ($5-30M GMV) handling 2,000 tickets per month, 30% automa
 
 Nearly 1 in 4 brands reduced headcount after enabling AI Agent. Of those, **51% achieved all three: fewer people, same ticket volume, same or more revenue**.
 
-| Automation tier | Avg headcount saved | Avg annual saving |
-|-----------------|---------------------|-------------------|
-| 0-20% | 4.1 agents | $205K |
-| 20-40% | 4.2 agents | $209K |
-| 40-60% | 5.2 agents | $262K |
-| 60%+ | 6.2 agents | $310K |
+| Automation tier | Avg headcount saved | Gross saving | Avg platform cost | Net saving |
+|-----------------|---------------------|-------------|-------------------|------------|
+| 0-20% | 4.1 agents | $205K | $9K | $196K |
+| 20-40% | 4.2 agents | $209K | $9K | $200K |
+| 40-60% | 5.2 agents | $262K | $9K | $253K |
+| 60%+ | 6.2 agents | $310K | $9K | $301K |
 
-Even at the lowest automation tier, brands save the equivalent of 4 full-time agents, roughly $205K per year.
+Even at the lowest automation tier, brands net $196K per year after platform costs.
 
 ---
 
@@ -73,4 +73,4 @@ Every quarter a brand spends below 30% automation is a quarter they are hiring t
 
 ---
 
-**Methodology:** Platform-level behavioral data from Gorgias merchants. Agent productivity based on human-handled billable tickets (non-spam, with assigned agent) over the last 90 days. AI Agent resolution time uses median values (averages are skewed by a long tail of tickets requiring human follow-up). AI agent equivalents calculated as automated tickets divided by human tickets per active user. ROI based on accounts with net positive savings, assuming $50K fully-loaded annual cost per agent. Data as of March 2026.
+**Methodology:** Platform-level behavioral data from Gorgias merchants. Agent productivity based on human-handled billable tickets (non-spam, with assigned agent) over the last 90 days. AI Agent resolution time uses median values (averages are skewed by a long tail of tickets requiring human follow-up). AI agent equivalents calculated as automated tickets divided by human tickets per active user. ROI based on accounts with net positive savings, assuming $50K fully-loaded annual cost per agent and $9K average annual platform cost. Data as of March 2026.
