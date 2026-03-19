@@ -1,77 +1,83 @@
-# More than half your tickets are repeats.
+# Stop benchmarking against the average.
 
 *Gorgias Ecommerce Lab | March 2026*
 
 ---
 
-**55%** repeat rate in the best-performing verticals. It only goes up from there.
-**62%** repeat rate in Electronics, the highest.
-**4x** resolution time spread. Repeat rate follows.
+**4x** resolution time spread across verticals, hidden by the all-industry average.
+**0.3 pts** CSAT variation on a 5-point scale. It tells you nothing.
+**67-265 hrs** resolution time range at the same GMV band.
 
 ---
 
-## The metric no one tracks
+## The problem with averages
 
-Most support teams track first response time. Some track resolution time. Almost none track how often the same customer comes back.
+The all-industry average resolution time at the $5-30M GMV band is roughly 116 hours. That number describes no one.
 
-Across every vertical at the $5-30M GMV band, more than half of all tickets are repeat contacts. The lowest repeat rate in the dataset is 54.8%. The highest is 62.2%. No vertical is below 50%.
+An Electronics brand resolving tickets in 265 hours and a Pet Supplies brand resolving in 67 hours are both measured against the same average. One looks like it is underperforming. The other looks like it is overperforming. Neither comparison is useful because they are not in the same category.
 
-[NEED: Confirm definition of "Repeat %" with data team. Is this customers who have contacted before (ever), follow-ups on the same issue, or repeat contacts within a specific window? The interpretation shapes the narrative.]
-
----
-
-## The pattern
-
-The verticals with the lowest repeat rates also have the fastest resolution times. The verticals with the highest repeat rates have the slowest.
-
-| Vertical | Repeat rate | Avg resolution | CSAT |
-|----------|-------------|---------------|------|
-| Animals & Pet Supplies | 54.8% | 67 hrs | 4.62 |
-| Food & Beverage | 54.8% | 74 hrs | 4.55 |
-| Apparel & Accessories | 55.6% | 99 hrs | 4.39 |
-| Health & Beauty | 56.8% | 97 hrs | 4.44 |
-| Sporting Goods | 58.9% | 124 hrs | 4.45 |
-| Vehicles & Parts | 59.6% | 99 hrs | 4.60 |
-| Hardware | 61.4% | 89 hrs | 4.40 |
-| Furniture | 61.5% | 129 hrs | 4.49 |
-| Electronics | 62.2% | 265 hrs | 4.31 |
-
-Pet Supplies and Food & Beverage resolve fastest and have the fewest repeat contacts. Electronics resolves slowest and has the most. When the issue gets resolved, customers do not come back. When it does not, they do.
-
-[NEED: Is the correlation between repeat rate and resolution time statistically significant? Data team to validate with R-squared or similar.]
+Ticket type, product complexity, return behavior, and policy structure vary by vertical. These factors determine how long tickets take to resolve, how often customers come back, and what "good" looks like for your team. The all-industry average erases all of that.
 
 ---
 
-## Why it matters
+## What actually varies
 
-Every repeat ticket has a cost. It takes agent time. It resets the customer's patience. And it inflates your ticket volume in a way that makes your team look busier than it should be.
+Not every metric differentiates equally. CSAT ranges from 4.31 to 4.62 across verticals. That is 0.3 points on a 5-point scale. It tells you almost nothing about how your operation compares to your peers.
 
-A brand with a 62% repeat rate is not handling 62% more unique customer problems than a brand at 55%. It is handling the same problems again because they were not resolved the first time.
+Resolution time and repeat rate tell a different story.
 
-[NEED: Can we calculate the estimated ticket volume reduction if repeat rate dropped from 62% to 55%? e.g., "For a brand handling 2,000 tickets/month at 62% repeat rate, reducing to 55% would eliminate roughly X tickets/month." Data team to model.]
+| Metric | Range across verticals | Spread |
+|--------|----------------------|--------|
+| CSAT | 4.31 - 4.62 | 0.3 pts |
+| First response time | 18.6 - 28.6 hrs | 1.5x |
+| Resolution time | 67 - 265 hrs | 4x |
+| Repeat rate | 54.8% - 62.2% | 7.4 pts |
+| FCR | 36.9% - 44.4% | 7.5 pts |
+
+Resolution time has the widest spread. It is the metric most likely to tell you whether you are ahead of or behind your vertical peers. CSAT is the least likely.
 
 ---
 
-## What drives repeats
+## Your benchmark
 
-The data suggests resolution quality, not speed, determines repeat rate. The fastest first-response vertical (Hardware at 18.6 hours) has one of the highest repeat rates (61.4%). Responding quickly does not prevent the customer from coming back. Resolving the issue does.
+These are the CX benchmarks by vertical at the $5-30M GMV band. Find your vertical. These are your peers.
 
-This points to two levers:
-1. **Resolution completeness.** Is the agent solving the problem or just responding to it?
-2. **Policy flexibility.** Verticals with simpler resolution paths (easy refunds, straightforward replacements) have lower repeat rates. Verticals with complex processes (troubleshooting, conditional warranties) have higher ones.
+| Vertical | CSAT | First response | Resolution | FCR | Repeat rate |
+|----------|------|---------------|------------|-----|-------------|
+| Animals & Pet Supplies | 4.62 | 20.0 hrs | 67 hrs | 44.4% | 54.8% |
+| Food & Beverage | 4.55 | 20.0 hrs | 74 hrs | 44.0% | 54.8% |
+| Hardware | 4.40 | 18.6 hrs | 89 hrs | 38.4% | 61.4% |
+| Health & Beauty | 4.44 | 25.2 hrs | 97 hrs | 42.6% | 56.8% |
+| Vehicles & Parts | 4.60 | 20.3 hrs | 99 hrs | 38.5% | 59.6% |
+| Apparel & Accessories | 4.39 | 24.5 hrs | 99 hrs | 43.4% | 55.6% |
+| Sporting Goods | 4.45 | 24.0 hrs | 124 hrs | 40.2% | 58.9% |
+| Furniture | 4.49 | 28.6 hrs | 129 hrs | 38.8% | 61.5% |
+| Electronics | 4.31 | 27.7 hrs | 265 hrs | 36.9% | 62.2% |
 
-[NEED: Ticket category breakdown by vertical. If we can show that high-repeat verticals have more multi-touch ticket types (troubleshooting, warranty claims) vs. low-repeat verticals (refund requests, order status), the policy argument becomes data-backed rather than inferred.]
+[NEED: Data team to confirm whether resolution time is human-only, AI-only, or blended. This affects how the benchmark should be interpreted.]
+
+[NEED: Can we add a second table for Enterprise ($30-150M) and SMB (<$5M) bands so readers at different stages can find their tier?]
+
+---
+
+## How to use this
+
+Three steps:
+
+**1. Find your vertical.** Compare against your vertical peers, not the all-industry average. An Apparel brand at 100 hours resolution is at par. An Electronics brand at 100 hours is significantly outperforming.
+
+**2. Lead with resolution time and repeat rate.** These are the metrics with the most variation across verticals. If your resolution time or repeat rate is above your vertical benchmark, that is where the operational gap lives. CSAT will not show you this.
+
+**3. Set targets by vertical, not by ambition.** A Furniture brand targeting Pet Supplies-level resolution times (67 hours) is chasing a structurally different vertical. Set targets relative to your peers, then improve from there.
 
 ---
 
 ## The bottom line
 
-If more than half your tickets are repeat contacts, responding faster will not fix it. You are just having the same conversation again, sooner.
+The all-industry average is not your benchmark. Your vertical is. The metrics worth tracking are the ones that actually vary across your peer group: resolution time, repeat rate, and first contact resolution. CSAT and first response time compress real differences into numbers too small to act on.
 
-The brands with the lowest repeat rates are not the fastest. They are the ones that resolve the issue completely the first time. That is a function of resolution quality and policy, not speed.
-
-Track repeat rate. It tells you more about your support operation than CSAT or FRT.
+Find your row in the table above. That is where you start.
 
 ---
 
-**Methodology:** Platform-level performance data from Gorgias merchants over the last 365 days. Metrics reported at the $5-30M GMV band to control for brand size. Repeat rate measures the share of tickets from customers who have previously contacted support [NEED: confirm exact definition with data team]. Resolution time measures full ticket lifecycle from creation to close. Data as of March 2026.
+**Methodology:** Platform-level performance data from Gorgias merchants over the last 365 days. Metrics reported at the $5-30M GMV band to control for brand size. CSAT measured on a 5-point scale. First contact resolution (FCR) is the share of tickets resolved without a follow-up interaction. Resolution time measures full ticket lifecycle from creation to close. Data as of March 2026.

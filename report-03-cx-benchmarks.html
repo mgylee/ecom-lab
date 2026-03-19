@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>More than half your tickets are repeats.</title>
+  <title>Stop benchmarking against the average.</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --black:#0A0A0A; --900:#18181B; --700:#3F3F46; --500:#71717A; --400:#A1A1AA; --200:#E4E4E7; --100:#F4F4F5; --50:#FAFAFA; --white:#FFFFFF; --accent:#FF5B35; --col:680px; --side:240px; }
@@ -62,7 +63,11 @@
     .data-table tbody tr:last-child td { border-bottom:none; }
     .td-bold { font-weight:600; color:var(--900); }
     .td-accent { font-weight:600; color:var(--accent); }
-    .placeholder { background:#FFFBEB; border:1px dashed #F59E0B; border-radius:6px; padding:12px 16px; margin:18px 0; font-size:13px; color:#92400E; line-height:1.5; }
+    .metric-spread { width:100%; border-collapse:collapse; font-size:14px; margin:28px 0; }
+    .metric-spread td { padding:10px 14px; border-bottom:1px solid var(--100); color:var(--700); }
+    .metric-spread td:first-child { font-weight:600; color:var(--900); }
+    .metric-spread td:last-child { text-align:right; color:var(--400); font-size:13px; }
+    .metric-spread tr:last-child td { border-bottom:none; }
     hr { border:none; border-top:1px solid var(--200); margin:48px 0; }
     .method { padding:24px; background:var(--50); border-radius:8px; border:1px solid var(--200); }
     .method-label { font-size:10px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--400); margin-bottom:8px; }
@@ -93,8 +98,8 @@
       <span class="tag-sep">&middot;</span>
       <span class="tag">March 2026</span>
     </div>
-    <h1>More than half your tickets are repeats.</h1>
-    <p class="header-deck">Across every vertical, more than 50% of tickets come from customers who have already been in touch. Most brands optimize for speed. The better question is why customers keep coming back.</p>
+    <h1>Stop benchmarking against the average.</h1>
+    <p class="header-deck">The all-industry average describes no real brand. Your vertical and GMV band are the only peer group that matters. Here are the numbers.</p>
     <div class="author-row">
       <div class="avatar">ML</div>
       <div>
@@ -107,9 +112,10 @@
     <div class="sidebar-section">
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
-        <li><a href="#metric">The metric no one tracks</a></li>
-        <li><a href="#pattern">The pattern</a></li>
-        <li><a href="#drives">What drives repeats</a></li>
+        <li><a href="#problem">The problem with averages</a></li>
+        <li><a href="#varies">What actually varies</a></li>
+        <li><a href="#benchmark">Your benchmark</a></li>
+        <li><a href="#use">How to use this</a></li>
         <li><a href="#bottom">The bottom line</a></li>
       </ul>
     </div>
@@ -132,96 +138,98 @@
 
 <div class="stats-strip">
   <div class="stat-item">
-    <div class="stat-num">55%</div>
-    <div class="stat-desc">repeat rate in the best-performing verticals. It only goes up.</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">62%</div>
-    <div class="stat-desc">repeat rate in Electronics, the highest in the dataset</div>
-  </div>
-  <div class="stat-item">
     <div class="stat-num">4x</div>
-    <div class="stat-desc">resolution time spread. Repeat rate follows.</div>
+    <div class="stat-desc">resolution time spread across verticals, hidden by the all-industry average</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">0.3 pts</div>
+    <div class="stat-desc">CSAT variation on a 5-point scale. It tells you nothing.</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">67-265</div>
+    <div class="stat-desc">hrs resolution time range at the same GMV band</div>
   </div>
 </div>
 
 <div class="body-layout">
   <article>
 
-    <h2 id="metric">The metric no one tracks</h2>
+    <h2 id="problem">The problem with averages</h2>
 
-    <p>Most support teams track first response time. Some track resolution time. Almost none track how often the same customer comes back.</p>
+    <p>An Electronics brand resolving tickets in 265 hours and a Pet Supplies brand resolving in 67 hours are both measured against the same all-industry average. One looks like it is underperforming. The other looks like it is overperforming. Neither comparison is useful because they are not in the same category.</p>
 
-    <p>Across every vertical at the $5-30M GMV band, more than half of all tickets are repeat contacts. The lowest repeat rate in the dataset is 54.8%. The highest is 62.2%. No vertical is below 50%.</p>
+    <p>Ticket type, product complexity, return behavior, and policy structure vary by vertical. These factors determine how long tickets take to resolve, how often customers come back, and what "good" looks like for your team. The all-industry average erases all of that.</p>
 
-    <div class="placeholder">NEED: Confirm definition of "Repeat %" with data team. Is this customers who have contacted before (ever), follow-ups on the same issue, or repeat contacts within a specific window?</div>
+    <h2 id="varies">What actually varies</h2>
 
-    <h2 id="pattern">The pattern</h2>
-
-    <p>The verticals with the lowest repeat rates also have the fastest resolution times. The verticals with the highest repeat rates have the slowest.</p>
+    <p>Not every metric differentiates equally. Some move across verticals. Others do not.</p>
 
     <div class="chart-block">
       <div class="chart-header">
-        <div class="chart-title">Repeat Rate vs. Resolution Time by Vertical</div>
-        <div class="chart-sub">$5-30M GMV. Sorted by repeat rate. Slower resolution, more repeats.</div>
+        <div class="chart-title">Resolution Time by Vertical</div>
+        <div class="chart-sub">$5-30M GMV band, in hours. The all-industry average hides a 4x spread.</div>
       </div>
-      <div class="chart-area" style="height:300px;"><canvas id="c1"></canvas></div>
+      <div class="chart-area" style="height:280px;"><canvas id="c1"></canvas></div>
       <div class="chart-footer">Gorgias platform data &middot; Last 365 days &middot; March 2026</div>
     </div>
+
+    <table class="metric-spread">
+      <tr><td>CSAT</td><td>4.31 - 4.62</td><td>0.3 pts spread</td></tr>
+      <tr><td>First response time</td><td>18.6 - 28.6 hrs</td><td>1.5x spread</td></tr>
+      <tr><td>Resolution time</td><td>67 - 265 hrs</td><td>4x spread</td></tr>
+      <tr><td>Repeat rate</td><td>54.8% - 62.2%</td><td>7.4 pts spread</td></tr>
+      <tr><td>FCR</td><td>36.9% - 44.4%</td><td>7.5 pts spread</td></tr>
+    </table>
+
+    <p>Resolution time has the widest spread. It is the metric most likely to tell you whether you are ahead of or behind your vertical peers. CSAT is the least likely.</p>
+
+    <h2 id="benchmark">Your benchmark</h2>
+
+    <p>Find your vertical. These are your peers at the $5-30M GMV band.</p>
 
     <table class="data-table">
       <thead>
         <tr>
           <th>Vertical</th>
-          <th>Repeat rate</th>
-          <th>Avg resolution</th>
           <th>CSAT</th>
+          <th>First response</th>
+          <th>Resolution</th>
+          <th>FCR</th>
+          <th>Repeat rate</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td class="td-bold">Animals & Pet Supplies</td><td class="td-accent">54.8%</td><td>67 hrs</td><td>4.62</td></tr>
-        <tr><td class="td-bold">Food & Beverage</td><td class="td-accent">54.8%</td><td>74 hrs</td><td>4.55</td></tr>
-        <tr><td class="td-bold">Apparel & Accessories</td><td>55.6%</td><td>99 hrs</td><td>4.39</td></tr>
-        <tr><td class="td-bold">Health & Beauty</td><td>56.8%</td><td>97 hrs</td><td>4.44</td></tr>
-        <tr><td class="td-bold">Sporting Goods</td><td>58.9%</td><td>124 hrs</td><td>4.45</td></tr>
-        <tr><td class="td-bold">Vehicles & Parts</td><td>59.6%</td><td>99 hrs</td><td>4.60</td></tr>
-        <tr><td class="td-bold">Hardware</td><td>61.4%</td><td>89 hrs</td><td>4.40</td></tr>
-        <tr><td class="td-bold">Furniture</td><td>61.5%</td><td>129 hrs</td><td>4.49</td></tr>
-        <tr><td class="td-bold">Electronics</td><td>62.2%</td><td>265 hrs</td><td>4.31</td></tr>
+        <tr><td class="td-bold">Animals & Pet Supplies</td><td>4.62</td><td>20.0 hrs</td><td>67 hrs</td><td>44.4%</td><td>54.8%</td></tr>
+        <tr><td class="td-bold">Food & Beverage</td><td>4.55</td><td>20.0 hrs</td><td>74 hrs</td><td>44.0%</td><td>54.8%</td></tr>
+        <tr><td class="td-bold">Hardware</td><td>4.40</td><td>18.6 hrs</td><td>89 hrs</td><td>38.4%</td><td>61.4%</td></tr>
+        <tr><td class="td-bold">Health & Beauty</td><td>4.44</td><td>25.2 hrs</td><td>97 hrs</td><td>42.6%</td><td>56.8%</td></tr>
+        <tr><td class="td-bold">Vehicles & Parts</td><td>4.60</td><td>20.3 hrs</td><td>99 hrs</td><td>38.5%</td><td>59.6%</td></tr>
+        <tr><td class="td-bold">Apparel & Accessories</td><td>4.39</td><td>24.5 hrs</td><td>99 hrs</td><td>43.4%</td><td>55.6%</td></tr>
+        <tr><td class="td-bold">Sporting Goods</td><td>4.45</td><td>24.0 hrs</td><td>124 hrs</td><td>40.2%</td><td>58.9%</td></tr>
+        <tr><td class="td-bold">Furniture</td><td>4.49</td><td>28.6 hrs</td><td>129 hrs</td><td>38.8%</td><td>61.5%</td></tr>
+        <tr><td class="td-bold">Electronics</td><td>4.31</td><td>27.7 hrs</td><td class="td-accent">265 hrs</td><td>36.9%</td><td>62.2%</td></tr>
       </tbody>
     </table>
 
-    <p>Pet Supplies and Food & Beverage resolve fastest and have the fewest repeat contacts. Electronics resolves slowest and has the most. When the issue gets resolved, customers do not come back. When it does not, they do.</p>
+    <h2 id="use">How to use this</h2>
 
-    <div class="placeholder">NEED: Correlation coefficient between repeat rate and resolution time to quantify the relationship. Data team to validate.</div>
+    <p><strong>Find your vertical.</strong> Compare against your vertical peers, not the all-industry average. An Apparel brand at 100 hours resolution is at par. An Electronics brand at 100 hours is significantly outperforming.</p>
 
-    <h2 id="drives">What drives repeats</h2>
+    <p><strong>Lead with resolution time and repeat rate.</strong> These are the metrics with the most variation across verticals. If your resolution time or repeat rate is above your vertical benchmark, that is where the operational gap lives. CSAT will not show you this.</p>
 
-    <p>The data suggests resolution quality, not speed, determines repeat rate. The fastest first-response vertical (Hardware at 18.6 hours) has one of the highest repeat rates (61.4%). Responding quickly does not prevent the customer from coming back. Resolving the issue does.</p>
-
-    <p>This points to two levers:</p>
-
-    <p><strong>Resolution completeness.</strong> Is the agent solving the problem or just responding to it? A fast first response followed by three more exchanges is not better than a slower first response that closes the ticket.</p>
-
-    <p><strong>Policy flexibility.</strong> Verticals with simpler resolution paths (easy refunds, straightforward replacements) have lower repeat rates. Verticals with complex processes (troubleshooting, conditional warranties) have higher ones.</p>
-
-    <div class="placeholder">NEED: Ticket category breakdown by vertical (refund requests vs. troubleshooting vs. warranty claims) to show that high-repeat verticals have more multi-touch ticket types. This makes the policy argument data-backed rather than inferred.</div>
-
-    <div class="placeholder">NEED: Estimated ticket volume impact. e.g., "For a brand handling 2,000 tickets/month at 62% repeat rate, reducing to 55% would eliminate roughly X tickets/month." Data team to model.</div>
+    <p><strong>Set targets by vertical, not by ambition.</strong> A Furniture brand targeting Pet Supplies-level resolution times is chasing a structurally different vertical. Set targets relative to your peers, then improve from there.</p>
 
     <h2 id="bottom">The bottom line</h2>
 
-    <p>If more than half your tickets are repeat contacts, responding faster will not fix it. You are just having the same conversation again, sooner.</p>
+    <p>The all-industry average is not your benchmark. Your vertical is. The metrics worth tracking are the ones that actually vary across your peer group: resolution time, repeat rate, and first contact resolution. CSAT and first response time compress real differences into numbers too small to act on.</p>
 
-    <p>The brands with the lowest repeat rates are not the fastest. They are the ones that resolve the issue completely the first time. That is a function of resolution quality and policy, not speed.</p>
-
-    <p>Track repeat rate. It tells you more about your support operation than CSAT or first response time.</p>
+    <p>Find your row in the table above. That is where you start.</p>
 
     <hr />
 
     <div class="method">
       <div class="method-label">Methodology</div>
-      <p>Platform-level performance data from Gorgias merchants over the last 365 days. Metrics reported at the $5-30M GMV band to control for brand size. Repeat rate measures the share of tickets from customers who have previously contacted support [confirm exact definition with data team]. Resolution time measures full ticket lifecycle from creation to close. Data as of March 2026.</p>
+      <p>Platform-level performance data from Gorgias merchants over the last 365 days. Metrics reported at the $5-30M GMV band to control for brand size. CSAT measured on a 5-point scale. First contact resolution (FCR) is the share of tickets resolved without a follow-up interaction. Resolution time measures full ticket lifecycle from creation to close. Data as of March 2026.</p>
     </div>
 
   </article>
@@ -230,9 +238,10 @@
     <div class="sidebar-section">
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
-        <li><a href="#metric">The metric no one tracks</a></li>
-        <li><a href="#pattern">The pattern</a></li>
-        <li><a href="#drives">What drives repeats</a></li>
+        <li><a href="#problem">The problem with averages</a></li>
+        <li><a href="#varies">What actually varies</a></li>
+        <li><a href="#benchmark">Your benchmark</a></li>
+        <li><a href="#use">How to use this</a></li>
         <li><a href="#bottom">The bottom line</a></li>
       </ul>
     </div>
@@ -252,56 +261,49 @@
   const grid     = { color: '#F4F4F5', drawBorder: false };
   const noBorder = { display: false };
 
-  // Repeat rate (bars) vs Resolution time (line), sorted by repeat rate
-  const labels = ['Pet Supplies','Food & Bev','Apparel','Health & Beauty','Sporting','Vehicles','Hardware','Furniture','Electronics'];
-
   new Chart(document.getElementById('c1'), {
     type: 'bar',
     data: {
-      labels: labels,
-      datasets: [
-        {
-          label: 'Repeat rate %',
-          data: [54.8, 54.8, 55.6, 56.8, 58.9, 59.6, 61.4, 61.5, 62.2],
-          backgroundColor: ['#E4E4E7','#E4E4E7','#D4D4D8','#D4D4D8','#A1A1AA','#A1A1AA','#71717A','#3F3F46','#FF5B35'],
-          borderRadius: 3,
-          borderSkipped: false,
-          yAxisID: 'y',
-        },
-        {
-          label: 'Avg resolution (hrs)',
-          data: [67, 74, 99, 97, 124, 99, 89, 129, 265],
-          type: 'line',
-          borderColor: '#0A0A0A',
-          backgroundColor: '#0A0A0A',
-          borderWidth: 2,
-          pointRadius: 4,
-          pointBackgroundColor: '#0A0A0A',
-          tension: 0.3,
-          yAxisID: 'y1',
-        }
-      ]
+      labels: ['Pet Supplies','Food & Bev','Hardware','Health & Beauty','Vehicles','Apparel','Sporting','Furniture','Electronics'],
+      datasets: [{
+        data: [67, 74, 89, 97, 99, 99, 124, 129, 265],
+        backgroundColor: ['#E4E4E7','#E4E4E7','#D4D4D8','#D4D4D8','#A1A1AA','#A1A1AA','#71717A','#3F3F46','#FF5B35'],
+        borderRadius: 3,
+        borderSkipped: false,
+      }]
     },
     options: {
+      indexAxis: 'y',
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: {
-          display: true, position: 'top', align: 'start',
-          labels: { boxWidth: 12, boxHeight: 12, padding: 18, font: { size: 11 }, color: '#71717A' }
-        },
-        tooltip: {
-          callbacks: {
-            label: c => c.datasetIndex === 0
-              ? ` Repeat rate: ${c.parsed.y}%`
-              : ` Resolution: ${c.parsed.y} hrs`
+        legend: { display: false },
+        tooltip: { callbacks: { label: c => ` ${c.parsed.x} hrs avg resolution` } },
+        annotation: {
+          annotations: {
+            avg: {
+              type: 'line',
+              xMin: 116,
+              xMax: 116,
+              borderColor: '#FF5B35',
+              borderWidth: 1.5,
+              borderDash: [6, 4],
+              label: {
+                display: true,
+                content: 'All-industry avg: 116 hrs',
+                position: 'start',
+                backgroundColor: 'rgba(255,91,53,0.1)',
+                color: '#FF5B35',
+                font: { size: 10, weight: '600' },
+                padding: 4,
+              }
+            }
           }
         }
       },
       scales: {
-        x: { grid: { display: false }, border: noBorder },
-        y: { grid, border: noBorder, min: 50, max: 65, ticks: { callback: v => v + '%' }, position: 'left' },
-        y1: { grid: { display: false }, border: noBorder, min: 0, max: 300, ticks: { callback: v => v + ' hrs' }, position: 'right' }
+        x: { grid, border: noBorder, min: 0, max: 300, ticks: { callback: v => v + ' hrs' } },
+        y: { grid: { display: false }, border: noBorder }
       }
     }
   });
