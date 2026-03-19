@@ -1,82 +1,74 @@
-# Your CSAT score is lying to you.
+# It's not how fast you respond. It's what you resolve.
 
 *Gorgias Ecommerce Lab | March 2026*
 
 ---
 
-**0.3 pts** total CSAT variation across verticals, on a 5-point scale.
-**4x** resolution time spread across the same verticals.
-**265 hrs** avg resolution in Electronics vs. 67 hrs in Pet Supplies, same GMV.
+**4x** resolution time spread across verticals. CSAT: flat.
+**44%** first contact resolution in the highest-satisfaction verticals.
+**37%** first contact resolution in the lowest.
 
 ---
 
-## The metric everyone tracks
+## The assumption
 
-Most support teams report CSAT. Leadership watches it. QBRs feature it. It is the default measure of whether support is working.
+Most support teams optimize for speed. Faster first response, shorter handle time, quicker resolution. The assumption is that faster support leads to higher satisfaction.
 
-Across verticals at the $5-30M GMV band, CSAT ranges from 4.31 to 4.62. That is 0.3 points of spread on a 5-point scale. It tells you almost nothing about how your support operation is performing relative to your peers.
-
-| Vertical | Avg CSAT |
-|----------|----------|
-| Animals & Pet Supplies | 4.62 |
-| Vehicles & Parts | 4.60 |
-| Food & Beverage | 4.55 |
-| Furniture | 4.49 |
-| Sporting Goods | 4.45 |
-| Health & Beauty | 4.44 |
-| Hardware | 4.40 |
-| Apparel & Accessories | 4.39 |
-| Electronics | 4.31 |
-
-Every vertical lands between 4.3 and 4.6. A brand at 4.4 has no way of knowing whether that is good, average, or poor for their category. The answer is: it does not matter. The number does not move enough to be a signal.
+The data does not support that assumption.
 
 ---
 
-## The metrics that actually move
+## Speed does not drive satisfaction
 
-Resolution time tells a different story. At the same $5-30M GMV band, the spread is 4x.
+Across verticals at the $5-30M GMV band, resolution time varies by 4x. CSAT varies by 0.3 points.
 
-| Vertical | Avg resolution time | Avg first response |
-|----------|--------------------|--------------------|
-| Animals & Pet Supplies | 67 hrs | 20.0 hrs |
-| Food & Beverage | 74 hrs | 20.0 hrs |
-| Hardware | 89 hrs | 18.6 hrs |
-| Health & Beauty | 97 hrs | 25.2 hrs |
-| Vehicles & Parts | 99 hrs | 20.3 hrs |
-| Apparel & Accessories | 99 hrs | 24.5 hrs |
-| Sporting Goods | 124 hrs | 24.0 hrs |
-| Furniture | 129 hrs | 28.6 hrs |
-| Electronics | 265 hrs | 27.7 hrs |
+| Vertical | CSAT | Avg first response | Avg resolution |
+|----------|------|-------------------|----------------|
+| Animals & Pet Supplies | 4.62 | 20.0 hrs | 67 hrs |
+| Vehicles & Parts | 4.60 | 20.3 hrs | 99 hrs |
+| Food & Beverage | 4.55 | 20.0 hrs | 74 hrs |
+| Furniture | 4.49 | 28.6 hrs | 129 hrs |
+| Sporting Goods | 4.45 | 24.0 hrs | 124 hrs |
+| Health & Beauty | 4.44 | 25.2 hrs | 97 hrs |
+| Hardware | 4.40 | 18.6 hrs | 89 hrs |
+| Apparel & Accessories | 4.39 | 24.5 hrs | 99 hrs |
+| Electronics | 4.31 | 27.7 hrs | 265 hrs |
 
-An Electronics brand resolving tickets in 265 hours and a Pet Supplies brand resolving in 67 hours can both report a CSAT of 4.4. One is taking 4x longer. CSAT does not capture that difference. Speed does.
-
-First response time follows a similar pattern. The fastest verticals respond in under 19 hours. The slowest take over 28 hours. That is a 50% gap that CSAT compresses into noise.
+Hardware has the fastest first response (18.6 hours) and a below-average CSAT (4.40). Vehicles & Parts is slower (20.3 hours, 99 hours to resolve) but has the second-highest CSAT (4.60). Speed is not the differentiator here.
 
 ---
 
-## Where your vertical stands
+## Resolution quality drives satisfaction
 
-The full benchmark at the $5-30M GMV band:
+First contact resolution tells a different story. The verticals with the highest CSAT also have the highest FCR.
 
-| Vertical | CSAT | First response | Resolution | FCR |
-|----------|------|---------------|------------|-----|
-| Animals & Pet Supplies | 4.62 | 20.0 hrs | 67 hrs | 44.4% |
-| Food & Beverage | 4.55 | 20.0 hrs | 74 hrs | 44.0% |
-| Hardware | 4.40 | 18.6 hrs | 89 hrs | 38.4% |
-| Health & Beauty | 4.44 | 25.2 hrs | 97 hrs | 42.6% |
-| Vehicles & Parts | 4.60 | 20.3 hrs | 99 hrs | 38.5% |
-| Apparel & Accessories | 4.39 | 24.5 hrs | 99 hrs | 43.4% |
-| Sporting Goods | 4.45 | 24.0 hrs | 124 hrs | 40.2% |
-| Furniture | 4.49 | 28.6 hrs | 129 hrs | 38.8% |
-| Electronics | 4.31 | 27.7 hrs | 265 hrs | 36.9% |
+| Vertical | CSAT | FCR |
+|----------|------|-----|
+| Animals & Pet Supplies | 4.62 | 44.4% |
+| Food & Beverage | 4.55 | 44.0% |
+| Health & Beauty | 4.44 | 42.6% |
+| Apparel & Accessories | 4.39 | 43.4% |
+| Electronics | 4.31 | 36.9% |
+
+The top-CSAT verticals resolve tickets on the first contact 44% of the time. Electronics, the lowest-CSAT vertical, resolves 37%. Customers do not care how quickly you respond. They care whether you solved their problem.
+
+---
+
+## The policy question
+
+The pattern is not random. The verticals with the highest first contact resolution are the ones with structurally simpler resolution paths.
+
+Pet Supplies and Food & Beverage brands tend to offer straightforward replacements and generous refund policies. The ticket gets resolved because the policy makes resolution easy. Electronics brands face complex troubleshooting, conditional warranties, and multi-step return processes. The ticket does not get resolved on the first contact because the policy does not allow it.
+
+CSAT is not measuring how fast your team is. It is measuring how often your policies let your team say yes.
 
 ---
 
 ## The bottom line
 
-CSAT is a lagging metric that compresses real operational differences into a number that barely moves. If your team is reporting CSAT as the primary measure of support quality, you are measuring the wrong thing.
+Speed matters. But it is not the primary driver of customer satisfaction. The brands with the highest CSAT are not the fastest. They are the ones that resolve the issue on the first contact. That is a function of brand policy: return flexibility, refund rules, and the authority your agents have to close a ticket without escalation.
 
-Resolution time, first response time, and first contact resolution vary meaningfully across verticals. They are the metrics that differentiate fast support operations from slow ones. Benchmark those.
+If your CSAT is flat and you are already fast, the lever is not speed. It is policy.
 
 ---
 

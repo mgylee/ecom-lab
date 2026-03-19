@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your CSAT score is lying to you.</title>
+  <title>It's not how fast you respond. It's what you resolve.</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
@@ -38,118 +38,63 @@
     body::before { content: ''; display: block; height: 3px; background: var(--accent); }
 
     nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 48px;
-      height: 52px;
-      border-bottom: 1px solid var(--200);
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(8px);
-      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 52px; border-bottom: 1px solid var(--200);
+      position: sticky; top: 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); z-index: 100;
     }
 
-    .nav-brand {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--black);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
+    .nav-brand { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--black); text-decoration: none; display: flex; align-items: center; gap: 8px; }
     .nav-brand-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
     .nav-right { display: flex; align-items: center; gap: 20px; }
     .nav-label { font-size: 12px; color: var(--500); letter-spacing: 0.06em; text-transform: uppercase; }
 
     .header-section {
-      max-width: calc(var(--col) + var(--side) + 80px);
-      margin: 0 auto;
-      padding: 72px 48px 56px;
-      display: grid;
-      grid-template-columns: 1fr var(--side);
-      gap: 64px;
-      align-items: start;
+      max-width: calc(var(--col) + var(--side) + 80px); margin: 0 auto;
+      padding: 72px 48px 56px; display: grid; grid-template-columns: 1fr var(--side); gap: 64px; align-items: start;
     }
 
     .header-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-
     .tag { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--500); }
     .tag-sep { color: var(--200); }
 
     .header-left h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(32px, 4vw, 46px);
-      font-weight: 700;
-      line-height: 1.15;
-      color: var(--black);
-      margin-bottom: 20px;
-      letter-spacing: -0.01em;
+      font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 4vw, 46px);
+      font-weight: 700; line-height: 1.15; color: var(--black); margin-bottom: 20px; letter-spacing: -0.01em;
     }
-
     .header-left h1 em { font-style: italic; color: var(--700); }
-
     .header-deck { font-size: 16px; color: var(--700); line-height: 1.65; max-width: 520px; margin-bottom: 28px; }
-
     .author-row { display: flex; align-items: center; gap: 10px; padding-top: 24px; border-top: 1px solid var(--200); }
-
-    .avatar {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: var(--100); border: 1px solid var(--200);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 600; color: var(--700); flex-shrink: 0;
-    }
-
+    .avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--100); border: 1px solid var(--200); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--700); flex-shrink: 0; }
     .author-name { font-size: 13.5px; font-weight: 600; color: var(--900); }
     .author-title { font-size: 12.5px; color: var(--500); }
 
     .sidebar { padding-top: 4px; }
     .sidebar-section { margin-bottom: 32px; }
-
     .sidebar-heading { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--400); margin-bottom: 10px; }
-
     .toc { list-style: none; }
     .toc li { margin-bottom: 2px; }
     .toc a { font-size: 13px; color: var(--500); text-decoration: none; display: block; padding: 5px 0 5px 10px; border-left: 2px solid transparent; transition: color 0.15s, border-color 0.15s; line-height: 1.4; }
     .toc a:hover { color: var(--black); border-left-color: var(--accent); }
-
     .subscribe-box { border: 1px solid var(--200); border-radius: 8px; padding: 16px; }
     .subscribe-box p { font-size: 12.5px; color: var(--700); line-height: 1.5; margin-bottom: 12px; }
-
     .btn-sub { display: block; text-align: center; font-size: 12px; font-weight: 600; color: var(--black); background: var(--100); border: 1px solid var(--200); border-radius: 6px; padding: 8px 14px; text-decoration: none; transition: background 0.15s; }
     .btn-sub:hover { background: var(--200); }
-
     .share-row { display: flex; gap: 8px; }
     .share-btn { font-size: 12px; font-weight: 500; color: var(--500); text-decoration: none; border: 1px solid var(--200); border-radius: 6px; padding: 6px 10px; transition: all 0.15s; }
     .share-btn:hover { color: var(--black); border-color: var(--400); }
 
     .stats-strip {
-      max-width: calc(var(--col) + var(--side) + 80px);
-      margin: 0 auto;
-      padding: 0 48px 56px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      border-top: 1px solid var(--200);
+      max-width: calc(var(--col) + var(--side) + 80px); margin: 0 auto;
+      padding: 0 48px 56px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid var(--200);
     }
-
     .stat-item { padding: 28px 32px; border-right: 1px solid var(--200); }
     .stat-item:last-child { border-right: none; }
-
     .stat-num { font-family: 'Playfair Display', Georgia, serif; font-size: 40px; font-weight: 700; color: var(--black); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em; }
     .stat-desc { font-size: 13px; color: var(--500); line-height: 1.5; }
 
     .body-layout {
-      max-width: calc(var(--col) + var(--side) + 80px);
-      margin: 0 auto;
-      padding: 0 48px 96px;
-      display: grid;
-      grid-template-columns: 1fr var(--side);
-      gap: 64px;
-      align-items: start;
+      max-width: calc(var(--col) + var(--side) + 80px); margin: 0 auto;
+      padding: 0 48px 96px; display: grid; grid-template-columns: 1fr var(--side); gap: 64px; align-items: start;
     }
 
     article h2 { font-size: 20px; font-weight: 600; color: var(--black); margin-top: 52px; margin-bottom: 16px; scroll-margin-top: 72px; letter-spacing: -0.01em; }
@@ -170,8 +115,9 @@
     .td-bold { font-weight: 600; color: var(--900); }
     .td-accent { font-weight: 600; color: var(--accent); }
 
-    hr { border: none; border-top: 1px solid var(--200); margin: 48px 0; }
+    .placeholder { background: #FFFBEB; border: 1px dashed #F59E0B; border-radius: 6px; padding: 12px 16px; margin: 18px 0; font-size: 13px; color: #92400E; line-height: 1.5; }
 
+    hr { border: none; border-top: 1px solid var(--200); margin: 48px 0; }
     .method { padding: 24px; background: var(--50); border-radius: 8px; border: 1px solid var(--200); }
     .method-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--400); margin-bottom: 8px; }
     .method p { font-size: 13px !important; color: var(--500) !important; line-height: 1.65 !important; margin: 0 !important; }
@@ -209,8 +155,8 @@
       <span class="tag-sep">&middot;</span>
       <span class="tag">March 2026</span>
     </div>
-    <h1>Your CSAT score is lying to you.</h1>
-    <p class="header-deck">CSAT barely moves across verticals. Speed and resolution vary by 4x. Most brands are benchmarking the wrong metric.</p>
+    <h1>It's not how fast you respond.<br><em>It's what you resolve.</em></h1>
+    <p class="header-deck">Speed varies 4x across verticals. CSAT barely moves. The brands with the highest satisfaction are not the fastest. They are the ones that resolve the issue on the first contact.</p>
     <div class="author-row">
       <div class="avatar">ML</div>
       <div>
@@ -223,9 +169,10 @@
     <div class="sidebar-section">
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
-        <li><a href="#tracks">The metric everyone tracks</a></li>
-        <li><a href="#moves">The metrics that actually move</a></li>
-        <li><a href="#benchmark">Where your vertical stands</a></li>
+        <li><a href="#assumption">The assumption</a></li>
+        <li><a href="#speed">Speed does not drive satisfaction</a></li>
+        <li><a href="#resolution">Resolution quality does</a></li>
+        <li><a href="#policy">The policy question</a></li>
         <li><a href="#bottom">The bottom line</a></li>
       </ul>
     </div>
@@ -248,86 +195,100 @@
 
 <div class="stats-strip">
   <div class="stat-item">
-    <div class="stat-num">0.3 pts</div>
-    <div class="stat-desc">total CSAT variation across verticals, on a 5-point scale</div>
-  </div>
-  <div class="stat-item">
     <div class="stat-num">4x</div>
-    <div class="stat-desc">resolution time spread across the same verticals</div>
+    <div class="stat-desc">resolution time spread across verticals. CSAT: flat.</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">265 hrs</div>
-    <div class="stat-desc">avg resolution in Electronics vs. 67 hrs in Pet Supplies</div>
+    <div class="stat-num">44%</div>
+    <div class="stat-desc">first contact resolution in the highest-satisfaction verticals</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">37%</div>
+    <div class="stat-desc">first contact resolution in the lowest</div>
   </div>
 </div>
 
 <div class="body-layout">
   <article>
 
-    <h2 id="tracks">The metric everyone tracks</h2>
+    <h2 id="assumption">The assumption</h2>
 
-    <p>Most support teams report CSAT. Leadership watches it. QBRs feature it. It is the default measure of whether support is working.</p>
+    <p>Most support teams optimize for speed. Faster first response, shorter handle time, quicker resolution. The assumption is that faster support leads to higher satisfaction.</p>
 
-    <p>Across verticals at the $5-30M GMV band, CSAT ranges from 4.31 to 4.62. That is 0.3 points of spread on a 5-point scale. It tells you almost nothing about how your support operation is performing relative to your peers.</p>
+    <p>The data does not support that assumption.</p>
 
-    <div class="chart-block">
-      <div class="chart-header">
-        <div class="chart-title">Avg CSAT by Vertical</div>
-        <div class="chart-sub">$5-30M GMV band, 5-point scale. The bars are nearly identical.</div>
-      </div>
-      <div class="chart-area" style="height:280px;"><canvas id="c1"></canvas></div>
-      <div class="chart-footer">Gorgias platform data &middot; Last 365 days &middot; March 2026</div>
-    </div>
+    <h2 id="speed">Speed does not drive satisfaction</h2>
 
-    <p>Every vertical lands between 4.3 and 4.6. A brand at 4.4 has no way of knowing whether that is good, average, or poor for their category. The number does not move enough to be a signal.</p>
-
-    <h2 id="moves">The metrics that actually move</h2>
-
-    <p>Resolution time tells a different story. At the same $5-30M GMV band, the spread is 4x.</p>
+    <p>Across verticals at the $5-30M GMV band, resolution time varies by 4x. CSAT varies by 0.3 points.</p>
 
     <div class="chart-block">
       <div class="chart-header">
-        <div class="chart-title">Avg Resolution Time by Vertical</div>
-        <div class="chart-sub">$5-30M GMV band, in hours. The spread is 4x.</div>
+        <div class="chart-title">Resolution Time vs. CSAT by Vertical</div>
+        <div class="chart-sub">$5-30M GMV. Speed varies 4x. Satisfaction barely moves.</div>
       </div>
-      <div class="chart-area" style="height:280px;"><canvas id="c2"></canvas></div>
+      <div class="chart-area" style="height:300px;"><canvas id="c1"></canvas></div>
       <div class="chart-footer">Gorgias platform data &middot; Last 365 days &middot; March 2026</div>
     </div>
 
-    <p>An Electronics brand resolving tickets in 265 hours and a Pet Supplies brand resolving in 67 hours can both report a CSAT of 4.4. One is taking 4x longer. CSAT does not capture that difference. Speed does.</p>
+    <p>Hardware has the fastest first response (18.6 hours) and a below-average CSAT (4.40). Vehicles & Parts is slower (20.3 hours FRT, 99 hours to resolve) but has the second-highest CSAT (4.60). Speed is not the differentiator here.</p>
 
-    <p>First response time follows a similar pattern. The fastest verticals respond in under 19 hours. The slowest take over 28 hours. That is a 50% gap that CSAT compresses into noise.</p>
+    <div class="placeholder">NEED: Correlation coefficient (R&sup2;) between FRT and CSAT, and between resolution time and CSAT, to quantify weakness of relationship. Data team to validate.</div>
 
-    <h2 id="benchmark">Where your vertical stands</h2>
+    <h2 id="resolution">Resolution quality drives satisfaction</h2>
+
+    <p>First contact resolution tells a different story. The verticals with the highest CSAT also have the highest FCR.</p>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <div class="chart-title">First Contact Resolution vs. CSAT by Vertical</div>
+        <div class="chart-sub">$5-30M GMV. FCR tracks satisfaction more closely than speed.</div>
+      </div>
+      <div class="chart-area" style="height:300px;"><canvas id="c2"></canvas></div>
+      <div class="chart-footer">Gorgias platform data &middot; Last 365 days &middot; March 2026</div>
+    </div>
+
+    <p>The top-CSAT verticals resolve tickets on the first contact <strong>44% of the time</strong>. Electronics, the lowest-CSAT vertical, resolves <strong>37%</strong>. Customers do not care how quickly you respond. They care whether you solved their problem.</p>
+
+    <div class="placeholder">NEED: Repeat contact rate by vertical to reinforce the FCR story. Brands with low FCR should show higher repeat rates, confirming the pattern. Data team to validate.</div>
+
+    <h2 id="policy">The policy question</h2>
+
+    <p>The pattern is not random. The verticals with the highest first contact resolution are the ones with structurally simpler resolution paths.</p>
+
+    <p>Pet Supplies and Food & Beverage brands tend to offer straightforward replacements and generous refund policies. The ticket gets resolved because the policy makes resolution easy. Electronics brands face complex troubleshooting, conditional warranties, and multi-step return processes. The ticket does not get resolved on the first contact because the policy does not allow it.</p>
+
+    <p>CSAT is not measuring how fast your team is. It is measuring how often your policies let your team say yes.</p>
+
+    <div class="placeholder">NEED: Return/refund policy data by vertical (avg refund rate, avg return window, one-click resolution share) to quantify the policy-to-FCR link. Data team to pull if available.</div>
 
     <table class="data-table">
       <thead>
         <tr>
           <th>Vertical</th>
           <th>CSAT</th>
+          <th>FCR</th>
           <th>First response</th>
           <th>Resolution</th>
-          <th>FCR</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td class="td-bold">Animals & Pet Supplies</td><td>4.62</td><td>20.0 hrs</td><td class="td-accent">67 hrs</td><td>44.4%</td></tr>
-        <tr><td class="td-bold">Food & Beverage</td><td>4.55</td><td>20.0 hrs</td><td>74 hrs</td><td>44.0%</td></tr>
-        <tr><td class="td-bold">Hardware</td><td>4.40</td><td>18.6 hrs</td><td>89 hrs</td><td>38.4%</td></tr>
-        <tr><td class="td-bold">Health & Beauty</td><td>4.44</td><td>25.2 hrs</td><td>97 hrs</td><td>42.6%</td></tr>
-        <tr><td class="td-bold">Vehicles & Parts</td><td>4.60</td><td>20.3 hrs</td><td>99 hrs</td><td>38.5%</td></tr>
-        <tr><td class="td-bold">Apparel & Accessories</td><td>4.39</td><td>24.5 hrs</td><td>99 hrs</td><td>43.4%</td></tr>
-        <tr><td class="td-bold">Sporting Goods</td><td>4.45</td><td>24.0 hrs</td><td>124 hrs</td><td>40.2%</td></tr>
-        <tr><td class="td-bold">Furniture</td><td>4.49</td><td>28.6 hrs</td><td>129 hrs</td><td>38.8%</td></tr>
-        <tr><td class="td-bold">Electronics</td><td>4.31</td><td>27.7 hrs</td><td class="td-accent">265 hrs</td><td>36.9%</td></tr>
+        <tr><td class="td-bold">Animals & Pet Supplies</td><td>4.62</td><td class="td-accent">44.4%</td><td>20.0 hrs</td><td>67 hrs</td></tr>
+        <tr><td class="td-bold">Food & Beverage</td><td>4.55</td><td class="td-accent">44.0%</td><td>20.0 hrs</td><td>74 hrs</td></tr>
+        <tr><td class="td-bold">Vehicles & Parts</td><td>4.60</td><td>38.5%</td><td>20.3 hrs</td><td>99 hrs</td></tr>
+        <tr><td class="td-bold">Sporting Goods</td><td>4.45</td><td>40.2%</td><td>24.0 hrs</td><td>124 hrs</td></tr>
+        <tr><td class="td-bold">Health & Beauty</td><td>4.44</td><td>42.6%</td><td>25.2 hrs</td><td>97 hrs</td></tr>
+        <tr><td class="td-bold">Furniture</td><td>4.49</td><td>38.8%</td><td>28.6 hrs</td><td>129 hrs</td></tr>
+        <tr><td class="td-bold">Hardware</td><td>4.40</td><td>38.4%</td><td>18.6 hrs</td><td>89 hrs</td></tr>
+        <tr><td class="td-bold">Apparel & Accessories</td><td>4.39</td><td>43.4%</td><td>24.5 hrs</td><td>99 hrs</td></tr>
+        <tr><td class="td-bold">Electronics</td><td>4.31</td><td>36.9%</td><td>27.7 hrs</td><td>265 hrs</td></tr>
       </tbody>
     </table>
 
     <h2 id="bottom">The bottom line</h2>
 
-    <p>CSAT is a lagging metric that compresses real operational differences into a number that barely moves. If your team is reporting CSAT as the primary measure of support quality, you are measuring the wrong thing.</p>
+    <p>Speed matters. But it is not the primary driver of customer satisfaction. The brands with the highest CSAT are not the fastest. They are the ones that resolve the issue on the first contact. That is a function of brand policy: return flexibility, refund rules, and the authority your agents have to close a ticket without escalation.</p>
 
-    <p>Resolution time, first response time, and first contact resolution vary meaningfully across verticals. They are the metrics that differentiate fast support operations from slow ones. Benchmark those.</p>
+    <p>If your CSAT is flat and you are already fast, the lever is not speed. It is policy.</p>
 
     <hr />
 
@@ -342,9 +303,10 @@
     <div class="sidebar-section">
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
-        <li><a href="#tracks">The metric everyone tracks</a></li>
-        <li><a href="#moves">The metrics that actually move</a></li>
-        <li><a href="#benchmark">Where your vertical stands</a></li>
+        <li><a href="#assumption">The assumption</a></li>
+        <li><a href="#speed">Speed does not drive satisfaction</a></li>
+        <li><a href="#resolution">Resolution quality does</a></li>
+        <li><a href="#policy">The policy question</a></li>
         <li><a href="#bottom">The bottom line</a></li>
       </ul>
     </div>
@@ -366,58 +328,112 @@
   const grid     = { color: '#F4F4F5', drawBorder: false };
   const noBorder = { display: false };
 
-  const verticals = ['Pet Supplies', 'Food & Bev', 'Hardware', 'Health & Beauty', 'Vehicles', 'Apparel', 'Sporting', 'Furniture', 'Electronics'];
+  // Chart 1 — Resolution time (bars) vs CSAT (line) by vertical
+  // Sorted by resolution time ascending
+  const labels = ['Pet Supplies', 'Food & Bev', 'Hardware', 'Health & Beauty', 'Vehicles', 'Apparel', 'Sporting', 'Furniture', 'Electronics'];
 
-  // Chart 1 — CSAT by vertical (flat, all nearly identical)
   new Chart(document.getElementById('c1'), {
     type: 'bar',
     data: {
-      labels: verticals,
-      datasets: [{
-        data: [4.62, 4.55, 4.40, 4.44, 4.60, 4.39, 4.45, 4.49, 4.31],
-        backgroundColor: '#E4E4E7',
-        borderRadius: 3,
-        borderSkipped: false,
-      }]
+      labels: labels,
+      datasets: [
+        {
+          label: 'Avg resolution (hrs)',
+          data: [67, 74, 89, 97, 99, 99, 124, 129, 265],
+          backgroundColor: ['#E4E4E7','#E4E4E7','#E4E4E7','#D4D4D8','#D4D4D8','#D4D4D8','#A1A1AA','#71717A','#FF5B35'],
+          borderRadius: 3,
+          borderSkipped: false,
+          yAxisID: 'y',
+        },
+        {
+          label: 'CSAT (5-pt scale)',
+          data: [4.62, 4.55, 4.40, 4.44, 4.60, 4.39, 4.45, 4.49, 4.31],
+          type: 'line',
+          borderColor: '#0A0A0A',
+          backgroundColor: '#0A0A0A',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#0A0A0A',
+          tension: 0.3,
+          yAxisID: 'y1',
+        }
+      ]
     },
     options: {
-      indexAxis: 'y',
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: c => ` CSAT: ${c.parsed.x}/5` } }
+        legend: {
+          display: true, position: 'top', align: 'start',
+          labels: { boxWidth: 12, boxHeight: 12, padding: 18, font: { size: 11 }, color: '#71717A' }
+        },
+        tooltip: {
+          callbacks: {
+            label: c => c.datasetIndex === 0
+              ? ` Resolution: ${c.parsed.y} hrs`
+              : ` CSAT: ${c.parsed.y}/5`
+          }
+        }
       },
       scales: {
-        x: { grid, border: noBorder, min: 0, max: 5, ticks: { stepSize: 1 } },
-        y: { grid: { display: false }, border: noBorder }
+        x: { grid: { display: false }, border: noBorder },
+        y: { grid, border: noBorder, min: 0, max: 300, ticks: { callback: v => v + ' hrs' }, position: 'left' },
+        y1: { grid: { display: false }, border: noBorder, min: 3.5, max: 5, ticks: { callback: v => v.toFixed(1), stepSize: 0.5 }, position: 'right' }
       }
     }
   });
 
-  // Chart 2 — Resolution time by vertical (huge spread)
+  // Chart 2 — FCR (bars) vs CSAT (line) by vertical
+  // Sorted by FCR descending
+  const labels2 = ['Pet Supplies', 'Food & Bev', 'Apparel', 'Health & Beauty', 'Sporting', 'Furniture', 'Vehicles', 'Hardware', 'Electronics'];
+
   new Chart(document.getElementById('c2'), {
     type: 'bar',
     data: {
-      labels: verticals,
-      datasets: [{
-        data: [67, 74, 89, 97, 99, 99, 124, 129, 265],
-        backgroundColor: ['#E4E4E7','#E4E4E7','#D4D4D8','#D4D4D8','#A1A1AA','#A1A1AA','#71717A','#3F3F46','#FF5B35'],
-        borderRadius: 3,
-        borderSkipped: false,
-      }]
+      labels: labels2,
+      datasets: [
+        {
+          label: 'FCR %',
+          data: [44.4, 44.0, 43.4, 42.6, 40.2, 38.8, 38.5, 38.4, 36.9],
+          backgroundColor: ['#FF5B35','#FF5B35','#FA8563','#FA8563','#A1A1AA','#D4D4D8','#D4D4D8','#D4D4D8','#E4E4E7'],
+          borderRadius: 3,
+          borderSkipped: false,
+          yAxisID: 'y',
+        },
+        {
+          label: 'CSAT (5-pt scale)',
+          data: [4.62, 4.55, 4.39, 4.44, 4.45, 4.49, 4.60, 4.40, 4.31],
+          type: 'line',
+          borderColor: '#0A0A0A',
+          backgroundColor: '#0A0A0A',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#0A0A0A',
+          tension: 0.3,
+          yAxisID: 'y1',
+        }
+      ]
     },
     options: {
-      indexAxis: 'y',
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: c => ` ${c.parsed.x} hrs avg resolution` } }
+        legend: {
+          display: true, position: 'top', align: 'start',
+          labels: { boxWidth: 12, boxHeight: 12, padding: 18, font: { size: 11 }, color: '#71717A' }
+        },
+        tooltip: {
+          callbacks: {
+            label: c => c.datasetIndex === 0
+              ? ` FCR: ${c.parsed.y}%`
+              : ` CSAT: ${c.parsed.y}/5`
+          }
+        }
       },
       scales: {
-        x: { grid, border: noBorder, min: 0, max: 300, ticks: { callback: v => v + ' hrs' } },
-        y: { grid: { display: false }, border: noBorder }
+        x: { grid: { display: false }, border: noBorder },
+        y: { grid, border: noBorder, min: 30, max: 50, ticks: { callback: v => v + '%' }, position: 'left' },
+        y1: { grid: { display: false }, border: noBorder, min: 3.5, max: 5, ticks: { callback: v => v.toFixed(1), stepSize: 0.5 }, position: 'right' }
       }
     }
   });
