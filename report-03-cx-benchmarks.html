@@ -50,7 +50,7 @@
     .body-layout { max-width:calc(var(--col)+var(--side)+80px); margin:0 auto; padding:0 48px 96px; display:grid; grid-template-columns:1fr var(--side); gap:64px; align-items:start; }
     article h2 { font-size:20px; font-weight:600; color:var(--black); margin-top:52px; margin-bottom:16px; scroll-margin-top:72px; letter-spacing:-0.01em; }
     article p { font-size:16px; color:var(--700); line-height:1.8; margin-bottom:18px; }
-    article p strong { color:var(--900); font-weight:600; }
+    article p strong { color:var(--900); font-weight: 600; }
     .chart-block { margin:36px 0; border:1px solid var(--200); border-radius:8px; overflow:hidden; }
     .chart-header { padding:18px 22px 0; }
     .chart-title { font-size:13px; font-weight:600; color:var(--900); margin-bottom:3px; }
@@ -99,7 +99,7 @@
       <span class="tag">March 2026</span>
     </div>
     <h1>Stop benchmarking against the average.</h1>
-    <p class="header-deck">The all-industry average describes no real brand. Your vertical and GMV band are the only peer group that matters. Here are the numbers.</p>
+    <p class="header-deck">First response time varies 5.5x across verticals at the same GMV. The all-industry average hides all of it. Here are the numbers that actually matter for your vertical.</p>
     <div class="author-row">
       <div class="avatar">ML</div>
       <div>
@@ -113,9 +113,9 @@
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
         <li><a href="#problem">The problem with averages</a></li>
-        <li><a href="#varies">What actually varies</a></li>
+        <li><a href="#gaps">Where the gaps are</a></li>
         <li><a href="#benchmark">Your benchmark</a></li>
-        <li><a href="#use">How to use this</a></li>
+        <li><a href="#volume">Ticket volume varies too</a></li>
         <li><a href="#bottom">The bottom line</a></li>
       </ul>
     </div>
@@ -138,16 +138,16 @@
 
 <div class="stats-strip">
   <div class="stat-item">
-    <div class="stat-num">4x</div>
-    <div class="stat-desc">resolution time spread across verticals, hidden by the all-industry average</div>
+    <div class="stat-num">5.5x</div>
+    <div class="stat-desc">first response time spread across verticals at the same GMV</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">0.3 pts</div>
-    <div class="stat-desc">CSAT variation on a 5-point scale. It tells you nothing.</div>
+    <div class="stat-num">1.6 hrs</div>
+    <div class="stat-desc">fastest vertical FRT vs. 9.1 hrs slowest</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">67-265</div>
-    <div class="stat-desc">hrs resolution time range at the same GMV band</div>
+    <div class="stat-num">2.4x</div>
+    <div class="stat-desc">ticket volume per order varies by vertical</div>
   </div>
 </div>
 
@@ -156,72 +156,73 @@
 
     <h2 id="problem">The problem with averages</h2>
 
-    <p>An Electronics brand resolving tickets in 265 hours and a Pet Supplies brand resolving in 67 hours are both measured against the same all-industry average. One looks like it is underperforming. The other looks like it is overperforming. Neither comparison is useful because they are not in the same category.</p>
+    <p>The all-industry median first response time at $10M GMV is 6.3 hours. That number describes no one.</p>
 
-    <p>Ticket type, product complexity, return behavior, and policy structure vary by vertical. These factors determine how long tickets take to resolve, how often customers come back, and what "good" looks like for your team. The all-industry average erases all of that.</p>
+    <p>A Hardware brand responding in 1.6 hours and an Apparel brand responding in 8.8 hours are both measured against the same average. One looks fast. The other looks slow. But without vertical context, neither comparison is useful.</p>
 
-    <h2 id="varies">What actually varies</h2>
+    <h2 id="gaps">Where the gaps are</h2>
 
-    <p>Not every metric differentiates equally. Some move across verticals. Others do not.</p>
+    <p>Not every metric differentiates equally. Across 14 verticals at $10M GMV, first response time varies by 5.5x. No other operational metric comes close.</p>
 
     <div class="chart-block">
       <div class="chart-header">
-        <div class="chart-title">Resolution Time by Vertical</div>
-        <div class="chart-sub">$5-30M GMV band, in hours. The all-industry average hides a 4x spread.</div>
+        <div class="chart-title">Median First Response Time by Vertical</div>
+        <div class="chart-sub">$10M GMV band, in hours. 5.5x spread.</div>
       </div>
-      <div class="chart-area" style="height:280px;"><canvas id="c1"></canvas></div>
-      <div class="chart-footer">Gorgias platform data &middot; Last 365 days &middot; March 2026</div>
+      <div class="chart-area" style="height:380px;"><canvas id="c1"></canvas></div>
+      <div class="chart-footer">Gorgias platform data &middot; Airtable source of truth &middot; March 2026</div>
     </div>
 
     <table class="metric-spread">
-      <tr><td>CSAT</td><td>4.31 - 4.62</td><td>0.3 pts spread</td></tr>
-      <tr><td>First response time</td><td>18.6 - 28.6 hrs</td><td>1.5x spread</td></tr>
-      <tr><td>Resolution time</td><td>67 - 265 hrs</td><td>4x spread</td></tr>
-      <tr><td>Repeat rate</td><td>54.8% - 62.2%</td><td>7.4 pts spread</td></tr>
-      <tr><td>FCR</td><td>36.9% - 44.4%</td><td>7.5 pts spread</td></tr>
+      <tr><td>First response time</td><td>1.6 - 9.1 hrs</td><td>5.5x spread</td></tr>
+      <tr><td>Tickets per 100 orders</td><td>19.4 - 46.3</td><td>2.4x spread</td></tr>
+      <tr><td>Resolution time</td><td>15.1 - 21.9 hrs</td><td>1.5x spread</td></tr>
+      <tr><td>CSAT</td><td>4.45 - 4.66</td><td>0.2 pts spread</td></tr>
     </table>
 
-    <p>Resolution time has the widest spread. It is the metric most likely to tell you whether you are ahead of or behind your vertical peers. CSAT is the least likely.</p>
+    <p>CSAT varies by 0.2 points. Resolution time varies by 1.5x. Neither will tell you whether your operation is ahead of or behind your peers. First response time will.</p>
 
     <h2 id="benchmark">Your benchmark</h2>
 
-    <p>Find your vertical. These are your peers at the $5-30M GMV band.</p>
+    <p>Find your vertical. These are the median metrics at $10M GMV, sorted by first response time.</p>
 
     <table class="data-table">
       <thead>
         <tr>
           <th>Vertical</th>
-          <th>CSAT</th>
           <th>First response</th>
           <th>Resolution</th>
-          <th>FCR</th>
-          <th>Repeat rate</th>
+          <th>CSAT</th>
+          <th>Tickets/100 orders</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td class="td-bold">Animals & Pet Supplies</td><td>4.62</td><td>20.0 hrs</td><td>67 hrs</td><td>44.4%</td><td>54.8%</td></tr>
-        <tr><td class="td-bold">Food & Beverage</td><td>4.55</td><td>20.0 hrs</td><td>74 hrs</td><td>44.0%</td><td>54.8%</td></tr>
-        <tr><td class="td-bold">Hardware</td><td>4.40</td><td>18.6 hrs</td><td>89 hrs</td><td>38.4%</td><td>61.4%</td></tr>
-        <tr><td class="td-bold">Health & Beauty</td><td>4.44</td><td>25.2 hrs</td><td>97 hrs</td><td>42.6%</td><td>56.8%</td></tr>
-        <tr><td class="td-bold">Vehicles & Parts</td><td>4.60</td><td>20.3 hrs</td><td>99 hrs</td><td>38.5%</td><td>59.6%</td></tr>
-        <tr><td class="td-bold">Apparel & Accessories</td><td>4.39</td><td>24.5 hrs</td><td>99 hrs</td><td>43.4%</td><td>55.6%</td></tr>
-        <tr><td class="td-bold">Sporting Goods</td><td>4.45</td><td>24.0 hrs</td><td>124 hrs</td><td>40.2%</td><td>58.9%</td></tr>
-        <tr><td class="td-bold">Furniture</td><td>4.49</td><td>28.6 hrs</td><td>129 hrs</td><td>38.8%</td><td>61.5%</td></tr>
-        <tr><td class="td-bold">Electronics</td><td>4.31</td><td>27.7 hrs</td><td class="td-accent">265 hrs</td><td>36.9%</td><td>62.2%</td></tr>
+        <tr><td class="td-bold">Hardware</td><td class="td-accent">1.6 hrs</td><td>15.1 hrs</td><td>4.51</td><td>41.2</td></tr>
+        <tr><td class="td-bold">Animals & Pet Supplies</td><td>3.6 hrs</td><td>15.6 hrs</td><td>4.63</td><td>24.8</td></tr>
+        <tr><td class="td-bold">Business & Industrial</td><td>4.0 hrs</td><td>17.2 hrs</td><td>4.53</td><td>24.9</td></tr>
+        <tr><td class="td-bold">Home & Garden</td><td>4.4 hrs</td><td>19.2 hrs</td><td>4.58</td><td>31.9</td></tr>
+        <tr><td class="td-bold">Vehicles & Parts</td><td>4.4 hrs</td><td>17.0 hrs</td><td>4.66</td><td>46.0</td></tr>
+        <tr><td class="td-bold">Electronics</td><td>4.8 hrs</td><td>19.4 hrs</td><td>4.49</td><td>46.3</td></tr>
+        <tr><td class="td-bold">Food & Beverages</td><td>5.1 hrs</td><td>15.8 hrs</td><td>4.62</td><td>20.4</td></tr>
+        <tr><td class="td-bold">Health & Beauty</td><td>5.2 hrs</td><td>16.8 hrs</td><td>4.53</td><td>21.1</td></tr>
+        <tr><td class="td-bold">Baby & Toddler</td><td>5.3 hrs</td><td>17.4 hrs</td><td>4.56</td><td>24.4</td></tr>
+        <tr><td class="td-bold">Sporting Goods</td><td>5.8 hrs</td><td>19.2 hrs</td><td>4.56</td><td>31.8</td></tr>
+        <tr><td class="td-bold">Luggage & Bags</td><td>7.7 hrs</td><td>19.7 hrs</td><td>4.46</td><td>32.3</td></tr>
+        <tr><td class="td-bold">Toys & Games</td><td>8.3 hrs</td><td>20.8 hrs</td><td>4.58</td><td>19.4</td></tr>
+        <tr><td class="td-bold">Apparel & Accessories</td><td>8.8 hrs</td><td>19.7 hrs</td><td>4.45</td><td>22.4</td></tr>
+        <tr><td class="td-bold">Arts & Entertainment</td><td class="td-accent">9.1 hrs</td><td>21.9 hrs</td><td>4.62</td><td>20.8</td></tr>
       </tbody>
     </table>
 
-    <h2 id="use">How to use this</h2>
+    <h2 id="volume">Ticket volume varies too</h2>
 
-    <p><strong>Find your vertical.</strong> Compare against your vertical peers, not the all-industry average. An Apparel brand at 100 hours resolution is at par. An Electronics brand at 100 hours is significantly outperforming.</p>
+    <p>Tickets per 100 orders varies 2.4x across verticals. Electronics and Vehicles & Parts generate over 46 tickets per 100 orders. Food & Beverages and Toys & Games generate under 20. This is structural, not operational. Product complexity, return rates, and pre-sale questions drive ticket volume.</p>
 
-    <p><strong>Lead with resolution time and repeat rate.</strong> These are the metrics with the most variation across verticals. If your resolution time or repeat rate is above your vertical benchmark, that is where the operational gap lives. CSAT will not show you this.</p>
-
-    <p><strong>Set targets by vertical, not by ambition.</strong> A Furniture brand targeting Pet Supplies-level resolution times is chasing a structurally different vertical. Set targets relative to your peers, then improve from there.</p>
+    <p>A brand at 40 tickets per 100 orders is not necessarily doing something wrong. It may be in a vertical where customers have more questions. Benchmarking ticket volume against the all-industry average without accounting for vertical will lead to the wrong conclusions.</p>
 
     <h2 id="bottom">The bottom line</h2>
 
-    <p>The all-industry average is not your benchmark. Your vertical is. The metrics worth tracking are the ones that actually vary across your peer group: resolution time, repeat rate, and first contact resolution. CSAT and first response time compress real differences into numbers too small to act on.</p>
+    <p>The all-industry average is not your benchmark. Your vertical is. First response time is the metric with the most variation across verticals and the one most likely to tell you whether your support operation is ahead of or behind your peers.</p>
 
     <p>Find your row in the table above. That is where you start.</p>
 
@@ -229,7 +230,7 @@
 
     <div class="method">
       <div class="method-label">Methodology</div>
-      <p>Platform-level performance data from Gorgias merchants over the last 365 days. Metrics reported at the $5-30M GMV band to control for brand size. CSAT measured on a 5-point scale. First contact resolution (FCR) is the share of tickets resolved without a follow-up interaction. Resolution time measures full ticket lifecycle from creation to close. Data as of March 2026.</p>
+      <p>Platform-level performance data from Gorgias merchants, smoothed by GMV band and industry vertical. Metrics reported at the $10M GMV band. First response time and resolution time are medians. CSAT measured on a 5-point scale. Tickets per 100 orders measures support volume relative to order volume. Data as of March 2026.</p>
     </div>
 
   </article>
@@ -239,9 +240,9 @@
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
         <li><a href="#problem">The problem with averages</a></li>
-        <li><a href="#varies">What actually varies</a></li>
+        <li><a href="#gaps">Where the gaps are</a></li>
         <li><a href="#benchmark">Your benchmark</a></li>
-        <li><a href="#use">How to use this</a></li>
+        <li><a href="#volume">Ticket volume varies too</a></li>
         <li><a href="#bottom">The bottom line</a></li>
       </ul>
     </div>
@@ -261,13 +262,17 @@
   const grid     = { color: '#F4F4F5', drawBorder: false };
   const noBorder = { display: false };
 
+  const labels = ['Hardware','Pet Supplies','Business','Home & Garden','Vehicles','Electronics','Food & Bev','Health & Beauty','Baby & Toddler','Sporting','Luggage & Bags','Toys & Games','Apparel','Arts & Ent'];
+  const frtData = [1.6, 3.6, 4.0, 4.4, 4.4, 4.8, 5.1, 5.2, 5.3, 5.8, 7.7, 8.3, 8.8, 9.1];
+  const colors = frtData.map(v => v <= 4.0 ? '#0A0A0A' : v <= 6.0 ? '#71717A' : v <= 8.0 ? '#A1A1AA' : '#FF5B35');
+
   new Chart(document.getElementById('c1'), {
     type: 'bar',
     data: {
-      labels: ['Pet Supplies','Food & Bev','Hardware','Health & Beauty','Vehicles','Apparel','Sporting','Furniture','Electronics'],
+      labels: labels,
       datasets: [{
-        data: [67, 74, 89, 97, 99, 99, 124, 129, 265],
-        backgroundColor: ['#E4E4E7','#E4E4E7','#D4D4D8','#D4D4D8','#A1A1AA','#A1A1AA','#71717A','#3F3F46','#FF5B35'],
+        data: frtData,
+        backgroundColor: colors,
         borderRadius: 3,
         borderSkipped: false,
       }]
@@ -278,20 +283,20 @@
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: c => ` ${c.parsed.x} hrs avg resolution` } },
+        tooltip: { callbacks: { label: c => ` ${c.parsed.x} hrs median FRT` } },
         annotation: {
           annotations: {
             avg: {
               type: 'line',
-              xMin: 116,
-              xMax: 116,
+              xMin: 6.3,
+              xMax: 6.3,
               borderColor: '#FF5B35',
               borderWidth: 1.5,
               borderDash: [6, 4],
               label: {
                 display: true,
-                content: 'All-industry avg: 116 hrs',
-                position: 'start',
+                content: 'All-industry avg: 6.3 hrs',
+                position: 'end',
                 backgroundColor: 'rgba(255,91,53,0.1)',
                 color: '#FF5B35',
                 font: { size: 10, weight: '600' },
@@ -302,7 +307,7 @@
         }
       },
       scales: {
-        x: { grid, border: noBorder, min: 0, max: 300, ticks: { callback: v => v + ' hrs' } },
+        x: { grid, border: noBorder, min: 0, max: 11, ticks: { callback: v => v + ' hrs', stepSize: 2 } },
         y: { grid: { display: false }, border: noBorder }
       }
     }

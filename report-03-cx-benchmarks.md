@@ -4,80 +4,84 @@
 
 ---
 
-**4x** resolution time spread across verticals, hidden by the all-industry average.
-**0.3 pts** CSAT variation on a 5-point scale. It tells you nothing.
-**67-265 hrs** resolution time range at the same GMV band.
+**5.5x** first response time spread across verticals at the same GMV.
+**1.6 hrs** fastest vertical FRT vs. 9.1 hrs slowest.
+**2.4x** ticket volume per order varies by vertical. Some industries are structurally harder.
 
 ---
 
 ## The problem with averages
 
-The all-industry average resolution time at the $5-30M GMV band is roughly 116 hours. That number describes no one.
+The all-industry median first response time at $10M GMV is 6.3 hours. That number describes no one.
 
-An Electronics brand resolving tickets in 265 hours and a Pet Supplies brand resolving in 67 hours are both measured against the same average. One looks like it is underperforming. The other looks like it is overperforming. Neither comparison is useful because they are not in the same category.
+A Hardware brand responding in 1.6 hours and an Apparel brand responding in 8.8 hours are both measured against the same average. One looks fast. The other looks slow. But without vertical context, neither comparison is useful.
 
-Ticket type, product complexity, return behavior, and policy structure vary by vertical. These factors determine how long tickets take to resolve, how often customers come back, and what "good" looks like for your team. The all-industry average erases all of that.
+Ticket type, product complexity, and channel mix vary by vertical. These factors determine how quickly your team can respond, how many tickets you generate per order, and what "good" looks like. The all-industry average erases all of that.
 
 ---
 
-## What actually varies
+## First response time is where the gaps are
 
-Not every metric differentiates equally. CSAT ranges from 4.31 to 4.62 across verticals. That is 0.3 points on a 5-point scale. It tells you almost nothing about how your operation compares to your peers.
+Across 14 verticals at $10M GMV, first response time varies by 5.5x. No other operational metric comes close to this spread.
 
-Resolution time and repeat rate tell a different story.
+| Metric | Range | Spread |
+|--------|-------|--------|
+| First response time | 1.6 - 9.1 hrs | 5.5x |
+| Tickets per 100 orders | 19.4 - 46.3 | 2.4x |
+| Resolution time | 15.1 - 21.9 hrs | 1.5x |
+| CSAT | 4.45 - 4.66 | 0.2 pts |
 
-| Metric | Range across verticals | Spread |
-|--------|----------------------|--------|
-| CSAT | 4.31 - 4.62 | 0.3 pts |
-| First response time | 18.6 - 28.6 hrs | 1.5x |
-| Resolution time | 67 - 265 hrs | 4x |
-| Repeat rate | 54.8% - 62.2% | 7.4 pts |
-| FCR | 36.9% - 44.4% | 7.5 pts |
-
-Resolution time has the widest spread. It is the metric most likely to tell you whether you are ahead of or behind your vertical peers. CSAT is the least likely.
+CSAT varies by 0.2 points. Resolution time varies by 1.5x. Neither will tell you whether your operation is ahead of or behind your peers. First response time will.
 
 ---
 
 ## Your benchmark
 
-These are the CX benchmarks by vertical at the $5-30M GMV band. Find your vertical. These are your peers.
+Find your vertical. These are the median metrics at $10M GMV, sorted by first response time.
 
-| Vertical | CSAT | First response | Resolution | FCR | Repeat rate |
-|----------|------|---------------|------------|-----|-------------|
-| Animals & Pet Supplies | 4.62 | 20.0 hrs | 67 hrs | 44.4% | 54.8% |
-| Food & Beverage | 4.55 | 20.0 hrs | 74 hrs | 44.0% | 54.8% |
-| Hardware | 4.40 | 18.6 hrs | 89 hrs | 38.4% | 61.4% |
-| Health & Beauty | 4.44 | 25.2 hrs | 97 hrs | 42.6% | 56.8% |
-| Vehicles & Parts | 4.60 | 20.3 hrs | 99 hrs | 38.5% | 59.6% |
-| Apparel & Accessories | 4.39 | 24.5 hrs | 99 hrs | 43.4% | 55.6% |
-| Sporting Goods | 4.45 | 24.0 hrs | 124 hrs | 40.2% | 58.9% |
-| Furniture | 4.49 | 28.6 hrs | 129 hrs | 38.8% | 61.5% |
-| Electronics | 4.31 | 27.7 hrs | 265 hrs | 36.9% | 62.2% |
+| Vertical | First response | Resolution | CSAT | Tickets/100 orders |
+|----------|---------------|------------|------|-------------------|
+| Hardware | 1.6 hrs | 15.1 hrs | 4.51 | 41.2 |
+| Animals & Pet Supplies | 3.6 hrs | 15.6 hrs | 4.63 | 24.8 |
+| Business & Industrial | 4.0 hrs | 17.2 hrs | 4.53 | 24.9 |
+| Home & Garden | 4.4 hrs | 19.2 hrs | 4.58 | 31.9 |
+| Vehicles & Parts | 4.4 hrs | 17.0 hrs | 4.66 | 46.0 |
+| Electronics | 4.8 hrs | 19.4 hrs | 4.49 | 46.3 |
+| Food & Beverages | 5.1 hrs | 15.8 hrs | 4.62 | 20.4 |
+| Health & Beauty | 5.2 hrs | 16.8 hrs | 4.53 | 21.1 |
+| Baby & Toddler | 5.3 hrs | 17.4 hrs | 4.56 | 24.4 |
+| Sporting Goods | 5.8 hrs | 19.2 hrs | 4.56 | 31.8 |
+| Luggage & Bags | 7.7 hrs | 19.7 hrs | 4.46 | 32.3 |
+| Toys & Games | 8.3 hrs | 20.8 hrs | 4.58 | 19.4 |
+| Apparel & Accessories | 8.8 hrs | 19.7 hrs | 4.45 | 22.4 |
+| Arts & Entertainment | 9.1 hrs | 21.9 hrs | 4.62 | 20.8 |
 
-[NEED: Data team to confirm whether resolution time is human-only, AI-only, or blended. This affects how the benchmark should be interpreted.]
+---
 
-[NEED: Can we add a second table for Enterprise ($30-150M) and SMB (<$5M) bands so readers at different stages can find their tier?]
+## Some verticals generate more tickets per order
+
+Tickets per 100 orders varies 2.4x across verticals. Electronics and Vehicles & Parts generate over 46 tickets per 100 orders. Food & Beverages and Toys & Games generate under 20. This is structural, not operational. Product complexity, return rates, and pre-sale questions drive ticket volume.
+
+A brand at 40 tickets per 100 orders is not necessarily doing something wrong. It may be in a vertical where customers have more questions. Benchmarking ticket volume against the all-industry average without accounting for vertical will lead to the wrong conclusions.
 
 ---
 
 ## How to use this
 
-Three steps:
+**Find your vertical.** Compare against your vertical peers, not the all-industry average. An Apparel brand responding in 6 hours is faster than its vertical median (8.8 hrs). A Hardware brand at 6 hours is nearly 4x slower than its peers (1.6 hrs). Same number, different conclusion.
 
-**1. Find your vertical.** Compare against your vertical peers, not the all-industry average. An Apparel brand at 100 hours resolution is at par. An Electronics brand at 100 hours is significantly outperforming.
+**Lead with first response time.** It has the widest spread across verticals (5.5x). If your FRT is above your vertical benchmark, that is where the operational gap lives. CSAT and resolution time will not show you this.
 
-**2. Lead with resolution time and repeat rate.** These are the metrics with the most variation across verticals. If your resolution time or repeat rate is above your vertical benchmark, that is where the operational gap lives. CSAT will not show you this.
-
-**3. Set targets by vertical, not by ambition.** A Furniture brand targeting Pet Supplies-level resolution times (67 hours) is chasing a structurally different vertical. Set targets relative to your peers, then improve from there.
+**Adjust for ticket volume.** If your vertical generates 40+ tickets per 100 orders, your team is handling structurally more volume than a vertical at 20. Factor that into headcount planning and automation targets.
 
 ---
 
 ## The bottom line
 
-The all-industry average is not your benchmark. Your vertical is. The metrics worth tracking are the ones that actually vary across your peer group: resolution time, repeat rate, and first contact resolution. CSAT and first response time compress real differences into numbers too small to act on.
+The all-industry average is not your benchmark. Your vertical is. First response time is the metric with the most variation across verticals and the one most likely to tell you whether your support operation is ahead of or behind your peers.
 
 Find your row in the table above. That is where you start.
 
 ---
 
-**Methodology:** Platform-level performance data from Gorgias merchants over the last 365 days. Metrics reported at the $5-30M GMV band to control for brand size. CSAT measured on a 5-point scale. First contact resolution (FCR) is the share of tickets resolved without a follow-up interaction. Resolution time measures full ticket lifecycle from creation to close. Data as of March 2026.
+**Methodology:** Platform-level performance data from Gorgias merchants, smoothed by GMV band and industry vertical. Metrics reported at the $10M GMV band. First response time and resolution time are medians. CSAT measured on a 5-point scale. Tickets per 100 orders measures support volume relative to order volume. Data as of March 2026. Source: Gorgias Ecommerce Lab Airtable (appHTPnidve5znze0).
