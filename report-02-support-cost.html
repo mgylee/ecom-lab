@@ -243,7 +243,7 @@
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
         <li><a href="#cost">The cost of a ticket</a></li>
-        <li><a href="#comparison">Human agents vs. AI Agent</a></li>
+        <li><a href="#comparison">What AI Agent changes</a></li>
         <li><a href="#scale">What changes at scale</a></li>
         <li><a href="#result">The result</a></li>
         <li><a href="#bottom">The bottom line</a></li>
@@ -286,13 +286,11 @@
 
     <h2 id="cost">The cost of a ticket</h2>
 
-    <p>Support costs are a time problem. An agent closes a ticket. That ticket takes time. That time costs money. Most brands know their total support headcount. Few know their cost per ticket. The gap between those two numbers is where the overspend lives.</p>
+    <p>Support costs are a time problem. Every ticket takes time. That time costs money. Most brands know their total support headcount. Few know their cost per ticket.</p>
 
-    <p>Among brands that optimized their team after enabling AI Agent, the average agent went from handling <strong>254 tickets per month to 329</strong> — a 29% productivity increase. The team shrank from 10.8 to 8.4 people, yet revenue grew 22%. <span style="font-size:11px;color:var(--400);">Source: <a href="https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119#2f61ae2178f58042873de0797163be44" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">EcomLab Report First Data</a></span></p>
+    <h2 id="comparison">What AI Agent changes</h2>
 
-    <h2 id="comparison">Human agents vs. AI Agent</h2>
-
-    <p>The difference is immediate. Comparing 30 days before AI Agent enablement to days 60–120 after, customers get meaningfully faster support.</p>
+    <p>After enabling AI Agent, median first response time drops by half.</p>
 
     <table class="data-table">
       <thead>
@@ -309,9 +307,24 @@
       </tbody>
     </table>
 
-    <p>Median first response time was cut in half. AI responds immediately to the tickets it handles, clearing the simple volume from the queue so human agents hit complex tickets with shorter wait times and more focus. <span style="font-size:11px;color:var(--400);">Source: <a href="https://www.notion.so/gorgias/ROI-of-AI-Support-Agents-30b1ae2178f580acbfbcfa9918a0d46d" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">ROI of AI: Support Agents</a></span></p>
+    <p>AI handles the simple tickets instantly. Human agents see shorter queues and can focus on the complex ones. <span style="font-size:11px;color:var(--400);">Source: <a href="https://www.notion.so/gorgias/ROI-of-AI-Support-Agents-30b1ae2178f580acbfbcfa9918a0d46d" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">ROI of AI: Support Agents</a></span></p>
 
-    <p>The efficiency gains compound as automation increases. At 60%+ automation, brands that grew ticket volume by 143% saw total human hours grow just 6% — effort per ticket collapsed by 58%.</p>
+    <h2 id="scale">What changes at scale</h2>
+
+    <p>As automation rate increases, AI absorbs more ticket volume. At 50%+ automation, the balance tips: AI is handling more than the human team.</p>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <div class="chart-title">Human Team Size vs. AI Agent Equivalents</div>
+        <div class="chart-sub">At 50%+ automation, AI handles more volume than the human team</div>
+      </div>
+      <div class="chart-area" style="height:280px;"><canvas id="c2"></canvas></div>
+      <div class="chart-footer">Gorgias platform data · March 2026 · Source: <a href="https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119#2f61ae2178f58042873de0797163be44" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">EcomLab Report First Data</a></div>
+    </div>
+
+    <p>At 50%+ automation, AI does the work of <strong>6.3 agents</strong>. The average human team at that tier is 3 people. The humans shift to higher-value work while AI handles the volume.</p>
+
+    <p>Among brands that grew ticket volume by 20%+ year over year, the gap between volume growth and effort growth shows the compounding effect.</p>
 
     <table class="data-table">
       <thead>
@@ -329,28 +342,14 @@
         <tr><td class="td-bold">60%+</td><td>+143%</td><td>+6%</td><td class="td-accent">-58%</td></tr>
       </tbody>
     </table>
-    <p style="font-size:11px;color:var(--400);">Source: <a href="https://www.notion.so/gorgias/ROI-of-AI-Support-Agents-30b1ae2178f580acbfbcfa9918a0d46d" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">ROI of AI: Support Agents</a> · YoY = days 60-120 post-enablement vs same calendar window one year earlier</p>
 
-    <h2 id="scale">What changes at scale</h2>
-
-    <p>As automation rate increases, AI absorbs more ticket volume. It means you can scale your business without hiring more. At 50%+ automation, the balance tips.</p>
-
-    <div class="chart-block">
-      <div class="chart-header">
-        <div class="chart-title">Human Team Size vs. AI Agent Equivalents</div>
-        <div class="chart-sub">At 50%+ automation, AI absorbs more volume than the human team</div>
-      </div>
-      <div class="chart-area" style="height:280px;"><canvas id="c2"></canvas></div>
-      <div class="chart-footer">Gorgias platform data · March 2026 · Source: <a href="https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119#2f61ae2178f58042873de0797163be44" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">EcomLab Report First Data</a></div>
-    </div>
-
-    <p>At 50%+ automation, AI does the work of <strong>6.3 agents on average across brands at that tier</strong>. The average human team is 3 people. Your team stays the same size but shifts to higher-value work. AI is handling more volume than the human team.</p>
-
-    <p>Among the 345 brands that reduced their team by at least one person while maintaining business, each remaining agent handled <strong>29% more tickets</strong> (254 → 329 per month) — and revenue still grew 22%. <span style="font-size:11px;color:var(--400);">Source: <a href="https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119#2f61ae2178f58042873de0797163be44" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">EcomLab Report First Data</a></span></p>
+    <p>At 60%+ automation, ticket volume nearly tripled while human hours grew just 6%. Effort per ticket dropped 58%. <span style="font-size:11px;color:var(--400);">Source: <a href="https://www.notion.so/gorgias/ROI-of-AI-Support-Agents-30b1ae2178f580acbfbcfa9918a0d46d" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">ROI of AI: Support Agents</a></span></p>
 
     <h2 id="result">The result</h2>
 
-    <p>Nearly 1 in 4 brands reduced headcount after enabling AI Agent. Of those, <strong>51% achieved all three: fewer people, same ticket volume, same or more revenue</strong>.</p>
+    <p>Nearly 1 in 4 brands (23.5%) reduced their team after enabling AI Agent. Of those, <strong>51% achieved all three: fewer people, same ticket volume, same or more revenue</strong>.</p>
+
+    <p>The 345 brands that reduced by at least one person saw each remaining agent handle <strong>29% more tickets</strong> (254 to 329 per month), while revenue grew 22%. <span style="font-size:11px;color:var(--400);">Source: <a href="https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119#2f61ae2178f58042873de0797163be44" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">EcomLab Report First Data</a></span></p>
 
     <table class="data-table">
       <thead>
@@ -379,7 +378,7 @@
 
     <div class="method">
       <div class="method-label">Methodology</div>
-      <p>Platform-level behavioral data from Gorgias merchants. Agent productivity based on human-handled billable tickets (non-spam, with assigned agent) over the last 90 days. Resolution time uses median values for both human agents and AI Agent. AI Agent averages are skewed by a 72-hour auto-timeout on unresolved tickets, which inflates the mean without reflecting actual handle time. AI agent equivalents calculated as automated tickets divided by human tickets per active user. ROI based on accounts with net positive savings, assuming $20K blended annual cost per agent (weighted average of US-based and offshore support hires) and $9K average annual platform cost. Data as of March 2026.</p>
+      <p>Platform-level behavioral data from Gorgias merchants. First response time compares 30 days before AI Agent enablement to days 60-120 after, using medians. Year-over-year efficiency compares the post-enablement window to the same calendar period one year earlier. AI agent equivalents calculated as automated tickets divided by human tickets per active user. Headcount analysis requires teams of 3+ and at least 100 AI-closed tickets. ROI assumes $20K blended annual cost per agent (weighted average of US-based and offshore support hires) and $9K average annual platform cost. Data as of March 2026.</p>
     </div>
 
   </article>
@@ -389,7 +388,7 @@
       <div class="sidebar-heading">Table of contents</div>
       <ul class="toc">
         <li><a href="#cost">The cost of a ticket</a></li>
-        <li><a href="#comparison">Human agents vs. AI Agent</a></li>
+        <li><a href="#comparison">What AI Agent changes</a></li>
         <li><a href="#scale">What changes at scale</a></li>
         <li><a href="#result">The result</a></li>
         <li><a href="#bottom">The bottom line</a></li>
