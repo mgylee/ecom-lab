@@ -14,7 +14,7 @@
 
 Every vendor deck, every conference keynote, every earnings call implies the same thing: AI in ecommerce support is mainstream. Our data disagrees.
 
-We measured actual production deployment across ecommerce brands using Gorgias over the last 90 days. Not self-reported usage. Not survey responses. Platform-level signals showing whether AI is actively resolving customer interactions. The result: roughly 1 in 5 brands has deployed AI in customer-facing support.
+We measured actual production deployment across ecommerce brands using Gorgias. Not self-reported usage. Not survey responses. Platform-level signals showing whether AI is actively resolving customer interactions. The result: roughly 1 in 5 brands has deployed AI in customer-facing support.
 
 > **Placeholder:** Confirm exact aggregate adoption rate and MoM growth figure from internal trend data.
 
@@ -37,6 +37,8 @@ Brand size is the strongest predictor of AI adoption. The bigger the brand, the 
 | ~$500M | 50% |
 
 Fewer than 18% of brands under $1M GMV have deployed AI. That number crosses 25% around $5M GMV, 35% at $25M, and approaches 50% for brands above $500M GMV. Even at the largest tier, half have not deployed.
+
+The data points to a clear hesitation: most brands have not yet trusted AI to handle shopper-facing conversations autonomously. But the brands that have made that leap are the ones showing up in the performance data that follows.
 
 ---
 
