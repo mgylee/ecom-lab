@@ -10,10 +10,13 @@ A series of editorial, data-driven research reports published at ecom-lab-j64e.v
 
 **Audience:** Hesitating CX/ecom leaders (VPs, Directors, C-suite) who haven't committed to AI or are benchmarking their operations.
 
-**Reports:**
-- Report 1: AI Adoption Index — `report-01-ai-adoption-index` — Data validated against Airtable
-- Report 2: Support Economics — `report-02-support-cost` — Data pending validation (uses separate internal datasets, all unvalidated numbers are `[NEED]` placeholders)
-- Report 3: CX Benchmarks — `report-03-cx-benchmarks` — Data validated against Airtable (rebuilt from source of truth)
+**Published reports:**
+- Report 1: AI Adoption Index — `report-01-ai-adoption-index` — **Finalized**
+- Report 2: Support Economics — `report-02-support-cost` — **In progress** (2 [NEED] remaining)
+- Report 3: CX Benchmarks — `report-03-cx-benchmarks` — **Finalized**
+
+**Live URL:** ecom-lab-j64e.vercel.app
+**Notion archive:** [Ecom Finalized Content](https://www.notion.so/gorgias/Ecom-Finalized-Content-32c1ae2178f580aa9431dd878ef73a05)
 
 ---
 
@@ -27,7 +30,7 @@ A series of editorial, data-driven research reports published at ecom-lab-j64e.v
 - **Short sentences.** Active voice. Peer-to-peer, not consultant-speak.
 
 ### What to avoid
-- No em dashes. Use periods or commas.
+- No em dashes ( — ). Use periods or commas.
 - No sample sizes or brand counts (private data).
 - No "SMB" / "Enterprise" labels. Use GMV ranges ($5M, $150M).
 - No superlatives: "impressive," "remarkable," "powerful," "robust."
@@ -122,55 +125,6 @@ Every report follows this skeleton:
 - Resolution time scope (human, AI, or blended)
 - Any metric with the word "average" — confirm whether mean or median
 
-### Source of truth
-
-The single source of truth for CX benchmark data is the **Airtable base**: `appHTPnidve5znze0`.
-
-**Tables:**
-- `Smoothed by GMV` — metrics by industry and GMV band ($50K to $500M)
-- `Smoothed by Automation Rate` — metrics by industry and automation rate (0% to 100%)
-- `Methodology` — data smoothing methodology
-
-**Key fields available:**
-- Median First Response Time (min), Median Resolution Time (hrs)
-- Median CSAT Score, Median CSAT Positive (%)
-- Median One-Touch Rate (%), Median Messages/Ticket
-- AI Agent Automation Rate, Success Rate, Adoption Rate (official adopters)
-- Shopping Assistant Conversion Rate, Revenue, Adoption Rate
-- Median Tickets/100 Orders, Median Email/Chat Share (%)
-- Average Estimated GMV, Average Total Automation Rate
-
-**What is NOT in the Airtable:**
-- Human-only agent productivity (tickets per agent per month)
-- Human-only resolution times (separate from blended)
-- AI Agent resolution times (separate median from Cortex dataset)
-- AI agent equivalents, team size by automation tier
-- Headcount reduction stats (23.5%, 51%)
-- ROI/savings data by automation tier
-- Cost per ticket
-- Repeat rate / FCR (Airtable has "One-Touch Rate" instead)
-
-**Validation rule:** Every number in a published report must trace back to either the Airtable base or a named, validated internal dataset. If a data point cannot be sourced, it must be a `[NEED]` placeholder until the data team confirms it.
-
-### Validation results by report
-
-**Report 1: AI Adoption Index — VALIDATED**
-- AI adoption rates by GMV: match Airtable (within rounding)
-- FRT by automation rate: exact match (Smoothed by Automation Rate table)
-- CSAT by automation rate: exact match
-
-**Report 2: Support Economics — PENDING VALIDATION**
-- All data is from separate internal datasets not in the Airtable
-- Human resolution times, AI Agent resolution times, agent productivity, AI equivalents, headcount stats, and ROI figures all need data team confirmation
-- Airtable blended resolution times are lower than Report 2's human-only claims, which is expected if sources differ, but must be confirmed
-- All unvalidated numbers replaced with `[NEED]` placeholders
-
-**Report 3: CX Benchmarks — REBUILT FROM AIRTABLE**
-- Original version used CX benchmark PDF dashboard data that did not match Airtable (resolution times were 4-13x higher, different rank orders)
-- Rebuilt entirely from Airtable Smoothed by GMV table at $10M GMV band
-- Lead metric changed from resolution time (1.5x spread, too narrow) to FRT (5.5x spread)
-- All 14 verticals included, all numbers verified
-
 ---
 
 ## Design System
@@ -260,8 +214,6 @@ ecom-lab/
   report-03-cx-benchmarks.html
   report-03-cx-benchmarks.md
   vercel.json                         # { "cleanUrls": true }
-  .env                                # API keys (git-ignored, never commit)
-  .gitignore                          # Excludes .env
   ECOM-LAB-PLAYBOOK.md               # This file
 ```
 
@@ -289,112 +241,51 @@ ecom-lab/
 
 ---
 
-## Editorial Thinking
+## Data Directory
 
-How to evaluate narratives, make editorial decisions, and avoid common traps. Captured from the process of building Reports 1-3.
+All report data must trace back to a validated source. Every chart and table should include a source link in the footer.
 
-### Finding the stance
+### Primary sources
 
-The first question is always: "What's the one stance?" Every report needs a single, defensible claim. If you can't state it in one sentence, you don't have it yet. Push back until it's sharp.
+| Source | What it covers | Link |
+|--------|---------------|------|
+| Airtable (appHTPnidve5znze0) | CX benchmarks by GMV and automation rate: FRT, resolution time, CSAT, tickets/100 orders, AI adoption rate, agent equivalents across 14 verticals | [Airtable](https://airtable.com/appHTPnidve5znze0) |
+| Finalized Data Sources (Notion) | Metric definitions, SQL queries, smoothing methodology, pipeline documentation | [Notion](https://www.notion.so/gorgias/Ecom-Lab-Finalized-Data-Sources-3281ae2178f58067a241c98c38d93a47) |
+| ROI of AI: Support Agents (Notion) | FRT before/after, YoY efficiency by automation tier, headcount reduction, hours/1K tickets | [Notion](https://www.notion.so/gorgias/ROI-of-AI-Support-Agents-30b1ae2178f580acbfbcfa9918a0d46d) |
+| EcomLab Report First Data (Notion) | Adoption trend (monthly), agent equivalents, productivity, headcount savings, ROI by automation tier | [Notion](https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119) |
 
-Data must be unchallengeable. The standard: "Data should be consistent and cannot be challenged or poked." This means:
-- Every number in the report must come from a verified source
-- No data point should contradict the stance
-- If a correlation is directional but not clean, do not claim causation
-- If data is missing, use a placeholder. Do not fill gaps with assumptions.
+### Source of truth
 
-### Kill narratives that don't hold up
+**Airtable is the source of truth for all CX benchmark data** (Reports 1 and 3). CSV exports from the same pipeline may have different values due to re-runs with updated data. Always validate against the Airtable, not downloaded CSVs.
 
-Report 3 went through 5 complete rewrites. Each time, a weakness was identified and the narrative was pivoted rather than published with holes:
+Report 2 uses separate datasets (ROI analysis, headcount reduction) that are documented in the Notion pages above but not in the Airtable.
 
-1. "Vertical predicts automation outcomes" — killed because the 5x claim didn't match the listed data
-2. "Your CSAT score is lying to you" — killed because FCR-to-CSAT correlation had too many exceptions
-3. "Speed drives satisfaction" — killed because the middle of the dataset was messy (only extremes correlated)
-4. "More than half your tickets are repeats" — killed because the action item was too weak ("track repeat rate" isn't actionable enough)
-5. "Stop benchmarking against the average" — shipped because the data was clean, the stance was unchallengeable, and it gave the reader something useful (their actual benchmark)
+### Report data status
 
-The lesson: it is better to restart than to ship something with a hole in it.
+| Report | Data status | Remaining [NEED] |
+|--------|------------|-------------------|
+| Report 1: AI Adoption Index | Fully validated against Airtable | None |
+| Report 2: Support Economics | Mostly validated | Tickets per agent by GMV tier, resolution time before/after |
+| Report 3: CX Benchmarks | Fully validated against Airtable | None |
 
-### Separate "interesting" from "publishable"
+### Finalized content
 
-Many findings from the data were interesting but not strong enough to build a report around:
-- NPS varies more than CSAT (interesting, but "more variance" doesn't mean "better signal")
-- FCR loosely tracks CSAT (interesting, but Apparel at 43.4% FCR / 4.39 CSAT breaks it)
-- Electronics is worst on every metric (interesting, but too narrow for a standalone report)
+All three reports are archived in Notion: [Ecom Finalized Content](https://www.notion.so/gorgias/Ecom-Finalized-Content-32c1ae2178f580aa9431dd878ef73a05)
 
-The filter: can you make the claim without qualifying it? If you have to say "except for..." more than once, it's not ready.
+### Key assumptions
 
-### Narrative decisions by report
-
-**Report 1: AI Adoption Index**
-- Original framing included a "ceiling" on automation. Cut it. The audience is hesitating leaders. Telling them there's a ceiling undermines the case for adopting.
-- Removed all references to brands that bought AI but aren't automating. The contrast should be between adopters and non-adopters, not between good and bad adopters.
-- "Let the data speak" was a direct instruction. No editorializing, no persuasion. The numbers are the argument.
-
-**Report 2: Support Economics**
-- Reframed "replacing agents" as "scaling without hiring." The audience (CX leaders) doesn't want to hear about replacing their team. They want to hear about scaling without growing headcount. Same data, different framing.
-- Added net savings (minus platform cost). Gross savings without cost of AI is not credible. Always show net.
-- Changed stat strip from "6.25" to "2x." The raw number was confusing without context. "2x" is instantly clear. Stat strip numbers must stand alone.
-- "SMB" and "Enterprise" replaced with GMV ranges. A $5-30M brand doesn't call itself "Commercial." Use the language the reader uses for themselves.
-- Median over average for AI resolution time. The 72-hour auto-timeout skews the mean. Always check whether mean or median is the honest signal.
-
-**Report 3: CX Benchmarks**
-- Rejected the first draft from the team. It was too long (2,000+ words), repeated the same point 5 times, used em dashes, mentioned brand counts, and had salesy CTAs. All violations of the established format.
-- Rejected the "CSAT is lying" angle after pressure-testing. The data showed CSAT does loosely correlate with speed at the extremes. "Lying" was too strong a claim for directional data.
-- Rejected forced correlation narratives. When both FCR-to-CSAT and speed-to-CSAT had exceptions, the right move was to ask for an objective, non-biased look at the data. Honest pattern recognition, not narrative confirmation.
-- Flagged the 60% automation conflict. The benchmark data showed 10-17% automation rates. Publishing that would contradict the product's "60% automation" claim. Always check for conflicts with product positioning.
-- Settled on a framework angle. Instead of claiming a causal relationship, the final report gives the reader a tool: their vertical benchmark. This avoids correlation claims entirely and is genuinely useful.
-- **Data source mismatch discovered.** The initial CX benchmark PDF dashboard showed resolution times of 67-265 hrs. The Airtable source of truth showed 15.1-19.7 hrs. The entire narrative (4x resolution spread, Electronics as outlier) collapsed. Report was rebuilt from the Airtable data, leading with FRT (5.5x spread) instead of resolution time (1.5x). Lesson: always validate against the source of truth before writing, not after.
-- **Lead metric changed based on data.** Resolution time spread (1.5x) was too narrow to anchor a report. FRT spread (5.5x) was the widest in the dataset. The narrative follows the data, not the other way around.
-
-### Editorial instincts
-
-1. **Think about what the reader will do with the information.** "What's the action item?" If the report doesn't change a decision or behavior, it's not ready.
-
-2. **Protect the brand.** Publishing conflicting data in your own research undermines the product story. Check for conflicts before publishing.
-
-3. **Prefer reframing over cutting.** "Replacing agents" became "scaling without hiring." Same data, same conclusion, different emotional response from the reader.
-
-4. **Value honesty over cleverness.** When the data doesn't support a narrative, pivot. Don't spin.
-
-5. **Push for specificity.** "Enterprise brand" becomes "$150M+ GMV." "Resolves" becomes "handles billable tickets." "Average" needs clarification on whether it's mean or median.
-
-6. **Benchmark against the reader's skepticism.** Every claim should be evaluated through the lens of "would a skeptical VP poke a hole in this?" If yes, fix it before publishing.
-
-7. **Separate data exploration from narrative writing.** Look at data objectively first, identify what's clean and consistent, then build the stance. Not the other way around.
-
-8. **Know when to stop.** Shipping a good report beats perfecting an uncertain one.
-
----
-
-## Process
-
-### Writing a new report
-1. **Validate data first.** Pull from the Airtable source of truth (appHTPnidve5znze0). If using data from other sources (PDFs, dashboards, internal datasets), cross-reference against Airtable before writing. If a data point cannot be validated, mark it as `[NEED]`.
-2. Start with the validated data. Look at it objectively. No narrative yet.
-3. Identify what patterns are consistent (no exceptions) vs. directional (some exceptions).
-4. Build the stance around the consistent pattern only.
-5. Write the .md first. Get alignment on content and data.
-6. Build the .html using the design system.
-7. Pressure-test: walk through every data point and ask "can this be challenged?"
-8. Get feedback. Address it. Do not dismiss valid pushback.
-9. Ship when the data is clean and the stance is unchallengeable.
-
-### Questions to ask before writing
-1. What is the one stance? Can you say it in one sentence?
-2. Is every data point in the report consistent with that stance?
-3. Can any number be used to argue against you?
-4. What will the reader do differently after reading this?
-5. Does anything in this report conflict with Gorgias product positioning?
-6. Are you using the right metric (mean vs. median, gross vs. net)?
-7. Have you confirmed metric definitions with the data team?
-8. Would a skeptical VP find a hole in this?
+- Agent cost: $20K/year blended (weighted average of US-based and offshore support hires)
+- Platform cost: $9K/year average
+- AI adoption: requires activation + at least 5% automation in a 7-day period with at least 5 billed tickets
+- Benchmark window: last 90 days minus 7-day billing lag
+- Minimum account threshold: 30 tickets
+- Smoothing: Gaussian kernel, bandwidth 0.4 (log10 GMV) / 8 (automation rate pct)
 
 ---
 
 ## Lessons Learned
 
-1. **Start with one stance, not the data.** The best reports started with a clear claim and selected data to support it. The worst iterations tried to let the data "speak for itself." It doesn't. It just creates noise.
+1. **Start with one stance, not the data.** The best reports started with a clear claim and selected data to support it. The worst iterations tried to let the data "speak for itself" — it doesn't, it just creates noise.
 
 2. **Pressure-test before writing.** Walk through every data point and ask: "Can this be used to argue against my stance?" If yes, either address it head-on in the prose or cut it. Do not leave holes.
 
@@ -413,7 +304,3 @@ The filter: can you make the claim without qualifying it? If you have to say "ex
 9. **Don't force a narrative.** Report 3 went through 5 rewrites because we kept trying to find a causal story in data that only showed directional patterns. The final version worked because it stopped claiming causation and instead gave the reader a useful tool (their vertical benchmark).
 
 10. **Feedback widget must actually work.** Mailto links depend on the user's email client. Google Forms always work. Use Forms.
-
-11. **Validate against the source of truth before writing, not after.** Report 3 was built on PDF dashboard data that turned out to be completely different from the Airtable source of truth (resolution times were 4-13x higher). The entire report had to be rebuilt. Always pull from Airtable first. If using other data sources, cross-reference before committing to a narrative.
-
-12. **Different data sources measure different things.** "Resolution time" in one dataset may be human-only. In another, it may be blended (human + AI). In another, it may use a different methodology entirely. Always confirm what a metric actually measures before comparing across sources.
