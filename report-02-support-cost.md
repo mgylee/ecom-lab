@@ -64,7 +64,7 @@ At 60%+ automation, ticket volume nearly tripled while human hours grew just 6%.
 
 Nearly 1 in 4 brands (23.5%) reduced their team after enabling AI Agent. Of those, **51% achieved all three: fewer people, same ticket volume, same or more revenue**.
 
-The 345 brands that reduced by at least one person saw each remaining agent handle **29% more tickets** (254 to 329 per month), while revenue grew 22%.
+Brands that reduced by at least one person saw each remaining agent handle **29% more tickets** (254 to 329 per month), while revenue grew 22%.
 
 | Automation tier | Avg headcount saved | Gross saving | Net saving |
 |-----------------|---------------------|-------------|------------|
