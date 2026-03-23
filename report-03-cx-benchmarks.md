@@ -60,9 +60,9 @@ Find your vertical. These are the median metrics at $10M GMV, sorted by first re
 
 ## Some verticals generate more tickets per order
 
-Tickets per 100 orders varies 2.4x across verticals. Electronics and Vehicles & Parts generate over 46 tickets per 100 orders. Food & Beverages and Toys & Games generate under 20. This is structural, not operational. Product complexity, return rates, and pre-sale questions drive ticket volume.
+For every 100 orders, how many turn into a support ticket? That number varies widely by vertical. An Electronics brand generates about 46 support tickets for every 100 orders, nearly one ticket for every two orders. A Food & Beverages brand generates about 20, roughly one in five.
 
-A brand at 40 tickets per 100 orders is not necessarily doing something wrong. It may be in a vertical where customers have more questions. Benchmarking ticket volume against the all-industry average without accounting for vertical will lead to the wrong conclusions.
+This is not good or bad. It reflects product complexity and how much customers need to ask before and after buying. If you are in a high-ticket-volume vertical, that is your baseline, not a problem to fix. The right question is whether you are above or below your vertical peers.
 
 ---
 
