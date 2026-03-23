@@ -18,8 +18,6 @@ We measured actual production deployment across ecommerce brands using Gorgias. 
 
 > **Placeholder:** Confirm exact aggregate adoption rate and MoM growth figure from internal trend data.
 
-When you ask brands whether they "use AI," you get a different answer than when you measure whether AI is actually resolving customer tickets.
-
 ---
 
 ## Who has adopted, and who hasn't
@@ -66,7 +64,7 @@ Faster response times are visible to customers. The efficiency gains are visible
 
 Among brands that grew ticket volume by at least 20% year over year, the gap between volume growth and effort growth tells the story.
 
-| Automation tier | Ticket growth (YoY) | Hours growth (YoY) | Effort per ticket |
+| Automation tier | Ticket growth (YoY) | Human hours (YoY) | Effort per ticket |
 |-----------------|---------------------|---------------------|-------------------|
 | 1-20% | +66% | +29% | -27% |
 | 20-40% | +77% | +27% | -31% |
@@ -81,7 +79,6 @@ At 60%+ automation, ticket volume nearly tripled while total hours grew just 6%.
 
 Most brands are not there yet. Those that have committed are responding 10x faster and scaling without growing their team. The ones still hesitating are hiring their way through the same volume.
 
-That gap is not closing. It is widening every month.
 
 ---
 
