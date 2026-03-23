@@ -170,7 +170,7 @@
         <div class="chart-sub">$10M GMV band, in hours. 5.5x spread.</div>
       </div>
       <div class="chart-area" style="height:380px;"><canvas id="c1"></canvas></div>
-      <div class="chart-footer">Gorgias platform data &middot; Airtable source of truth &middot; March 2026</div>
+      <div class="chart-footer">Gorgias platform data · March 2026 · Source: <a href="https://airtable.com/appHTPnidve5znze0" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Airtable - Smoothed by GMV</a></div>
     </div>
 
     <table class="metric-spread">
@@ -180,7 +180,7 @@
       <tr><td>CSAT score (out of 5)</td><td>4.45 - 4.66</td><td>0.2 pts spread</td></tr>
     </table>
 
-    <p>CSAT varies by 0.2 points. Resolution time varies by 1.5x. Neither will tell you whether your operation is ahead of or behind your peers. First response time will.</p>
+    <p>CSAT varies by 0.2 points. Resolution time varies by 1.5x. Neither will tell you whether your operation is ahead of or behind your peers. First response time will. <span style="font-size:11px;color:var(--400);">Source: <a href="https://airtable.com/appHTPnidve5znze0" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Airtable - Smoothed by GMV</a></span></p>
 
     <h2 id="benchmark">Your benchmark</h2>
 
@@ -230,7 +230,7 @@
 
     <div class="method">
       <div class="method-label">Methodology</div>
-      <p>Platform-level performance data from Gorgias merchants, smoothed by GMV band and industry vertical. Metrics reported at the $10M GMV band. First response time and resolution time are medians. CSAT measured on a 5-point scale. Tickets per 100 orders measures support volume relative to order volume. Data as of March 2026.</p>
+      <p>Platform-level performance data from Gorgias merchants, smoothed by GMV band and industry vertical using Gaussian kernel smoothing. Metrics reported at the $10M GMV band. First response time and resolution time are medians aggregated per account, then median across accounts. CSAT measured on a 5-point scale. Tickets per 100 orders measures support volume relative to order volume. Accounts require at least 30 tickets to be included. Source: <a href="https://airtable.com/appHTPnidve5znze0" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Airtable (appHTPnidve5znze0)</a> · <a href="https://www.notion.so/gorgias/Ecom-Lab-Finalized-Data-Sources-3281ae2178f58067a241c98c38d93a47" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Finalized Data Sources</a>. Data as of March 2026.</p>
     </div>
 
   </article>
