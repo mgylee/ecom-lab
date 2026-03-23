@@ -10,10 +10,10 @@ A series of editorial, data-driven research reports published at ecom-lab-j64e.v
 
 **Audience:** Hesitating CX/ecom leaders (VPs, Directors, C-suite) who haven't committed to AI or are benchmarking their operations.
 
-**Published reports:**
-- Report 1: AI Adoption Index — `report-01-ai-adoption-index`
-- Report 2: Support Economics — `report-02-support-cost`
-- Report 3: CX Benchmarks — `report-03-cx-benchmarks`
+**Reports:**
+- Report 1: AI Adoption Index — `report-01-ai-adoption-index` — Data validated against Airtable
+- Report 2: Support Economics — `report-02-support-cost` — Data pending validation (uses separate internal datasets, all unvalidated numbers are `[NEED]` placeholders)
+- Report 3: CX Benchmarks — `report-03-cx-benchmarks` — Data validated against Airtable (rebuilt from source of truth)
 
 ---
 
@@ -122,6 +122,55 @@ Every report follows this skeleton:
 - Resolution time scope (human, AI, or blended)
 - Any metric with the word "average" — confirm whether mean or median
 
+### Source of truth
+
+The single source of truth for CX benchmark data is the **Airtable base**: `appHTPnidve5znze0`.
+
+**Tables:**
+- `Smoothed by GMV` — metrics by industry and GMV band ($50K to $500M)
+- `Smoothed by Automation Rate` — metrics by industry and automation rate (0% to 100%)
+- `Methodology` — data smoothing methodology
+
+**Key fields available:**
+- Median First Response Time (min), Median Resolution Time (hrs)
+- Median CSAT Score, Median CSAT Positive (%)
+- Median One-Touch Rate (%), Median Messages/Ticket
+- AI Agent Automation Rate, Success Rate, Adoption Rate (official adopters)
+- Shopping Assistant Conversion Rate, Revenue, Adoption Rate
+- Median Tickets/100 Orders, Median Email/Chat Share (%)
+- Average Estimated GMV, Average Total Automation Rate
+
+**What is NOT in the Airtable:**
+- Human-only agent productivity (tickets per agent per month)
+- Human-only resolution times (separate from blended)
+- AI Agent resolution times (separate median from Cortex dataset)
+- AI agent equivalents, team size by automation tier
+- Headcount reduction stats (23.5%, 51%)
+- ROI/savings data by automation tier
+- Cost per ticket
+- Repeat rate / FCR (Airtable has "One-Touch Rate" instead)
+
+**Validation rule:** Every number in a published report must trace back to either the Airtable base or a named, validated internal dataset. If a data point cannot be sourced, it must be a `[NEED]` placeholder until the data team confirms it.
+
+### Validation results by report
+
+**Report 1: AI Adoption Index — VALIDATED**
+- AI adoption rates by GMV: match Airtable (within rounding)
+- FRT by automation rate: exact match (Smoothed by Automation Rate table)
+- CSAT by automation rate: exact match
+
+**Report 2: Support Economics — PENDING VALIDATION**
+- All data is from separate internal datasets not in the Airtable
+- Human resolution times, AI Agent resolution times, agent productivity, AI equivalents, headcount stats, and ROI figures all need data team confirmation
+- Airtable blended resolution times are lower than Report 2's human-only claims, which is expected if sources differ, but must be confirmed
+- All unvalidated numbers replaced with `[NEED]` placeholders
+
+**Report 3: CX Benchmarks — REBUILT FROM AIRTABLE**
+- Original version used CX benchmark PDF dashboard data that did not match Airtable (resolution times were 4-13x higher, different rank orders)
+- Rebuilt entirely from Airtable Smoothed by GMV table at $10M GMV band
+- Lead metric changed from resolution time (1.5x spread, too narrow) to FRT (5.5x spread)
+- All 14 verticals included, all numbers verified
+
 ---
 
 ## Design System
@@ -211,6 +260,8 @@ ecom-lab/
   report-03-cx-benchmarks.html
   report-03-cx-benchmarks.md
   vercel.json                         # { "cleanUrls": true }
+  .env                                # API keys (git-ignored, never commit)
+  .gitignore                          # Excludes .env
   ECOM-LAB-PLAYBOOK.md               # This file
 ```
 
@@ -293,6 +344,8 @@ The filter: can you make the claim without qualifying it? If you have to say "ex
 - Rejected forced correlation narratives. When both FCR-to-CSAT and speed-to-CSAT had exceptions, the right move was to ask for an objective, non-biased look at the data. Honest pattern recognition, not narrative confirmation.
 - Flagged the 60% automation conflict. The benchmark data showed 10-17% automation rates. Publishing that would contradict the product's "60% automation" claim. Always check for conflicts with product positioning.
 - Settled on a framework angle. Instead of claiming a causal relationship, the final report gives the reader a tool: their vertical benchmark. This avoids correlation claims entirely and is genuinely useful.
+- **Data source mismatch discovered.** The initial CX benchmark PDF dashboard showed resolution times of 67-265 hrs. The Airtable source of truth showed 15.1-19.7 hrs. The entire narrative (4x resolution spread, Electronics as outlier) collapsed. Report was rebuilt from the Airtable data, leading with FRT (5.5x spread) instead of resolution time (1.5x). Lesson: always validate against the source of truth before writing, not after.
+- **Lead metric changed based on data.** Resolution time spread (1.5x) was too narrow to anchor a report. FRT spread (5.5x) was the widest in the dataset. The narrative follows the data, not the other way around.
 
 ### Editorial instincts
 
@@ -317,14 +370,15 @@ The filter: can you make the claim without qualifying it? If you have to say "ex
 ## Process
 
 ### Writing a new report
-1. Start with raw data. Look at it objectively. No narrative yet.
-2. Identify what patterns are consistent (no exceptions) vs. directional (some exceptions).
-3. Build the stance around the consistent pattern only.
-4. Write the .md first. Get alignment on content and data.
-5. Build the .html using the design system.
-6. Pressure-test: walk through every data point and ask "can this be challenged?"
-7. Get feedback. Address it. Do not dismiss valid pushback.
-8. Ship when the data is clean and the stance is unchallengeable.
+1. **Validate data first.** Pull from the Airtable source of truth (appHTPnidve5znze0). If using data from other sources (PDFs, dashboards, internal datasets), cross-reference against Airtable before writing. If a data point cannot be validated, mark it as `[NEED]`.
+2. Start with the validated data. Look at it objectively. No narrative yet.
+3. Identify what patterns are consistent (no exceptions) vs. directional (some exceptions).
+4. Build the stance around the consistent pattern only.
+5. Write the .md first. Get alignment on content and data.
+6. Build the .html using the design system.
+7. Pressure-test: walk through every data point and ask "can this be challenged?"
+8. Get feedback. Address it. Do not dismiss valid pushback.
+9. Ship when the data is clean and the stance is unchallengeable.
 
 ### Questions to ask before writing
 1. What is the one stance? Can you say it in one sentence?
@@ -359,3 +413,7 @@ The filter: can you make the claim without qualifying it? If you have to say "ex
 9. **Don't force a narrative.** Report 3 went through 5 rewrites because we kept trying to find a causal story in data that only showed directional patterns. The final version worked because it stopped claiming causation and instead gave the reader a useful tool (their vertical benchmark).
 
 10. **Feedback widget must actually work.** Mailto links depend on the user's email client. Google Forms always work. Use Forms.
+
+11. **Validate against the source of truth before writing, not after.** Report 3 was built on PDF dashboard data that turned out to be completely different from the Airtable source of truth (resolution times were 4-13x higher). The entire report had to be rebuilt. Always pull from Airtable first. If using other data sources, cross-reference before committing to a narrative.
+
+12. **Different data sources measure different things.** "Resolution time" in one dataset may be human-only. In another, it may be blended (human + AI). In another, it may use a different methodology entirely. Always confirm what a metric actually measures before comparing across sources.
