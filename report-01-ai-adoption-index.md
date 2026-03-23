@@ -62,16 +62,17 @@ CSAT at 20% automation sits at 87.9%, versus 90.3% at zero.
 
 Faster response times are visible to customers. The efficiency gains are visible to finance.
 
-Among brands that grew ticket volume by at least 20% year over year, the gap between volume growth and effort growth tells the story.
+We calculated "AI Agent Equivalents" by measuring how many automated tickets AI handles relative to the average human agent's workload. The result: AI is not just handling tickets — it is doing the equivalent work of multiple human agents.
 
-| Automation tier | Ticket growth (YoY) | Human hours (YoY) | Effort per ticket |
-|-----------------|---------------------|---------------------|-------------------|
-| 1-20% | +66% | +29% | -27% |
-| 20-40% | +77% | +27% | -31% |
-| 40-60% | +83% | +13% | -41% |
-| 60%+ | +143% | +6% | -58% |
+| Automation rate | AI agent equivalents | Avg team size |
+|-----------------|---------------------|---------------|
+| 10-20% | 1.0 agents | 5.9 users |
+| 20-30% | 2.1 agents | 6.4 users |
+| 30-40% | 3.1 agents | 5.6 users |
+| 40-50% | 3.5 agents | 4.3 users |
+| 50%+ | 6.3 agents | 3.0 users |
 
-At 60%+ automation, ticket volume nearly tripled while total hours grew just 6%. Human effort per ticket collapsed by 58%. The team barely worked harder — AI absorbed the growth.
+At 50%+ automation, brands operate with just **3 team members doing work that would typically require 9+**. AI does the equivalent of 6.3 agents. The human team stays the same size but shifts to higher-value work.
 
 ---
 

@@ -737,26 +737,18 @@
 
     <p>Faster response times are visible to customers. The efficiency gains are visible to finance.</p>
 
-    <p>Among brands that grew ticket volume by at least 20% year over year, the gap between volume growth and effort growth tells the story.</p>
+    <p>We calculated "AI Agent Equivalents" by measuring how many automated tickets AI handles relative to the average human agent's workload. The result: AI is not just handling tickets — it is doing the equivalent work of multiple human agents.</p>
 
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Automation tier</th>
-          <th>Ticket growth (YoY)</th>
-          <th>Human hours (YoY)</th>
-          <th>Effort per ticket</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="td-bold">1-20%</td><td>+66%</td><td>+29%</td><td class="td-accent">-27%</td></tr>
-        <tr><td class="td-bold">20-40%</td><td>+77%</td><td>+27%</td><td class="td-accent">-31%</td></tr>
-        <tr><td class="td-bold">40-60%</td><td>+83%</td><td>+13%</td><td class="td-accent">-41%</td></tr>
-        <tr><td class="td-bold">60%+</td><td>+143%</td><td>+6%</td><td class="td-accent">-58%</td></tr>
-      </tbody>
-    </table>
+    <div class="chart-block">
+      <div class="chart-header">
+        <div class="chart-title">Human Team Size vs. AI Agent Equivalents</div>
+        <div class="chart-sub">At 50%+ automation, AI handles more volume than the human team</div>
+      </div>
+      <div class="chart-area" style="height:280px;"><canvas id="c3"></canvas></div>
+      <div class="chart-footer">Gorgias platform data · March 2026 · Source: <a href="https://www.notion.so/gorgias/ROI-of-AI-Support-Agents-30b1ae2178f580acbfbcfa9918a0d46d" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">ROI of AI: Support Agents</a></div>
+    </div>
 
-    <p>At 60%+ automation, ticket volume nearly tripled while total hours grew just 6%. Human effort per ticket collapsed by 58%. The team barely worked harder — AI absorbed the growth. <span style="font-size:11px;color:var(--400);">Source: <a href="https://www.notion.so/gorgias/ROI-of-AI-Support-Agents-30b1ae2178f580acbfbcfa9918a0d46d" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">ROI of AI: Support Agents</a></span></p>
+    <p>At 50%+ automation, brands operate with just <strong>3 team members doing work that would typically require 9+</strong>. AI does the equivalent of 6.3 agents. The human team stays the same size but shifts to higher-value work.</p>
 
     <h2 id="bottom">The bottom line</h2>
 
@@ -821,6 +813,53 @@
       scales: {
         x: { grid: { display: false }, border: noBorder },
         y: { grid, border: noBorder, ticks: { callback: v => v + '%' }, min: 0, max: 60 }
+      }
+    }
+  });
+
+  // Chart 3 — Human team vs AI agent equivalents
+  new Chart(document.getElementById('c3'), {
+    type: 'line',
+    data: {
+      labels: ['10-20%', '20-30%', '30-40%', '40-50%', '50%+'],
+      datasets: [
+        {
+          label: 'Human team size',
+          data: [5.9, 6.4, 5.6, 4.3, 3.0],
+          borderColor: '#A1A1AA',
+          backgroundColor: '#A1A1AA',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#A1A1AA',
+          tension: 0.3,
+        },
+        {
+          label: 'AI agent equivalents',
+          data: [1.0, 2.1, 3.1, 3.5, 6.3],
+          borderColor: '#FF5B35',
+          backgroundColor: '#FF5B35',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#FF5B35',
+          tension: 0.3,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          align: 'start',
+          labels: { boxWidth: 20, boxHeight: 2, padding: 18, font: { size: 11 }, color: '#71717A', usePointStyle: false }
+        },
+        tooltip: { callbacks: { label: c => ` ${c.dataset.label}: ${c.parsed.y}` } }
+      },
+      scales: {
+        x: { grid: { display: false }, border: noBorder },
+        y: { grid, border: noBorder, min: 0, max: 8, ticks: { stepSize: 2 } }
       }
     }
   });
