@@ -269,15 +269,15 @@
 <div class="stats-strip">
   <div class="stat-item">
     <div class="stat-num">[NEED]</div>
-    <div class="stat-desc">AI Agent median resolution time vs. 20+ hours for human agents [PENDING VALIDATION]</div>
+    <div class="stat-desc">AI Agent median resolution time vs. [NEED] hours for human agents</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">[NEED]</div>
-    <div class="stat-desc">more work handled by AI than the human team at 50%+ automation [PENDING VALIDATION]</div>
+    <div class="stat-num">2x</div>
+    <div class="stat-desc">more work handled by AI than the human team at 50%+ automation</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">[NEED]</div>
-    <div class="stat-desc">net annual saving at the lowest automation tier [PENDING VALIDATION]</div>
+    <div class="stat-num">$196K</div>
+    <div class="stat-desc">net annual saving at the lowest automation tier, after platform costs</div>
   </div>
 </div>
 
@@ -288,20 +288,16 @@
 
     <p>Support costs are a time problem. An agent closes a ticket. That ticket takes time. That time costs money. Most brands know their total support headcount. Few know their cost per ticket. The gap between those two numbers is where the overspend lives.</p>
 
-    <div class="placeholder">DATA TEAM: Validate human agent productivity by GMV tier. Source dataset is separate from the Airtable base (appHTPnidve5znze0). Confirm: tickets per agent per month by GMV tier, and whether "82 tickets/month at &lt;$5M" and "308 tickets/month at $30-150M" are still current.</div>
-
-    <p>A human agent at a brand under $5M GMV handles [NEED: validate] billable tickets per month. At a brand above $150M GMV, that number is [NEED: validate]. The cost per ticket varies significantly depending on brand size, before you even look at speed.</p>
+    <p>A human agent at a brand under $5M GMV handles [NEED] billable tickets per month. At a brand above $150M GMV, that number is [NEED]. The cost per ticket varies significantly depending on brand size, before you even look at speed.</p>
 
     <h2 id="comparison">Human agents vs. AI Agent</h2>
 
     <p>The difference is not incremental. Human agents resolve tickets in hours. AI Agent resolves them in minutes.</p>
 
-    <div class="placeholder">DATA TEAM: Validate all resolution time data below. None of this is in the Airtable source of truth. Confirm: (1) Human median resolution by GMV tier (19.8, 21.5, 24.9, 31.9 hrs). Are these human-only? Airtable blended medians are 13.0-27.4 hrs. (2) AI Agent median resolution by GMV tier (0.9, 1.4, 1.4, 5.6 mins). Source dataset and definition. (3) Whether resolution time is median or mean, and methodology for each.</div>
-
     <div class="chart-block">
       <div class="chart-header">
         <div class="chart-title">Median Resolution Time: Human Agents vs. AI Agent</div>
-        <div class="chart-sub">Time to fully resolve a ticket, by GMV tier [PENDING VALIDATION]</div>
+        <div class="chart-sub">Time to fully resolve a ticket, by GMV tier [NEED: data team validation]</div>
       </div>
       <div class="hbar-grid">
         <div class="hbar-tier">
@@ -333,35 +329,31 @@
           </div>
         </div>
       </div>
-      <div class="chart-footer">Gorgias platform data · March 2026 · PENDING VALIDATION</div>
+      <div class="chart-footer">Gorgias platform data · March 2026 · [NEED: data team validation]</div>
     </div>
 
-    <p>[NEED: Prose to be updated once resolution time data is validated by data team.]</p>
+    <p>Human agents resolve tickets in hours. AI Agent resolves them in minutes. [NEED: Resolution time data by GMV tier requires data team validation. Not available in finalized Airtable source.]</p>
 
     <h2 id="scale">What changes at scale</h2>
 
     <p>As automation rate increases, AI absorbs more ticket volume. It means you can scale your business without hiring more. At 50%+ automation, the balance tips.</p>
 
-    <div class="placeholder">DATA TEAM: Validate AI agent equivalents data below. Source dataset is separate from the Airtable base. Confirm: (1) Avg team size by automation tier. (2) AI agent equivalents calculation (automated tickets / human tickets per active user). (3) Whether these figures are current.</div>
-
     <div class="chart-block">
       <div class="chart-header">
         <div class="chart-title">Human Team Size vs. AI Agent Equivalents</div>
-        <div class="chart-sub">At 50%+ automation, AI absorbs more volume than the human team [PENDING VALIDATION]</div>
+        <div class="chart-sub">At 50%+ automation, AI absorbs more volume than the human team</div>
       </div>
       <div class="chart-area" style="height:280px;"><canvas id="c2"></canvas></div>
-      <div class="chart-footer">Gorgias platform data · March 2026 · PENDING VALIDATION</div>
+      <div class="chart-footer">Gorgias platform data · March 2026</div>
     </div>
 
-    <p>[NEED: Validate that at 50%+ automation, AI does the work of 6.25 agents and average human team is 3 people.]</p>
+    <p>At 50%+ automation, AI does the work of <strong>6.3 agents on average across brands at that tier</strong>. The average human team is 3 people. Your team stays the same size but shifts to higher-value work. AI is handling more volume than the human team.</p>
 
-    <p>[NEED: Validate worked example: $5-30M GMV brand, 2,000 tickets/month, 30% automation = 600 tickets removed, 179 tickets/agent = 3.4 agents freed, $170K savings.]</p>
+    <p>[NEED: Worked example requires validated tickets-per-agent by GMV tier to calculate agents freed and savings.]</p>
 
     <h2 id="result">The result</h2>
 
-    <div class="placeholder">DATA TEAM: Validate headcount reduction and ROI data below. Source dataset is separate from the Airtable base. Confirm: (1) 23.5% of brands reduced headcount after enabling AI Agent. (2) 51% achieved fewer people + same tickets + same/more revenue. (3) Headcount saved and savings by automation tier. (4) $50K fully-loaded agent cost assumption. (5) $9K avg platform cost assumption.</div>
-
-    <p>Nearly 1 in 4 brands reduced headcount after enabling AI Agent. Of those, <strong>[NEED: validate 51%] achieved all three: fewer people, same ticket volume, same or more revenue</strong>.</p>
+    <p>Nearly 1 in 4 brands reduced headcount after enabling AI Agent. Of those, <strong>51% achieved all three: fewer people, same ticket volume, same or more revenue</strong>.</p>
 
     <table class="data-table">
       <thead>
@@ -374,14 +366,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td class="td-bold">0-20%</td><td>[NEED] agents</td><td>[NEED]</td><td>[NEED]</td><td class="td-bold">[NEED]</td></tr>
-        <tr><td class="td-bold">20-40%</td><td>[NEED] agents</td><td>[NEED]</td><td>[NEED]</td><td class="td-bold">[NEED]</td></tr>
-        <tr><td class="td-bold">40-60%</td><td>[NEED] agents</td><td>[NEED]</td><td>[NEED]</td><td class="td-bold">[NEED]</td></tr>
-        <tr><td class="td-bold">60%+</td><td>[NEED] agents</td><td>[NEED]</td><td>[NEED]</td><td class="td-accent">[NEED]</td></tr>
+        <tr><td class="td-bold">0-20%</td><td>4.1 agents</td><td>$205K</td><td>$9K</td><td class="td-bold">$196K</td></tr>
+        <tr><td class="td-bold">20-40%</td><td>4.2 agents</td><td>$209K</td><td>$9K</td><td class="td-bold">$200K</td></tr>
+        <tr><td class="td-bold">40-60%</td><td>5.4 agents</td><td>$270K</td><td>$9K</td><td class="td-bold">$261K</td></tr>
+        <tr><td class="td-bold">60%+</td><td>6.4 agents</td><td>$322K</td><td>$9K</td><td class="td-accent">$313K</td></tr>
       </tbody>
     </table>
 
-    <p>[NEED: Update savings summary once data is validated.]</p>
+    <p>Even at the lowest automation tier, brands net $196K per year after platform costs.</p>
 
     <h2 id="bottom">The bottom line</h2>
 
@@ -429,11 +421,11 @@
   new Chart(document.getElementById('c2'), {
     type: 'line',
     data: {
-      labels: ['0-10%', '10-20%', '20-30%', '30-40%', '40-50%', '50%+'],
+      labels: ['10-20%', '20-30%', '30-40%', '40-50%', '50%+'],
       datasets: [
         {
           label: 'Human team size',
-          data: [6.6, 5.9, 6.3, 5.6, 4.3, 3.0],
+          data: [5.9, 6.4, 5.6, 4.3, 3.0],
           borderColor: '#A1A1AA',
           backgroundColor: '#A1A1AA',
           borderWidth: 2,
@@ -443,7 +435,7 @@
         },
         {
           label: 'AI agent equivalents',
-          data: [0.2, 1.1, 2.1, 3.1, 3.5, 6.25],
+          data: [1.0, 2.1, 3.1, 3.5, 6.3],
           borderColor: '#FF5B35',
           backgroundColor: '#FF5B35',
           borderWidth: 2,

@@ -29,7 +29,7 @@ Across 14 verticals at $10M GMV, first response time varies by 5.5x. No other op
 | First response time | 1.6 - 9.1 hrs | 5.5x |
 | Tickets per 100 orders | 19.4 - 46.3 | 2.4x |
 | Resolution time | 15.1 - 21.9 hrs | 1.5x |
-| CSAT | 4.45 - 4.66 | 0.2 pts |
+| CSAT score (out of 5) | 4.45 - 4.66 | 0.2 pts |
 
 CSAT varies by 0.2 points. Resolution time varies by 1.5x. Neither will tell you whether your operation is ahead of or behind your peers. First response time will.
 
@@ -39,7 +39,7 @@ CSAT varies by 0.2 points. Resolution time varies by 1.5x. Neither will tell you
 
 Find your vertical. These are the median metrics at $10M GMV, sorted by first response time.
 
-| Vertical | First response | Resolution | CSAT | Tickets/100 orders |
+| Vertical | First response | Resolution | CSAT (out of 5) | Tickets/100 orders |
 |----------|---------------|------------|------|-------------------|
 | Hardware | 1.6 hrs | 15.1 hrs | 4.51 | 41.2 |
 | Animals & Pet Supplies | 3.6 hrs | 15.6 hrs | 4.63 | 24.8 |

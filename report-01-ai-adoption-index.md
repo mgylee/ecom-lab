@@ -6,7 +6,7 @@
 
 **~20%** of ecommerce brands have deployed AI in customer-facing support.
 **10x** faster response times for brands at 30%+ automation vs. zero.
-**2pts** CSAT difference between brands at 0% and 20% automation.
+**2pts** positive CSAT difference between brands at 0% and 20% automation.
 
 ---
 
@@ -14,7 +14,7 @@
 
 Every vendor deck, every conference keynote, every earnings call implies the same thing: AI in ecommerce support is mainstream. Our data disagrees.
 
-We measured actual production deployment across ecommerce brands using Gorgias from January 2025 through January 2026. Not self-reported usage. Not survey responses. Platform-level signals showing whether AI is actively resolving customer interactions. The result: roughly 1 in 5 brands has deployed AI in customer-facing support.
+We measured actual production deployment across ecommerce brands using Gorgias over the last 90 days. Not self-reported usage. Not survey responses. Platform-level signals showing whether AI is actively resolving customer interactions. The result: roughly 1 in 5 brands has deployed AI in customer-facing support.
 
 > **Placeholder:** Confirm exact aggregate adoption rate and MoM growth figure from internal trend data.
 
@@ -51,7 +51,7 @@ Among brands that have deployed AI, the response time improvement is not increme
 | 30% | 80 min | 84.0% | 89% faster |
 | 40% | 12 min | 81.3% | 98% faster |
 
-Brands automating near 0% respond in 736 minutes on average. At 20% automation, that drops to 400, roughly half. At 30%, it falls to 80 minutes. At 40%, 12 minutes. The gains do not scale evenly. They accelerate.
+Brands automating near 0% have a median first response time of 736 minutes. At 20% automation, that drops to 400, roughly half. At 30%, it falls to 80 minutes. At 40%, 12 minutes. The gains do not scale evenly. They accelerate.
 
 CSAT at 20% automation sits at 87.9%, versus 90.3% at zero.
 
@@ -87,4 +87,4 @@ That gap is not closing. It is widening every month.
 
 ---
 
-**Methodology:** Platform-level behavioral data from Gorgias merchants, January 2025 through January 2026. AI adoption is measured by active AI enablement in customer-facing workflows, not self-reported usage. Official AI Agent adoption requires reaching activation and achieving at least 5% automation in a 7-day period with at least 5 billed tickets. Data as of March 2026.
+**Methodology:** Platform-level behavioral data from Gorgias merchants over the last 90 days (minus 7-day billing lag). AI adoption is measured by active AI enablement in customer-facing workflows, not self-reported usage. Official AI Agent adoption requires reaching activation and achieving at least 5% automation in a 7-day period with at least 5 billed tickets. Performance metrics (first response time, CSAT) use medians aggregated per account, then median across accounts. Accounts require at least 30 tickets to be included. Data as of March 2026.
