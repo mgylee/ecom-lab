@@ -14,6 +14,8 @@
 
 Every ticket costs time. That time costs money. Most brands know their total support headcount. Few know their cost per ticket. That gap is where the overspend lives.
 
+[NEED: Tickets per human agent per month by GMV tier, and how AI Agent handles significantly more. This grounds the cost problem before showing the solution.]
+
 The question is not whether AI can help. It is how much changes when AI starts handling the volume.
 
 ---
