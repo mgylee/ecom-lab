@@ -658,8 +658,13 @@
 
     <p>We measured actual production deployment across ecommerce brands using Gorgias. Not self-reported usage. Not survey responses. Platform-level signals showing whether AI is actively resolving customer interactions. The result: roughly <strong>1 in 5 brands has deployed AI in customer-facing support</strong>.</p>
 
-    <div class="placeholder">
-      <strong>Placeholder:</strong> Confirm exact aggregate adoption rate and MoM growth figure from internal trend data.
+    <div class="chart-block">
+      <div class="chart-header">
+        <div class="chart-title">AI Agent Adoption Rate Over Time</div>
+        <div class="chart-sub">Share of paying customers with AI Agent enabled</div>
+      </div>
+      <div class="chart-area" style="height:240px;"><canvas id="c4"></canvas></div>
+      <div class="chart-footer">Gorgias platform data · March 2026 · Source: <a href="https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119#2ee1ae2178f580c9ba67c5baecf305a2" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">EcomLab Report First Data</a></div>
     </div>
 
     <h2 id="who">Who has adopted, and who hasn't</h2>
@@ -745,7 +750,7 @@
         <div class="chart-sub">At 50%+ automation, AI handles more volume than the human team</div>
       </div>
       <div class="chart-area" style="height:280px;"><canvas id="c3"></canvas></div>
-      <div class="chart-footer">Gorgias platform data · March 2026 · Source: <a href="https://www.notion.so/gorgias/ROI-of-AI-Support-Agents-30b1ae2178f580acbfbcfa9918a0d46d" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">ROI of AI: Support Agents</a></div>
+      <div class="chart-footer">Gorgias platform data · March 2026 · Source: <a href="https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119#2f61ae2178f58042873de0797163be44" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">ROI of AI: Support Agents</a></div>
     </div>
 
     <p>At 50%+ automation, brands operate with just <strong>3 team members doing work that would typically require 9+</strong>. AI does the equivalent of 6.3 agents. The human team stays the same size but shifts to higher-value work.</p>
@@ -813,6 +818,33 @@
       scales: {
         x: { grid: { display: false }, border: noBorder },
         y: { grid, border: noBorder, ticks: { callback: v => v + '%' }, min: 0, max: 60 }
+      }
+    }
+  });
+
+  // Chart 4 — Adoption rate trend
+  new Chart(document.getElementById('c4'), {
+    type: 'line',
+    data: {
+      labels: ['Apr 25','May 25','Jun 25','Jul 25','Aug 25','Sep 25','Oct 25','Nov 25','Dec 25','Jan 26'],
+      datasets: [{
+        data: [12.33, 13.11, 14.03, 14.95, 15.53, 16.31, 17.24, 17.73, 17.92, 17.55],
+        borderColor: '#0A0A0A',
+        backgroundColor: 'rgba(10,10,10,0.04)',
+        borderWidth: 2,
+        pointRadius: 3,
+        pointBackgroundColor: '#0A0A0A',
+        fill: true,
+        tension: 0.35
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.parsed.y}%` } } },
+      scales: {
+        x: { grid: { display: false }, border: noBorder },
+        y: { grid, border: noBorder, ticks: { callback: v => v + '%' }, min: 10, max: 20 }
       }
     }
   });

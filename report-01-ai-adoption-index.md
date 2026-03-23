@@ -16,7 +16,7 @@ Every vendor deck, every conference keynote, every earnings call implies the sam
 
 We measured actual production deployment across ecommerce brands using Gorgias. Not self-reported usage. Not survey responses. Platform-level signals showing whether AI is actively resolving customer interactions. The result: roughly 1 in 5 brands has deployed AI in customer-facing support.
 
-> **Placeholder:** Confirm exact aggregate adoption rate and MoM growth figure from internal trend data.
+Adoption has climbed steadily from 12.3% in April 2025 to 17.6% by January 2026 — but the curve is flattening, not accelerating. Source: [EcomLab Report First Data](https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119#2ee1ae2178f580c9ba67c5baecf305a2)
 
 ---
 
