@@ -57,19 +57,6 @@ Brands automating near 0% have a median first response time of 736 minutes. At 2
 
 CSAT at 20% automation sits at 87.9%, versus 90.3% at zero.
 
-The rate threshold matters independently of volume. Among brands automating fewer than 1,000 tickets per month, roughly 1 in 3 have crossed 30% automation. Among brands automating more than 1,000 tickets per month, that number is 1 in 28. Those brands are handling significant volume. But the structural shift in response time follows the rate, not the count.
-
-| Automated tickets (28d) | Above 30% automation rate |
-|------------------------|--------------------------|
-| 1–9 | 34% |
-| 10–49 | 29% |
-| 50–99 | 34% |
-| 100–249 | 30% |
-| 250–499 | 33% |
-| 500–999 | 35% |
-| 1,000+ | 4% |
-
-> **Placeholder:** Add 1-2 anonymised customer proof points: ticket volumes automated, FRT improvement, or headcount held flat at scale.
 
 ---
 
@@ -77,7 +64,16 @@ The rate threshold matters independently of volume. Among brands automating fewe
 
 Faster response times are visible to customers. The efficiency gains are visible to finance.
 
-> **Placeholder:** Ticket volume growth year-over-year vs. headcount growth year-over-year, segmented by automation tier (0-10%, 10-30%, 30%+). Finding to show: brands at 30%+ automation absorb volume growth without adding headcount. Brands below 10% are hiring to keep up.
+Among brands that grew ticket volume by at least 20% year over year, the gap between volume growth and effort growth tells the story.
+
+| Automation tier | Ticket growth (YoY) | Hours growth (YoY) | Effort per ticket |
+|-----------------|---------------------|---------------------|-------------------|
+| 1-20% | +66% | +29% | -27% |
+| 20-40% | +77% | +27% | -31% |
+| 40-60% | +83% | +13% | -41% |
+| 60%+ | +143% | +6% | -58% |
+
+At 60%+ automation, ticket volume nearly tripled while total hours grew just 6%. Human effort per ticket collapsed by 58%. The team barely worked harder — AI absorbed the growth.
 
 ---
 
