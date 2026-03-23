@@ -28,6 +28,8 @@ After enabling AI Agent, median first response time drops by half.
 |--------|----------------|----------------|--------|
 | Median first response time | 11.0 hrs | 5.5 hrs | -50% |
 | Average first response time | 18.8 hrs | 12.7 hrs | -32% |
+| Median resolution time | [NEED] | [NEED] | [NEED] |
+| Average resolution time | [NEED] | [NEED] | [NEED] |
 
 AI handles the simple tickets instantly. Human agents see shorter queues and spend their time on the conversations that need judgment.
 
@@ -56,7 +58,7 @@ This holds up under growth. Among brands that grew ticket volume by 20%+ year ov
 | 40-60% | +83% | +13% | -41% |
 | 60%+ | +143% | +6% | -58% |
 
-At 60%+ automation, ticket volume nearly tripled while human hours grew just 6%.
+At 60%+ automation, ticket volume nearly tripled while human hours grew just 6%. The time saved is not idle. Teams reinvest it into training AI on brand-specific responses, surfacing insights on inventory gaps, shipping issues, and product feedback, and turning customer conversations into data that drives business strategy.
 
 ---
 
