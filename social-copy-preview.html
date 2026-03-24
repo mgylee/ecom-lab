@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecom Lab Launch — Social Copy Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #F3F2EF;
+            color: #191919;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #191919;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 32px;
+        }
+        .post-group {
+            margin-bottom: 48px;
+        }
+        .post-group-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #FF5B35;
+            margin-bottom: 16px;
+        }
+        .post-card {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 16px 0;
+        }
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .avatar-gorgias {
+            background: #FF5B35;
+        }
+        .avatar-matilda {
+            background: #3F3F46;
+        }
+        .post-author {
+            line-height: 1.3;
+        }
+        .post-author-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: #191919;
+        }
+        .post-author-title {
+            font-size: 12px;
+            color: #666;
+        }
+        .post-author-time {
+            font-size: 12px;
+            color: #999;
+        }
+        .post-body {
+            padding: 12px 16px 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #191919;
+            white-space: pre-line;
+        }
+        .post-body p {
+            margin-bottom: 12px;
+        }
+        .post-body p:last-child {
+            margin-bottom: 0;
+        }
+        .post-engagement {
+            padding: 8px 16px;
+            border-top: 1px solid #E0E0E0;
+            display: flex;
+            justify-content: space-around;
+            color: #666;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .post-engagement span {
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: default;
+        }
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            margin-top: 12px;
+            margin-bottom: 4px;
+        }
+        .meta-tag {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tag-day1 { background: #FFF0EC; color: #FF5B35; }
+        .tag-day2 { background: #EEF2FF; color: #4F46E5; }
+        .tag-day3 { background: #F0FDF4; color: #16A34A; }
+        .tag-day4 { background: #FEF9C3; color: #A16207; }
+        .tag-brand { background: #F4F4F5; color: #3F3F46; }
+        .tag-personal { background: #F4F4F5; color: #71717A; }
+        .divider {
+            height: 1px;
+            background: #E0E0E0;
+            margin: 48px 0;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #F4F4F5;
+            border: 1px solid #E0E0E0;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3F3F46;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.15s;
+        }
+        .copy-btn:hover {
+            background: #E4E4E7;
+        }
+        .copy-btn.copied {
+            background: #F0FDF4;
+            color: #16A34A;
+            border-color: #BBF7D0;
+        }
+        .post-card {
+            position: relative;
+        }
+        .char-count {
+            font-size: 11px;
+            color: #999;
+            text-align: right;
+            padding: 0 16px 12px;
+        }
+        .char-count.warning { color: #A16207; }
+        .char-count.danger { color: #DC2626; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ecom Lab Social Copy Preview</h1>
+        <p class="subtitle">Launch date: April 15, 2026 at 9:00 AM EST. All posts below are final drafts for review.</p>
+
+        <!-- DAY 1 -->
+        <div class="post-group">
+            <div class="post-group-label">Day 1 — Tuesday, April 15 (Launch Day)</div>
+
+            <div class="post-card" id="post-1">
+                <button class="copy-btn" onclick="copyPost('post-1-body')">Copy text</button>
+                <div class="post-header">
+                    <div class="avatar avatar-gorgias">G</div>
+                    <div class="post-author">
+                        <div class="post-author-name">Gorgias</div>
+                        <div class="post-author-title">Conversational Commerce Platform</div>
+                        <div class="post-author-time">9:00 AM EST</div>
+                    </div>
+                </div>
+                <div class="post-meta">
+                    <span class="meta-tag tag-day1">Day 1</span>
+                    <span class="meta-tag tag-brand">Brand Page</span>
+                </div>
+                <div class="post-body" id="post-1-body">Every vendor deck says AI in ecommerce support is mainstream.
+
+Our data says otherwise.
+
+We measured actual AI deployment across thousands of ecommerce brands. Not survey responses. Not self-reported usage. Platform-level behavioral data.
+
+Today we're launching Gorgias Ecom Lab, a research series that publishes what we see in the data.
+
+Three reports are live:
+
+📊 AI Adoption Index. ~20% of brands have deployed AI in support. The gap between narrative and reality is wide.
+
+📊 CX Benchmarks. First response time varies 5.5x across verticals. The all-industry average describes no one.
+
+📊 Support Economics. The math on what support actually costs, and where AI changes the equation.
+
+No CTAs. No product pitches. Just the numbers.
+
+Link in comments 👇</div>
+                <div class="char-count"></div>
+                <div class="post-engagement">
+                    <span>👍 Like</span>
+                    <span>💬 Comment</span>
+                    <span>🔄 Repost</span>
+                    <span>📤 Send</span>
+                </div>
+            </div>
+
+            <div class="post-card" id="post-2">
+                <button class="copy-btn" onclick="copyPost('post-2-body')">Copy text</button>
+                <div class="post-header">
+                    <div class="avatar avatar-matilda">ML</div>
+                    <div class="post-author">
+                        <div class="post-author-name">Matilda Lee</div>
+                        <div class="post-author-title">Head of Product Marketing at Gorgias</div>
+                        <div class="post-author-time">12:00 PM EST</div>
+                    </div>
+                </div>
+                <div class="post-meta">
+                    <span class="meta-tag tag-day1">Day 1</span>
+                    <span class="meta-tag tag-personal">Personal</span>
+                </div>
+                <div class="post-body" id="post-2-body">We spent the last few months digging into our platform data across thousands of ecommerce support operations.
+
+Three things stood out:
+
+1. Only ~20% of ecommerce brands have actually deployed AI in customer-facing support. The "everyone's doing it" narrative doesn't match reality.
+
+2. First response time varies 5.5x across verticals at the same GMV. Benchmarking against the all-industry average is useless.
+
+3. Brands at 50%+ automation run support with 3 people doing the work of 9. The efficiency gain is structural, not incremental.
+
+We published all of it: data, methodology, and the arguments, in a new research series called Ecom Lab.
+
+This is platform data, not surveys. If you run ecommerce support, your vertical's benchmarks are in here.
+
+[link]</div>
+                <div class="char-count"></div>
+                <div class="post-engagement">
+                    <span>👍 Like</span>
+                    <span>💬 Comment</span>
+                    <span>🔄 Repost</span>
+                    <span>📤 Send</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="post-group">
+            <div class="post-group-label">Day 2 — Wednesday, April 16 (Report 1 Spotlight)</div>
+
+            <div class="post-card" id="post-3">
+                <button class="copy-btn" onclick="copyPost('post-3-body')">Copy text</button>
+                <div class="post-header">
+                    <div class="avatar avatar-gorgias">G</div>
+                    <div class="post-author">
+                        <div class="post-author-name">Gorgias</div>
+                        <div class="post-author-title">Conversational Commerce Platform</div>
+                        <div class="post-author-time">10:00 AM EST</div>
+                    </div>
+                </div>
+                <div class="post-meta">
+                    <span class="meta-tag tag-day2">Day 2</span>
+                    <span class="meta-tag tag-brand">Brand Page</span>
+                </div>
+                <div class="post-body" id="post-3-body">AI in ecommerce support is "everywhere."
+
+Except it isn't.
+
+We measured actual deployment across ecommerce brands. The number: ~20%.
+
+At $5M GMV, 25% have deployed. At $100M, 43%. Even at $500M+, half haven't.
+
+But the brands that have? 10x faster response times. Teams of 3 doing the work of 9.
+
+The gap between adopters and everyone else isn't closing. It's widening.
+
+Full data: [link]</div>
+                <div class="char-count"></div>
+                <div class="post-engagement">
+                    <span>👍 Like</span>
+                    <span>💬 Comment</span>
+                    <span>🔄 Repost</span>
+                    <span>📤 Send</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="post-group">
+            <div class="post-group-label">Day 3 — Thursday, April 17 (Report 3 Spotlight)</div>
+
+            <div class="post-card" id="post-4">
+                <button class="copy-btn" onclick="copyPost('post-4-body')">Copy text</button>
+                <div class="post-header">
+                    <div class="avatar avatar-gorgias">G</div>
+                    <div class="post-author">
+                        <div class="post-author-name">Gorgias</div>
+                        <div class="post-author-title">Conversational Commerce Platform</div>
+                        <div class="post-author-time">10:00 AM EST</div>
+                    </div>
+                </div>
+                <div class="post-meta">
+                    <span class="meta-tag tag-day3">Day 3</span>
+                    <span class="meta-tag tag-brand">Brand Page</span>
+                </div>
+                <div class="post-body" id="post-4-body">The all-industry median first response time is 6.3 hours.
+
+That number describes no one.
+
+A Hardware brand responds in 1.6 hours. An Apparel brand in 8.8. Both are measured against the same average.
+
+We benchmarked 14 ecommerce verticals across FRT, resolution time, CSAT, and ticket volume.
+
+Find your vertical. See where you actually stand.
+
+[link]</div>
+                <div class="char-count"></div>
+                <div class="post-engagement">
+                    <span>👍 Like</span>
+                    <span>💬 Comment</span>
+                    <span>🔄 Repost</span>
+                    <span>📤 Send</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DAY 4 -->
+        <div class="post-group">
+            <div class="post-group-label">Day 4 — Friday, April 18 (Report 2 Spotlight)</div>
+
+            <div class="post-card" id="post-5">
+                <button class="copy-btn" onclick="copyPost('post-5-body')">Copy text</button>
+                <div class="post-header">
+                    <div class="avatar avatar-gorgias">G</div>
+                    <div class="post-author">
+                        <div class="post-author-name">Gorgias</div>
+                        <div class="post-author-title">Conversational Commerce Platform</div>
+                        <div class="post-author-time">10:00 AM EST</div>
+                    </div>
+                </div>
+                <div class="post-meta">
+                    <span class="meta-tag tag-day4">Day 4</span>
+                    <span class="meta-tag tag-brand">Brand Page</span>
+                </div>
+                <div class="post-body" id="post-5-body">Every ticket costs time. That time costs money.
+
+We looked at what happens to support economics when brands deploy AI:
+
+→ First response time: cut in half
+→ At 50%+ automation: AI handles more volume than the human team
+→ Even at the lowest automation tier: $73K net annual savings after platform costs
+
+The teams aren't shrinking. They're reallocating. Less queue management, more brand-building work.
+
+Full breakdown: [link]</div>
+                <div class="char-count"></div>
+                <div class="post-engagement">
+                    <span>👍 Like</span>
+                    <span>💬 Comment</span>
+                    <span>🔄 Repost</span>
+                    <span>📤 Send</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Character counts
+        document.querySelectorAll('.post-body').forEach(body => {
+            const count = body.textContent.trim().length;
+            const counter = body.parentElement.querySelector('.char-count');
+            const limit = 3000;
+            counter.textContent = `${count} / ${limit} characters`;
+            if (count > 2700) counter.classList.add('warning');
+            if (count > 3000) counter.classList.add('danger');
+        });
+
+        // Copy to clipboard
+        function copyPost(id) {
+            const text = document.getElementById(id).textContent.trim();
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById(id).parentElement.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy text';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
