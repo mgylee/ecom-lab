@@ -12,11 +12,15 @@
 
 ## The gap between narrative and data
 
-Every vendor deck, every conference keynote, every earnings call implies the same thing: AI in ecommerce support is mainstream. Our data disagrees.
+Every vendor deck, every conference keynote, and every earnings call suggests that AI in ecommerce support is mainstream.
 
-We measured actual production deployment across ecommerce brands using Gorgias. Not self-reported usage. Not survey responses. Platform-level signals showing whether AI is actively resolving customer interactions. The result: roughly 1 in 5 brands has deployed AI in customer-facing support.
+In our [2026 State of Conversational Commerce](https://www.gorgias.com/state-of-conversational-commerce-2026/trend-1) survey, the numbers back that up: **96% of ecommerce brands named customer support automation as their top AI use case**. 93% have used AI for at least a year. 83% say it is already transforming their business or bringing steady improvements. Zero percent said they were still hesitant.
 
-Adoption has climbed steadily from 12.3% in April 2025 to 17.6% by January 2026 — but the curve is flattening, not accelerating. Source: [EcomLab Report First Data](https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119#2ee1ae2178f580c9ba67c5baecf305a2)
+Then we measured what is actually happening. Using platform-level data (not self-reported usage or survey responses) we looked at whether AI is actively deployed and resolving customer interactions across ecommerce brands.
+
+The answer: **roughly 1 in 5**. Despite near-universal stated adoption, most ecommerce brands have not yet made the organizational decision to deploy AI in customer-facing support.
+
+At the same time, the adoption curve shows steady month-over-month growth, increasing from **12.3% in April 2025 to 17.6% by January 2026**.
 
 ---
 
@@ -36,7 +40,9 @@ Brand size is the strongest predictor of AI adoption. The bigger the brand, the 
 
 Fewer than 18% of brands under $1M GMV have deployed AI. That number crosses 25% around $5M GMV, 35% at $25M, and approaches 50% for brands above $500M GMV. Even at the largest tier, half have not deployed.
 
-The data points to a clear hesitation: most brands have not yet trusted AI to handle shopper-facing conversations autonomously. But the brands that have made that leap are the ones showing up in the performance data that follows.
+The data suggests this is less about technology readiness and more about organizational capacity. Larger brands are more likely to have dedicated CX operations teams, implementation resources, and the internal mandate to run a structured rollout. The gap is not about whether AI works. It is about whether a brand has the setup in place to deploy it properly.
+
+But the brands that have made that leap, regardless of size, are the ones showing up in the performance data that follows.
 
 ---
 
@@ -62,7 +68,7 @@ CSAT at 20% automation sits at 87.9%, versus 90.3% at zero.
 
 Faster response times are visible to customers. The efficiency gains are visible to finance.
 
-We calculated "AI Agent Equivalents" by measuring how many automated tickets AI handles relative to the average human agent's workload. The result: AI is not just handling tickets — it is doing the equivalent work of multiple human agents.
+We calculated "AI Agent Equivalents" by measuring how many automated tickets AI handles relative to the average human agent's workload. The result: AI is not just handling tickets -it is doing the equivalent work of multiple human agents.
 
 | Automation rate | AI agent equivalents | Avg team size |
 |-----------------|---------------------|---------------|
@@ -80,7 +86,9 @@ At 50%+ automation, brands operate with just **3 team members doing work that wo
 
 Most brands are not there yet. Those that have committed are responding 10x faster and scaling without growing their team. The ones still hesitating are hiring their way through the same volume.
 
+The performance gains in this report are not exclusive to enterprise. They follow from deployment, not scale. Brands that invest in proper setup (clear SOPs, structured knowledge bases, and a deliberate rollout) can reach the same automation tiers regardless of team size or GMV. The barrier is organizational commitment, not budget.
+
 
 ---
 
-**Methodology:** Platform-level behavioral data from Gorgias merchants over the last 90 days (minus 7-day billing lag). AI adoption is measured by active AI enablement in customer-facing workflows, not self-reported usage. Official AI Agent adoption requires reaching activation and achieving at least 5% automation in a 7-day period with at least 5 billed tickets. Performance metrics (first response time, CSAT) use medians aggregated per account, then median across accounts. Accounts require at least 30 tickets to be included. Data as of March 2026.
+**Methodology:** Platform-level behavioral data from ecommerce brands over the last 90 days. The dataset includes Gorgias merchants as well as brands using other AI integrations across their support stack. AI adoption is measured by active AI enablement in customer-facing workflows, not self-reported usage. Official AI Agent adoption requires reaching activation and achieving at least 5% automation in a 7-day period with at least 5 billed tickets. Performance metrics (first response time, CSAT) use medians aggregated per account, then median across accounts. Accounts require at least 30 tickets to be included. Data as of March 2026.

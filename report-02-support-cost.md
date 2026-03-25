@@ -5,31 +5,27 @@
 ---
 
 **50%** median first response time cut in half after AI Agent enablement.
-**2x** more work handled by AI than the human team at 50%+ automation.
+**2.1x** more work handled by AI than the human team at 50%+ automation.
 **$73K** net annual saving at the lowest automation tier, after platform costs.
 
 ---
 
 ## Why support costs more than it should
 
-Every ticket costs time. That time costs money. Most brands know their total support headcount. Few know their cost per ticket. That gap is where the overspend lives.
+Every ticket costs time. That time costs money. A human agent has roughly 160 working hours per month, and there is a hard ceiling on how many conversations one person can handle.
 
-[NEED: Tickets per human agent per month by GMV tier, and how AI Agent handles significantly more. This grounds the cost problem before showing the solution.]
-
-The question is not whether AI can help. It is how much changes when AI starts handling the volume.
+A $150M brand handles 4x the ticket volume per agent that a $5M brand does, yet smaller brands end up paying more per resolution without realizing it. When volume grows, headcount grows with it. That is the cost structure AI breaks.
 
 ---
 
 ## Customers get faster answers
 
-After enabling AI Agent, median first response time drops by half.
+After enabling AI Agent, both first response time and resolution time drop dramatically.
 
 | Metric | Before AI Agent | After AI Agent | Change |
 |--------|----------------|----------------|--------|
-| Median first response time | 11.0 hrs | 5.5 hrs | -50% |
-| Average first response time | 18.8 hrs | 12.7 hrs | -32% |
-| Median resolution time | [NEED] | [NEED] | [NEED] |
-| Average resolution time | [NEED] | [NEED] | [NEED] |
+| First response time | 11.0 hrs | 5.5 hrs | -50% |
+| Resolution time | 18.0 hrs | 2.4 min | -99.8% |
 
 AI handles the simple tickets instantly. Human agents see shorter queues and spend their time on the conversations that need judgment.
 
@@ -47,9 +43,11 @@ As automation rate rises, AI absorbs more of the workload. At 50%+ automation, A
 | 40-50% | 4.3 | 3.5 |
 | 50%+ | 3.0 | 6.3 |
 
-At 50%+ automation, AI does the work of **6.3 agents**. The average human team at that tier is 3 people.
+How to read this: at the 10-20% automation tier, the average brand has about 6 human agents. AI is handling the same ticket volume as 1 additional full-time agent. At 50%+ automation, AI does the work of **6.3 agents**, while the average human team at that tier is just 3 people. The lines cross: AI is handling more volume than the entire human team.
 
 This holds up under growth. Among brands that grew ticket volume by 20%+ year over year, human effort did not grow at the same rate.
+
+*Brands grouped by AI automation rate, showing how ticket growth translates into human workload. Read left to right: as automation increases, ticket volume grows faster but human effort per ticket shrinks.*
 
 | Automation tier | Ticket growth (YoY) | Human hours (YoY) | Effort per ticket |
 |-----------------|---------------------|---------------------|-------------------|
@@ -67,6 +65,8 @@ At 60%+ automation, ticket volume nearly tripled while human hours grew just 6%.
 Nearly 1 in 4 brands (23.5%) reduced their team after enabling AI Agent. Of those, **51% achieved all three: fewer people, same ticket volume, same or more revenue**.
 
 Brands that reduced by at least one person saw each remaining agent handle **29% more tickets** (254 to 329 per month), while revenue grew 22%.
+
+*Estimated annual savings by automation tier, after platform costs. Even at the lowest tier, AI Agent pays for itself, saving 4+ agents and $73K/year net.*
 
 | Automation tier | Avg headcount saved | Gross saving | Net saving |
 |-----------------|---------------------|-------------|------------|

@@ -197,8 +197,6 @@
 
     .sticky-side { position: sticky; top: 72px; }
 
-    .feedback-btn { position: fixed; bottom: 28px; right: 28px; background: var(--black); color: var(--white); border: none; border-radius: 8px; padding: 10px 16px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; z-index: 200; display: flex; align-items: center; gap: 7px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); transition: background 0.15s; text-decoration: none; }
-    .feedback-btn:hover { background: var(--700); }
 
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
@@ -272,7 +270,7 @@
     <div class="stat-desc">median first response time cut in half after AI Agent enablement</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">2x</div>
+    <div class="stat-num">2.1x</div>
     <div class="stat-desc">more work handled by AI than the human team at 50%+ automation</div>
   </div>
   <div class="stat-item">
@@ -286,15 +284,13 @@
 
     <h2 id="cost">Why support costs more than it should</h2>
 
-    <p>Every ticket costs time. That time costs money. Most brands know their total support headcount. Few know their cost per ticket. That gap is where the overspend lives.</p>
+    <p>Every ticket costs time. That time costs money. A human agent has roughly 160 working hours per month, and there is a hard ceiling on how many conversations one person can handle.</p>
 
-    <p>[NEED: Tickets per human agent per month by GMV tier, and how AI Agent handles significantly more. This grounds the cost problem before showing the solution.]</p>
-
-    <p>The question is not whether AI can help. It is how much changes when AI starts handling the volume.</p>
+    <p>A $150M brand handles 4x the ticket volume per agent that a $5M brand does, yet smaller brands end up paying more per resolution without realizing it. When volume grows, headcount grows with it. That is the cost structure AI breaks.</p>
 
     <h2 id="comparison">Customers get faster answers</h2>
 
-    <p>After enabling AI Agent, median first response time drops by half.</p>
+    <p>After enabling AI Agent, response times and resolution times both drop dramatically.</p>
 
     <table class="data-table">
       <thead>
@@ -306,12 +302,80 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td class="td-bold">Median first response time</td><td>11.0 hrs</td><td>5.5 hrs</td><td class="td-accent">-50%</td></tr>
-        <tr><td class="td-bold">Average first response time</td><td>18.8 hrs</td><td>12.7 hrs</td><td class="td-accent">-32%</td></tr>
-        <tr><td class="td-bold">Median resolution time</td><td>[NEED]</td><td>[NEED]</td><td class="td-accent">[NEED]</td></tr>
-        <tr><td class="td-bold">Average resolution time</td><td>[NEED]</td><td>[NEED]</td><td class="td-accent">[NEED]</td></tr>
+        <tr><td class="td-bold">First response time</td><td>11.0 hrs</td><td>5.5 hrs</td><td class="td-accent">-50%</td></tr>
+        <tr><td class="td-bold">Resolution time</td><td>18.0 hrs</td><td>2.4 min</td><td class="td-accent">-99.8%</td></tr>
       </tbody>
     </table>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <div class="chart-title">Median Resolution Time: Human Agents vs. AI Agent</div>
+        <div class="chart-sub">Time to fully resolve a ticket, by GMV tier</div>
+      </div>
+      <div class="hbar-grid">
+        <div class="hbar-tier">
+          <div class="hbar-label">&gt;$150M</div>
+          <div class="hbar-rows">
+            <div class="hbar-row">
+              <span class="hbar-tag">Human</span>
+              <div class="hbar-track"><div class="hbar-fill hbar-human" style="width:64.7%"></div></div>
+              <span class="hbar-val">13 hrs</span>
+            </div>
+            <div class="hbar-row">
+              <span class="hbar-tag">AI Agent</span>
+              <div class="hbar-track"><div class="hbar-fill hbar-ai" style="width:0.7%"></div></div>
+              <span class="hbar-val hbar-val-accent">0.9 mins</span>
+            </div>
+          </div>
+        </div>
+        <div class="hbar-tier">
+          <div class="hbar-label">$30–150M</div>
+          <div class="hbar-rows">
+            <div class="hbar-row">
+              <span class="hbar-tag">Human</span>
+              <div class="hbar-track"><div class="hbar-fill hbar-human" style="width:75.6%"></div></div>
+              <span class="hbar-val">15.2 hrs</span>
+            </div>
+            <div class="hbar-row">
+              <span class="hbar-tag">AI Agent</span>
+              <div class="hbar-track"><div class="hbar-fill hbar-ai" style="width:8%"></div></div>
+              <span class="hbar-val hbar-val-accent">1.6 hrs</span>
+            </div>
+          </div>
+        </div>
+        <div class="hbar-tier">
+          <div class="hbar-label">$5–30M</div>
+          <div class="hbar-rows">
+            <div class="hbar-row">
+              <span class="hbar-tag">Human</span>
+              <div class="hbar-track"><div class="hbar-fill hbar-human" style="width:88.6%"></div></div>
+              <span class="hbar-val">17.8 hrs</span>
+            </div>
+            <div class="hbar-row">
+              <span class="hbar-tag">AI Agent</span>
+              <div class="hbar-track"><div class="hbar-fill hbar-ai" style="width:1.1%"></div></div>
+              <span class="hbar-val hbar-val-accent">1.3 mins</span>
+            </div>
+          </div>
+        </div>
+        <div class="hbar-tier">
+          <div class="hbar-label">&lt;$5M</div>
+          <div class="hbar-rows">
+            <div class="hbar-row">
+              <span class="hbar-tag">Human</span>
+              <div class="hbar-track"><div class="hbar-fill hbar-human" style="width:100%"></div></div>
+              <span class="hbar-val">20.1 hrs</span>
+            </div>
+            <div class="hbar-row">
+              <span class="hbar-tag">AI Agent</span>
+              <div class="hbar-track"><div class="hbar-fill hbar-ai" style="width:2.1%"></div></div>
+              <span class="hbar-val hbar-val-accent">2.5 mins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-footer">Gorgias platform data · March 2026</div>
+    </div>
 
     <p>AI handles the simple tickets instantly. Human agents see shorter queues and can focus on the complex ones. <span style="font-size:11px;color:var(--400);">Source: <a href="https://www.notion.so/gorgias/ROI-of-AI-Support-Agents-30b1ae2178f580acbfbcfa9918a0d46d" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">ROI of AI: Support Agents</a></span></p>
 
@@ -328,9 +392,11 @@
       <div class="chart-footer">Gorgias platform data · March 2026 · Source: <a href="https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119#2f61ae2178f58042873de0797163be44" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">EcomLab Report First Data</a></div>
     </div>
 
-    <p>At 50%+ automation, AI does the work of <strong>6.3 agents</strong>. The average human team at that tier is 3 people.</p>
+    <p>How to read this: at the 10-20% automation tier, the average brand has about 6 human agents. AI is handling the same ticket volume as 1 additional full-time agent. At 50%+ automation, AI does the work of <strong>6.3 agents</strong>, while the average human team at that tier is just 3 people. The lines cross: AI is handling more volume than the entire human team.</p>
 
     <p>This holds up under growth. Among brands that grew ticket volume by 20%+ year over year, human effort did not grow at the same rate.</p>
+
+    <p style="font-size:13px; font-style:italic; color:var(--500); margin-bottom:8px;">Brands grouped by AI automation rate, showing how ticket growth translates into human workload. Read left to right: as automation increases, ticket volume grows faster but human effort per ticket shrinks.</p>
 
     <table class="data-table">
       <thead>
@@ -356,6 +422,8 @@
     <p>Nearly 1 in 4 brands (23.5%) reduced their team after enabling AI Agent. Of those, <strong>51% achieved all three: fewer people, same ticket volume, same or more revenue</strong>.</p>
 
     <p>Brands that reduced by at least one person saw each remaining agent handle <strong>29% more tickets</strong> (254 to 329 per month), while revenue grew 22%. <span style="font-size:11px;color:var(--400);">Source: <a href="https://www.notion.so/gorgias/EcomLab-Report-First-Data-2ee1ae2178f58028a99ceafe261e5119#2f61ae2178f58042873de0797163be44" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">EcomLab Report First Data</a></span></p>
+
+    <p style="font-size:13px; font-style:italic; color:var(--500); margin-bottom:8px;">Estimated annual savings by automation tier, after platform costs. Even at the lowest tier, AI Agent pays for itself, saving 4+ agents and $73K/year net.</p>
 
     <table class="data-table">
       <thead>
@@ -418,7 +486,7 @@
   const grid     = { color: '#F4F4F5', drawBorder: false };
   const noBorder = { display: false };
 
-  // Chart — Human team vs AI agent equivalents (dual line) — Human team vs AI agent equivalents (dual line)
+  // Chart -Human team vs AI agent equivalents (dual line) -Human team vs AI agent equivalents (dual line)
   new Chart(document.getElementById('c2'), {
     type: 'line',
     data: {
@@ -468,10 +536,6 @@
   });
 </script>
 
-<a class="feedback-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeIS0YgyVSuwy1ZailiGB9chENZE6fILkyFbeZi_jGiRswgSg/viewform" target="_blank" rel="noopener">
-  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1h12v9H8l-3 3V10H1V1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
-  Leave feedback
-</a>
 
 </body>
 </html>
